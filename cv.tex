@@ -1,0 +1,230 @@
+% https://kruzenshtern.org/cv.tex
+% https://neolefty.org/bill-baker-resume-2014.pdf
+% https://n2vi.com/cv.pdf
+% https://neolefty.org/resume/resume.txt
+% https://gitlab.com/cnewstead/infdesc
+% https://jenny.cool/resume/
+
+% https://texblog.org/2013/02/13/latex-documentclass-options-illustrated/#papersize
+\documentclass[a4paper]{article}
+
+\usepackage[
+  margin=2cm,
+]{geometry}
+% A4 ∪ letterform = L4
+% https://tex.stackexchange.com/questions/321712/how-to-compromise-between-a4-and-letter#comment1641649_321716
+\geometry{paperheight=11.7in,paperwidth=8.5in}
+\usepackage{array, xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{lipsum}
+
+\definecolor{lightgray}{gray}{0.8}
+\newcolumntype{L}{>{\raggedleft}p{0.13\textwidth}}
+\newcolumntype{R}{p{0.8\textwidth}}
+\newcommand\VRule{\color{lightgray}\vrule width 0.5pt}
+\frenchspacing
+
+\def\name{John D. Duncan, III}
+% \def\email{duncanjdiii+jobs@googlemail.com}
+\def\email{cv@johnduncan.io}
+\def\webpage{https://johnduncan.io}
+\def\linkedin{https://linkedin.com/in/johndduncan}
+\def\github{https://github.com/johndduncaniii}
+
+\geometry{
+  body={6.5in, 8.5in},
+  left=0.75in,
+  top=0.50in,
+  bottom=0.5in
+}
+
+\markright{\name}
+\thispagestyle{empty}
+
+% Don't indent paragraphs.
+\setlength\parindent{0em}
+
+% Make lists without bullets
+\renewenvironment{itemize}{
+	\begin{list}{}{
+		\setlength{\leftmargin}{1.5em}
+	}
+}{\end{list}}
+
+\newcommand{\updateinfo}[1][\today]{{\color{gray}Last updated on #1}}
+
+\begin{document}
+
+{\huge \bfseries \name}\hfill \updateinfo\\
+
+\begin{tabular}{ll}
+	Phone: & (240) 688-7187\\
+	Location: & New York City \\
+	% Status: & Citizen \\
+\end{tabular}
+\hfill
+\begin{tabular}{lr}
+	Email: & \href{mailto:\email}{\tt \email}\\
+	Homepage: & \href{\webpage}{\tt \webpage}\\
+	Linkedin: & \href{\linkedin}{\tt \linkedin} \\
+	Github: & \href{\github}{\tt \github} \\
+\end{tabular}
+% \section*{Motivation}
+% \begin{tabular}{ll}
+%	Designing technology which informs but doesn't demand focus or attention & \\ 
+%	Making things that are useful to people and that work well & \\ 
+%	Building friendships, teams, and mentorship culture & \\ 
+%	% Balancing simplicity, consistency, maintainability, reliability, performance, scalability, agility, security, and affordability & \\ 
+%	Balancing simplicity, consistency, maintainability, performance, and security & \\
+% \end{tabular}
+
+
+\section*{Education}
+
+\begin{tabular}{ll}
+  \textbf{Bachelor of Science in Computer Science {\footnotesize (Honors)} and Philosophy {\footnotesize (Honors)}} & \\
+  Gettysburg College, Gettysburg, PA & \\
+\end{tabular}
+
+\begin{tabular}{L!{\VRule}R}
+& \textbf{Computer Science} \\
+\textbf{Capstone} & \textit{Adam's Wellness Family Connection} \hfill Advisor: Dr.~Rod Tosten\\
+Class of 2017 & Outstanding Computer Science Student Award\\
+& \\
+& \textbf{Philosophy} \\
+\textbf{Capstone} & \textit{Infinite Horizons: The World to Mind Question} \hfill Advisor: Dr.~Daniel DeNicola\\
+\textbf{Thesis} & \textit{Virtual Futures: Virtuality as Political Praxis} \hfill Advisor: Dr.~Lisa Portmess\\
+& \\
+& \textbf{Extracurricular} \\
+2016--2017 & Eisenhower Institute Undergraduate Fellow\\
+Co-leader & Gettysburg Political Philosophy Collective\\
+Treasurer & Gettysburg College Independents\\
+\end{tabular}
+
+\section*{Employment}
+\begin{tabular}{L!{\VRule}R}
+2018--2024 & {\bf Quorum Analytics} \hfill Washington, DC\\
+{\footnotesize 2022--2024} & Senior Software Engineer, Technical Lead \hfill {\footnotesize (50 to 70 hours/week)}\\
+{\footnotesize 2020--2022} & Software Engineer II\\
+{\footnotesize 2018--2020} & Software Engineer\\
+& Python, Django, PostgreSQL, React, JavaScript, HTML, CSS, Redux, D3, React Native\\
+&\\
+Summer 2016 & {\bf Massachusetts Institute of Technology: Lincoln Laboratory} \hfill Lexington, MA \\
+& Research Intern \hfill {\footnotesize (40 hours/week)} \\
+& Java, Android SDK, Google Maps SDK, JavaScript, HTML, CSS, SQL\\
+\end{tabular}
+
+\subsection*{Quorum}
+\begin{itemize}
+  \item Responsible for collecting, interpreting, organizing, and presenting legislative and user-generated data on the Quorum B2B SaaS civic tech platform. During my tenure at Quorum, I designed, built, and maintained most of its flagship products, features and critical systems.
+\end{itemize}
+
+\begin{tabular}{L!{\VRule}R}
+\textbf{Projects} &
+	\begin{tabular}[t]{@{}l!{\VRule}l} % @{}l !{\VRule} p{0.6\linewidth}
+		PAC Hybrid & Search/Performance Lead, Team of 8 \\ % implemented, launched, and supported launch of new feature for compliance with FEC regulations
+		PAC & Search/Dashboards Performance Lead, Team of 8 \\ % implemented, launched, and supported launch of new feature for compliance with FEC regulations
+		% \multicolumn{2}{l}{\textbullet\hspace{\labelsep} Wrote PAC Dashboards, PAC Search, served as tech lead for FEC submission/validation/PDF printing containerization, and wrote State Committee and Print Check forms}\\
+		Search UI/UX & Technical Lead, Team of 3\\ % rewrote, refactored, and expanded functionality of search feature including filter search
+		Dashboards & Technical Lead, Pair \\
+		Transcripts & Front-end Lead, Pair \\ % Committee & Presidental
+		Bulk Actions & Technical Lead, Independent \\
+		Regulations & Front-end Lead \\
+		Search & Pair\\ % Wrote infrastructure which powers the default feature in Quorum
+	\end{tabular}\\
+\textbf{Leadership} & \textbullet\hspace{\labelsep} Full-stack Guild Leader\\
+% & Rockstar of the Quarter Q2 2021\\
+& \textbullet\hspace{\labelsep} Mentored two apprentice software engineers through the Quorum Accelerate Program\\
+& \textbullet\hspace{\labelsep} Onboarding mentor to two full-stack engineers and an engineering manager\\
+\textbf{Duties} & Code review, deployment, 24hr on-call, ui/ux design, interviews (phone/onsite, technical/design), “Learning Lab” presentations, devops, legacy maintenance, technical design documents, documentation, performance, accessibility, and browser research
+\end{tabular}
+
+\subsection*{Massachusetts Institute of Technology: Lincoln Laboratory (MIT LL)}
+\begin{itemize}
+  \item Worked on the Local Evacuation Alert Verification (LEAV) program for HURREVAC-eXtended (HVX) with the Humanitarian Assistance and Disaster Relief Systems group
+  \item Designed and built an Android application for end users (LEAV) and a JavaScript (EXT-JS) module for the Emergency Manager front-end (HVX)
+\end{itemize}
+
+% \section*{Leadership}
+
+% \begin{tabular}{L!{\VRule}R}
+% 2023--today & {\bf The Cairo Unit Owners Association Board of Directors} \hfill Washington, DC\\
+% {\footnotesize 2023} & Director\\
+% \end{tabular}
+
+
+% \newpage
+
+% \section*{Technical Skills}
+% % https://tex.stackexchange.com/a/215351
+% \begin{tabular}{L!{\VRule}R}
+%   \textbf{Languages} & Python, JavaScript, Go, SQL, \LaTeX \\
+%   \textbf{Databases} & PostgreSQL, PostGIS \\
+%   \textbf{Web} & HTML5, CSS3, DOM, XUL/XPCOM \\
+%   \textbf{Libraries} & React, Django, D3, Elasticsearch \\
+%   % & Styled Components, cypress, babel, enzyme, jest, npm, webpack, gulp \\  
+%   \textbf{Devops} & AWS (EC2, RDS, S3, Route53), Atlassian (Jira, Opsgenie), Ansible, Travis CI \\
+%   % \textbf{Unix} & macOS, linux, bash/sh/zsh, XQuartz, pkgsrc/brew/macports \\
+% \end{tabular}
+
+\pagebreak
+
+% \section*{Recent Projects}
+% \begin{itemize}
+% \item 2019--today: {\bf A Trading Platform for an Investment Bank}\\
+% {\bf Position}: Principal architect \& team leader\\
+% {\bf Team}: 30 engineers\\
+% {\bf Technologies}: Python, Javascript/React, Java, Kafka, Kubernetes, Athena/Spark, MongoDB, Postgres, Airflow\\
+% {\bf Summary}: A client is building a new trading platform that brings the entire trading process online, eliminating the need for phone calls and emails between investors and traders. Surveillance, risk management, and reconciliation happen automatically and in real-time rather than at the end of the trading day, with customized data flows between relevant departments. The platform enhances transparency, expands trading capacity, improves alpha generation, and helps traders manage risk more effectively. The platform uses modern, composable data architecture, sourcing real-time data from a variety of providers and exchanges. The range of supported assets is continuously expanding and currently includes mortgages, corporate loans, high-risk construction loans, digital currencies, and traditional securities. Engineered to automate tasks such as gathering and normalization of data and generation of analytics, the platform allows data scientists to focus on algorithm design instead of data processing. The platform was designed to be cloud-agnostic, a client can easily license its technology to institutional investors, asset managers, hedge funds, and proprietary trading firms.
+
+% \item 2018--2019: {\bf Private Capital Markets Platform}\\
+% {\bf Position}: Principal architect \& team leader\\
+% {\bf Team}: 10 engineers\\
+% {\bf Technologies}: Ruby, .NET, Javascript/React, Amazon Lambda and other AWS services\\
+% {\bf Summary}: The project aimed to develop a private capital markets platform that connects investors to private investment opportunities in both companies and funds. The client wanted to upgrade the existing platform to the next version as well as to align it with the best practices in cloud, security, regulatory compliance and deployment. One of the challenges was to migrate the application, processes and infrastructure to a cloud-native development (lift and shift was not an option.) It included data migration strategy, a monolith application split up into manageable and shareable services, and design and development of new deployment pipelines as well as a cloud infrastructure development.
+% \end{itemize}
+
+% \begin{itemize}
+% \item 2017--2018: {\bf Alternatives Market Platform}\\
+% {\bf Position}: Principal architect \& team leader\\
+% {\bf Team}: 7 engineers\\
+% {\bf Technologies}: Ruby, Javascript/Ember.JS, MySQL\\
+% {\bf Summary}: The project aimed to create a uniform platform that streamlines private transactions and allows qualified investors and institutional buyers to proactively identify, review, and confidentially engage in private transactions across different industries. By creating a single forum for the private capital markets, the platform delivers unparalleled access, transparency, and efficiency to investors, broker-dealers, and issuers. The platform development was aligned with the design and creation of a cloud infrastructure within a highly regulated financial environment. To streamline the development the automated release management strategy was developed. It allowed to deploy and scale new releases to cloud instances almost instantaneously.
+
+
+% \item 2016--2017: {\bf Distributed Digital Ledger Platform}\\
+% {\bf Position}: Principal architect \& team leader\\
+% {\bf Team}: 6 engineers\\
+% {\bf Technologies}: Ruby, Javascript/Ember.JS/D3, MySQL, DLT technologies\\
+% {\bf Summary}: The project goal was to develop a solution that allowed to trade assets digitally using a blockchain-based platform (digital money and FX transactions.) It provided a digital ledger technology to facilitate the issuance and recording of transfers of shares of privately held companies. The solution used cloud-based capitalization table management and stock plan administration solutions along with distributed ledger technologies to secure private transactions. To streamline coordination and integration between three finance companies, API-first approach was chosen to develop a money settlement platform. Team composition allowed breaking down the platform into smaller services, e.g. blockchain communication/reconciliation, authentication (JWT and OAuth 2.0), settlement and others. API endpoints, their responses and error messages were documented using Swagger and supported by integration test suites that could be easily executed to validate each of those applications in isolation and in real-life conditions.
+% \end{itemize}
+
+% \pagebreak
+
+% \section*{Personal Projects}
+
+% \begin{itemize}
+% \item {\bf Diggy}\\
+% {\bf URL}: \href{https://diggyhq.com}{\tt https://diggyhq.com}\\
+% {\bf Technologies}: Javascript, WASM, Ruby, Terraform, AWS\\
+% {\bf Summary}: Diggy is an out-of-the-box solution for aspiring developers that helps them start working on a project in less than a second with no overhead in setup and deployment. It is Google Docs, but for coding. The grand vision is to make coding a magnitude easier.
+
+% \item {\bf A low-latency trading solution}\\
+% {\bf URL}: \href{https://github.com/oneearedrabbit/ring}{\tt https://github.com/oneearedrabbit/ring}\\
+% {\bf Technologies}: Go, Python, lock-free data structures\\
+% {\bf Summary}: Developing of ultra-low latency algorithms that fetch market data and do statistical computations. I've been using lock-free data structures that allow to process a message in less than 20ns, which gives the performance of 50mln messages per second on a single machine. The system is relatively easy to scale horizontally, therefore throughput could be increased even more. 
+
+% \item {\bf A small-scale social network}\\
+% {\bf Technologies}: Node.JS, Javascript/Ember.JS, Redis, Docker\\
+% {\bf URL}: \href{https://github.com/pepyatka}{\tt https://github.com/pepyatka}\\
+% {\bf Summary}: Pepyatka was developed as an open-source replacement for FriendFeed, the real-time aggregator and social network where "likes" for user-generated content were implemented for the first time. Basically, this is a small-scale social real-time feed aggregator that allows you to share cute kitty photos, coordinate upcoming events, discuss any other cool stuff on the Internet. FriendFeed was shat down by Facebook in 2015, and Pepyatka was aiming to reproduce the core functionality for a small and active community that was using FriendFeed at that time. Later, Pepyatka has been taken over by \href{https://github.com/freefeed}{\bf FreeFeed} team, which continued design and development of the platform.
+
+% \item {\bf Reverse engineering of an IoT device}\\
+% {\bf URL}: \href{https://github.com/oneearedrabbit/karotz}{\tt https://github.com/oneearedrabbit/karotz}\\
+% {\bf Technologies}: Wireshark and a bit of luck\\
+% {\bf Summary}: Karotz is a Wi-Fi enabled device that was originally manufactured by Mindscape company. It uses a closed-source infrastructure to communicate with. After Mindscape filled for bankruptcy they discontinued web services making Karotz a cute, but useless device. I reverse-engineered Karotz's protocol and figured out how to get root access to the device, which ultimately allowed me to build my own infrastructure to prolong Kartoz's life. Since then it was picked up by other hackers.
+% \end{itemize}
+
+% \url{https://www.dataart.com/downloads/dataart_dzfk_k_timofeev.pdf}
+
+\end{document}

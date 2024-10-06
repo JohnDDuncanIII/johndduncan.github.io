@@ -1,0 +1,102 @@
+John Duncan -- March 2023
+	Software Engineer
+
+	cv@johnduncan.io
+	https://johnduncan.io
+	github.com/johndduncaniii
+
+	240-688-7187
+	Washington, D.C.
+	Citizen
+
+Motivation
+	Making things that are useful to people and that work well
+
+	Mentoring and building a positive culture
+
+	Communicating, documenting, group problem-solving, building friendships and 
+	teams
+
+	Balancing simplicity, consistency, maintainability, reliability, performance,
+	scalability, agility, security, and affordability
+
+Employment
+	2018 - Present (50 to 70 hours/week)
+	Quorum Analytics, Washington, D.C.
+		2022 Senior Software Engineer, Technical Lead
+		2020--2022 Software Engineer II
+		2018--2020 Software Engineer
+		Python, Django, PostgreSQL, JavaScript, HTML, CSS
+		React, Redux, D3, React Native
+
+	Summer 2016 (40 hours/week)
+	Massachusetts Institute of Technology: Lincoln Laboratory, Lexington, MA
+		Research Intern
+		Java, SQL, JavaScript, HTML, CSS
+		Android SDK, Google Maps SDK
+
+	Quorum
+		Responsible for collecting, interpreting, organizing, and presenting 
+		legislative and user-generated data on the Quorum B2B SaaS civic tech
+		platform.
+
+		During my tenure at Quorum, I have designed, built, and maintained many
+		of its flagship products, features and critical systems.
+
+		Projects
+		PAC: Team of 8
+		Search UI/: Technical Lead, Team of 3
+		Dashboards: Technical Lead, Pair
+		Transcripts: Pair
+		Bulk Actions: Independent
+		Search: Pair
+
+		Leadership:
+		Full-stack Guild Leader
+		Rockstar of the Quarter Q2 2021
+		Mentored two apprentice software engineers through the Quorum
+		Accelerate Program
+		Onboarding mentor to two full-stack engineers and an engineering manager
+
+		Responsibilities:
+		Code review, deployment, 24hr on-call, ui/ux design, interviews
+		(phone/onsite, technical/design), “Learning Lab” presentations, devops,
+		legacy maintenance, technical design documents (TDDs),
+		documentation, performance, accessibility, and browser compatibility
+		research
+
+	Massachusetts Institute of Technology: Lincoln Laboratory
+		Worked with the Biotechnology and Human Systems divion’s Humanitarian
+		Assistance and Disaster Relief Systems group on the Local Evacuation
+		Alert Verification (LEAV) program for HURREVAC-eXtended (HVX)
+
+		Wrote and designed an Android application for end users (LEAV) and a
+		JavaScript (EXT-JS) module for the Emergency Manager front-end (HVX)
+
+Technical Skills
+	Languages: Python, JavaScript, Go, SQL, LATEX
+	Databases: PostgreSQL, PostGIS
+Web HTML5, CSS3, DOM, XUL/XPCOM
+	Libraries: React, Django, D3, Elasticsearch
+	Devops: AWS (EC2, RDS, S3, Route53), Atlassian (Jira, Opsgenie), Ansible,
+	Travis CI
+
+Education
+	Bachelor of Science in Computer Science (Honors) and Philosophy (Honors)
+	Gettysburg College, Gettysburg, PA -- 2017
+
+	Computer Science
+		Class of 2017 Outstanding Computer Science Student Award
+		Capstone: “Adam’s Wellness Family Connection”
+		Advisor: Dr. Rod Tosten
+
+	Philosophy
+		Capstone: Infinite Horizons: The World to Mind Question
+		Advisor: Dr. Daniel DeNicola
+		Thesis: Virtual Futures: Virtuality as Political Praxis
+		Advisor: Dr. Lisa Portmess
+
+	Extracurricular
+		1/8 Eisenhower Institute Undergraduate Fellow
+		Co-leader Gettysburg Political Philosophy Collective
+		Treasurer Gettysburg College Independents
