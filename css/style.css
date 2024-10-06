@@ -1,10 +1,6 @@
 html {
 	display: grid;
 	place-items: center;
-	/* keep body centered in the same position on screen
-	irrespective of whether or not the scrollbar is being rendered */
-	overflow-x: hidden;
-	width: 100vw;
 }
 
 body {
