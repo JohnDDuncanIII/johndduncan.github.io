@@ -7,6 +7,7 @@ body {
 	/* https://tailwindcss.com/docs/font-family font-sans */
 	font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Roboto, "Inter", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 	font-feature-settings: "kern" 1,"liga" 1,"calt" 1;
+	font-size: 14px;
 	text-rendering: optimizeLegibility;
 	/* -moz-osx-font-smoothing: grayscale; */
 	/* -webkit-font-smoothing: antialiased; */
@@ -19,7 +20,7 @@ body {
 }
 @media only screen and (max-width: 610px) {
 	body {
-		width: initial;
+		min-width: initial;
 	}
 }
 h2.initial {
@@ -57,7 +58,7 @@ p.article {
 pre {
 	/* https://tailwindcss.com/docs/font-family font-mono */
 	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-	font-size: 13px;
+	font-size: 12px;
 }
 pre.left {
 	text-align: left;
