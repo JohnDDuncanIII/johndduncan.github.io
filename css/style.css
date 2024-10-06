@@ -1,18 +1,11 @@
-html {
-	display: grid;
-	place-items: center;
-}
-
 body {
 	/* https://tailwindcss.com/docs/font-family font-sans */
 	font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Roboto, "Inter", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 	font-feature-settings: "kern" 1,"liga" 1,"calt" 1;
-	font-size: 14px;
 	text-rendering: optimizeLegibility;
-	/* -moz-osx-font-smoothing: grayscale; */
-	/* -webkit-font-smoothing: antialiased; */
-	min-width: 600px;
-	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 600px;
 	border: 5px double black;
 	box-shadow: 3px 3px;
 	padding: 5px;
@@ -20,7 +13,7 @@ body {
 }
 @media only screen and (max-width: 610px) {
 	body {
-		min-width: initial;
+		width: initial;
 	}
 }
 h2.initial {
@@ -44,9 +37,9 @@ a:hover {
 p.article {
 	/* chianowski */
 	font-size: 1.2em;
-    line-height: 1.6em;
-    /* research!rsc */
-    /* line-height: 144%; */
+	line-height: 1.6em;
+	/* research!rsc */
+	/* line-height: 144%; */
 	/* substack */
 	/*
 	width: 728px;
