@@ -11,7 +11,7 @@ body {
 	padding: 5px;
 
 }
-@media only screen and (max-width: 610px) {
+@media only screen and (max-width: 635px) {
 	body {
 		width: initial;
 	}
@@ -71,10 +71,13 @@ header.img {
 	margin-block: 10px;
 }
 header.info {
-	display: flex
+	display: flex;
+	/* hack: allow overlap between left text header and right info header 8
+	only overflow when the 'k' in "Guestbook" overlaps with the '1' in "1 Thomas" */
+	margin-left: -38px;
 }
 header.text a {
-	margin-right: .25em;
+	margin-right: .2em;
 }
 header.text a {
 	border-bottom: solid 1px #000;
