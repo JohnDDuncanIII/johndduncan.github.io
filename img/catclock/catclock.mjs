@@ -20,5 +20,6 @@ const tick = () => {
 	document.getElementById("hours").style.transform = `rotate(${hoursDegrees}deg)`
 }
 
+// update clock hand(s) once per minute
 setInterval(tick, 60 * 1000)
 tick()
