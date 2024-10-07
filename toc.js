@@ -1,4 +1,4 @@
-// https://stackoverflow.com/a/37033774
+// https://stackoverflow.com/a/37033774/6201291
 const expandDetailsOnHash = (event) => {
 	const hash = (
 		event.target.tagName === "A"
