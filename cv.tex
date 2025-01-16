@@ -1,3 +1,7 @@
+% https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes
+% https://typst.app/universe/search/?kind=templates&category=cv
+% https://www.overleaf.com/gallery/tagged/cv
+
 % https://kruzenshtern.org/cv.tex
 % https://neolefty.org/bill-baker-resume-2014.pdf
 % https://n2vi.com/cv.pdf
@@ -6,175 +10,600 @@
 % https://jenny.cool/resume/
 
 % https://texblog.org/2013/02/13/latex-documentclass-options-illustrated/#papersize
-\documentclass[a4paper]{article}
+\documentclass[]{article}
+
+% https://tex.stackexchange.com/questions/321712/how-to-compromise-between-a4-and-letter#comment1641649_321716
+% \geometry{paperheight=11.7in,paperwidth=8.5in}
 
 \usepackage[
   margin=2cm,
 ]{geometry}
-% A4 ∪ letterform = L4
-% https://tex.stackexchange.com/questions/321712/how-to-compromise-between-a4-and-letter#comment1641649_321716
-\geometry{paperheight=11.7in,paperwidth=8.5in}
-\usepackage{array, xcolor}
+\usepackage{array, colortbl, enumitem, lipsum, microtype, xcolor}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
 \usepackage[hidelinks]{hyperref}
-\usepackage{lipsum}
+\usepackage[utf8]{inputenc}
+\usepackage[compact]{titlesec}
 
-\definecolor{lightgray}{gray}{0.8}
+\setlist[itemize]{leftmargin=*, topsep=0pt, nosep,label={\textbullet}}
+
 \newcolumntype{L}{>{\raggedleft}p{0.13\textwidth}}
 \newcolumntype{R}{p{0.8\textwidth}}
+\definecolor{lightgray}{gray}{0.8}
 \newcommand\VRule{\color{lightgray}\vrule width 0.5pt}
-\frenchspacing
+\setlength{\arrayrulewidth}{0.5pt} % Set line thickness
+\arrayrulecolor{lightgray}         % Set line color to light gray
+
+% underline for section titles
+% \noindent\textbf{\textsc{\Large Employment}}\vskip5pt
+\titleformat{\section}
+	{\normalfont\large\bfseries\scshape}
+	{\thesection}
+	{1em}
+	{}
+	[{\titlerule[0.5pt]}]
+
+\titleformat{\subsection}
+  {\normalfont\normalsize\bfseries}
+  {\thesubsection}
+  {1em}
+  {}
+
+% https://tex.stackexchange.com/a/54501
+\titlespacing*{\subsection} {0pt}{2ex}{0ex}
 
 \def\name{John D. Duncan, III}
+\def\phone{(240) 688-7187}
 % \def\email{duncanjdiii+jobs@googlemail.com}
 \def\email{cv@johnduncan.io}
 \def\webpage{https://johnduncan.io}
 \def\linkedin{https://linkedin.com/in/johndduncan}
 \def\github{https://github.com/johndduncaniii}
 
+\def\Plus{\texttt{+}}
+\def\Minus{\texttt{-}}
+
 \geometry{
-  body={6.5in, 8.5in},
-  left=0.75in,
-  top=0.50in,
+  left=0.5in,
+  right=0.5in,
+  top=0.5in,
   bottom=0.5in
 }
-
-\markright{\name}
-\thispagestyle{empty}
 
 % Don't indent paragraphs.
 \setlength\parindent{0em}
 
 % Make lists without bullets
-\renewenvironment{itemize}{
-	\begin{list}{}{
-		\setlength{\leftmargin}{1.5em}
-	}
-}{\end{list}}
+% \renewenvironment{itemize}{
+%	% \begin{list}{\textbullet}{
+%	%	\setlength{\leftmargin}{1.25em}
+%	\begin{list}{}{
+%         \setlength{\topsep}{5pt}    % Space before the first item
+%         \setlength{\partopsep}{0pt}  % Additional space when list follows a paragraph
+%         \setlength{\labelsep}{1em}   % Space between bullet and text
+%		\setlength{\leftmargin}{0em}
+%	}
+% }{\end{list}}
 
-\newcommand{\updateinfo}[1][\today]{{\color{gray}Last updated on #1}}
+\markright{\name}
+
+% remove the page number from the first page
+\thispagestyle{empty}
+
+% https://latexref.xyz/_005cfrenchspacing-_0026-_005cnonfrenchspacing.html
+\frenchspacing
 
 \begin{document}
 
-{\huge \bfseries \name}\hfill \updateinfo\\
+{\huge \bfseries \name}\hfill {\color{gray}Last updated on \today}\\
 
-\begin{tabular}{ll}
-	Phone: & (240) 688-7187\\
-	Location: & New York City \\
-	% Status: & Citizen \\
+\begin{tabular}{@{}l!{\VRule}l@{}}
+	Phone & \phone\\
+	Location & Dupont Circle, Washington, DC\\
+	Status & US Citizen \\
 \end{tabular}
 \hfill
-\begin{tabular}{lr}
-	Email: & \href{mailto:\email}{\tt \email}\\
-	Homepage: & \href{\webpage}{\tt \webpage}\\
-	Linkedin: & \href{\linkedin}{\tt \linkedin} \\
-	Github: & \href{\github}{\tt \github} \\
-\end{tabular}
-% \section*{Motivation}
-% \begin{tabular}{ll}
-%	Designing technology which informs but doesn't demand focus or attention & \\ 
-%	Making things that are useful to people and that work well & \\ 
-%	Building friendships, teams, and mentorship culture & \\ 
-%	% Balancing simplicity, consistency, maintainability, reliability, performance, scalability, agility, security, and affordability & \\ 
-%	Balancing simplicity, consistency, maintainability, performance, and security & \\
-% \end{tabular}
+\begin{tabular}{@{}l!{\VRule}r@{}}
+	Email & \href{mailto:\email}{\tt \email}\\ % \faGoogle
+	Homepage & \href{\webpage}{\tt \webpage}\\
+	Github & \href{\github}{\tt \github}\\ % \faGithub
+	Linkedin  & \href{\linkedin}{\tt \linkedin}\\ % \faLinkedin
+\end{tabular}\\
 
-\section*{Education}
-
-\begin{tabular}{ll}
-  \textbf{Bachelor of Science in Computer Science {\footnotesize (Honors)} and Philosophy {\footnotesize (Honors)}} & \\
-  Gettysburg College, Gettysburg, PA & \\
-\end{tabular}
-
-\begin{tabular}{L!{\VRule}R}
-& \textbf{Computer Science} \\
-\textbf{Capstone} & \textit{Adam's Wellness Family Connection} \hfill Advisor: Dr.~Rod Tosten\\
-Class of 2017 & Outstanding Computer Science Student Award\\
-& \\
-& \textbf{Philosophy} \\
-\textbf{Capstone} & \textit{Infinite Horizons: The World to Mind Question} \hfill Advisor: Dr.~Daniel DeNicola\\
-\textbf{Thesis} & \textit{Virtual Futures: Virtuality as Political Praxis} \hfill Advisor: Dr.~Lisa Portmess\\
-& \\
-& \textbf{Extracurricular} \\
-2016--2017 & Eisenhower Institute Undergraduate Fellow\\
-Co-leader & Gettysburg Political Philosophy Collective\\
-Treasurer & Gettysburg College Independents\\
+\section*{Motivation}
+\begin{tabular}{@{}l}
+	Making things that are useful to people and that work well. \\
+	% Working on a thoughtful and cohesive team that upholds a culture of technical excellence and communicates with kindness, honesty, and empathy.
+	% Creatively solving hard problems and serving as a mentor and resource to others & \\
+	% Fostering technical excellence through collaborative engineering and peer mentorship
+	% Designing technology which informs but doesn't demand focus or attention & \\ 
+	% Building friendships, teams, and a culture of mentorship & \\ 
+	% Balancing simplicity, consistency, maintainability, correctness, reliability, performance, scalability, agility, and security & \\
 \end{tabular}
 
 \section*{Employment}
-\begin{tabular}{L!{\VRule}R}
-2018--2024 & {\bf Quorum Analytics} \hfill Washington, DC\\
-{\footnotesize 2022--2024} & Senior Software Engineer, Technical Lead \hfill {\footnotesize (50 to 70 hours/week)}\\
-{\footnotesize 2020--2022} & Software Engineer II\\
-{\footnotesize 2018--2020} & Software Engineer\\
-& Python, Django, PostgreSQL, React, JavaScript, HTML, CSS, Redux, D3, React Native\\
-&\\
-Summer 2016 & {\bf Massachusetts Institute of Technology: Lincoln Laboratory} \hfill Lexington, MA \\
-& Research Intern \hfill {\footnotesize (40 hours/week)} \\
-& Java, Android SDK, Google Maps SDK, JavaScript, HTML, CSS, SQL\\
-\end{tabular}
+% \noindent\textbf{\textsc{\Large Employment}}\vskip5pt
+\subsection*{Quorum Analytics \hfill \textnormal{Washington, DC}}
 
-\subsection*{Quorum}
-\begin{itemize}
-  \item Responsible for collecting, interpreting, organizing, and presenting legislative and user-generated data on the Quorum B2B SaaS civic tech platform. During my tenure at Quorum, I designed, built, and maintained most of its flagship products, features and critical systems.
-\end{itemize}
+\begin{tabular}[t]{@{}l!{\VRule}l@{}}
+{\footnotesize 2022--2024} & {\bf Senior Software Engineer}\\
+{\footnotesize 2020--2022} & {\bf Software Engineer II}\\
+{\footnotesize 2018--2020} & {\bf Software Engineer} \\
+Technologies & Python, Django, PostgreSQL, React, JavaScript, HTML, CSS, D3, Redux, React Native
+\end{tabular}\hfill {\footnotesize (50 to 70 hours/week)}
 
-\begin{tabular}{L!{\VRule}R}
-\textbf{Projects} &
-	\begin{tabular}[t]{@{}l!{\VRule}l} % @{}l !{\VRule} p{0.6\linewidth}
-		PAC Hybrid & Search/Performance Lead, Team of 8 \\ % implemented, launched, and supported launch of new feature for compliance with FEC regulations
-		PAC & Search/Dashboards Performance Lead, Team of 8 \\ % implemented, launched, and supported launch of new feature for compliance with FEC regulations
+% Python, Django, PostgreSQL, React, JavaScript, HTML, CSS, D3, Redux, React Native
+% \noindent
+% \begin{center}
+% Python, Django, PostgreSQL, React, JavaScript, HTML, CSS, D3, Redux, React Native
+% \end{center}
+% {\centering Python, Django, PostgreSQL, React, JavaScript, HTML, CSS, D3, Redux, React Native \par}
+
+\vspace{5pt}
+
+% \begin{itemize}
+%   \item Led the full-stack research, design, development, and implementation of a significant number of flagship products, features, and critical systems for Quorum's B2B SaaS civic tech platform
+%   \item Specialized in collecting, interpreting, processing, organizing, and presenting legislative, regulatory, compliance, and user-generated data
+%   \item Authored 29k{\Plus} commits, 650{\Plus} PRs, 1k code reviews, and solved many of Quorum's most difficult and intractable engineering challenges
+%   \item Instrumental in scaling the business from \$9m to \$60m{\Plus} ARR\@ and the engineering team by an order of magnitude.
+% \end{itemize}
+
+\begin{minipage}[t]{0.5\linewidth}
+    \begin{itemize}
+		\item Researched, designed, developed, implemented, and launched over a dozen flagship products, features, and critical systems for Quorum's B2B SaaS civic tech public affairs platform.
+		\item Instrumental in scaling the business from \$9m to \$64m{\Plus} ARR and the engineering team from 12 to 120{\Plus}.
+		\item Served as technical resource \& mentor to dozens of engineers.
+    \end{itemize}
+
+	% \textbullet\hspace{.1em} Researched, designed, developed, implemented, and launched over a dozen flagship products, features, and critical systems for Quorum's B2B SaaS civic tech public affairs platform.\\
+	% https://www.linkedin.com/in/jforr/
+	% https://www.linkedin.com/in/chrismcfadden/
+	% \textbullet\hspace{.1em} Instrumental in scaling the business from \$9m to \$60m{\Plus} ARR and the engineering team from 12 to 120{\Plus} \\
+	% \textbullet\hspace{.1em} Served as technical resource \& mentor to dozens of engineers
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+		\item Led cross-functional teams to collect, interpret, process, organize, update, present, and visualizing legislative, regulatory, compliance, and user-generated data.
+		\item Delivered open ended \& high-ambiguity projects on time and under budget.
+		\item Authored 5k{\Plus} commits, 1k{\Plus} code reviews, and 700{\Plus} PRs
+    \end{itemize}
+	% and intractable engineering
+\end{minipage}
+
+\vspace{5pt}
+\begin{minipage}[t]{0.4\linewidth}
+	\textbf{Projects}\\
+	\begin{tabular}[t]{@{}l!{\VRule}l!{\VRule}l}
+		% Search/Performance
+		PAC Hybrid & Technical Lead & Team of 10 \\
+		% Search/Dashboards/Performance
+		Quorum PAC & Technical Lead & Team of 8 \\ % implemented, launched, and supported launch of new feature for compliance with FEC regulations
 		% \multicolumn{2}{l}{\textbullet\hspace{\labelsep} Wrote PAC Dashboards, PAC Search, served as tech lead for FEC submission/validation/PDF printing containerization, and wrote State Committee and Print Check forms}\\
-		Search UI/UX & Technical Lead, Team of 3\\ % rewrote, refactored, and expanded functionality of search feature including filter search
-		Dashboards & Technical Lead, Pair \\
-		Transcripts & Front-end Lead, Pair \\ % Committee & Presidental
-		Bulk Actions & Technical Lead, Independent \\
-		Regulations & Front-end Lead \\
-		Search & Pair\\ % Wrote infrastructure which powers the default feature in Quorum
+		Search UI/UX & Technical Lead & Team of 4\\ % rewrote, refactored, and expanded functionality of search feature including filter search
+		Dashboards & Technical Lead & Pair \\
+		Transcripts & Front-end Lead & Pair \\ % Committee & Presidental
+		Bulk Actions & Technical Lead & Independent \\
+		International & Front-end Lead & Pair \\
+		Regulations & Front-end Lead & Independent \\
+		Search & Pair & Team of 2 \\ % Wrote infrastructure which powers the default feature in Quorum
 	\end{tabular}\\
-\textbf{Leadership} & \textbullet\hspace{\labelsep} Full-stack Guild Leader\\
-% & Rockstar of the Quarter Q2 2021\\
-& \textbullet\hspace{\labelsep} Mentored two apprentice software engineers through the Quorum Accelerate Program\\
-& \textbullet\hspace{\labelsep} Onboarding mentor to two full-stack engineers and an engineering manager\\
-\textbf{Duties} & Code review, deployment, 24hr on-call, ui/ux design, interviews (phone/onsite, technical/design), “Learning Lab” presentations, devops, legacy maintenance, technical design documents, documentation, performance, accessibility, and browser research
+\end{minipage}
+% \hfill
+\begin{minipage}[t]{0.325\linewidth}
+    \textbf{Leadership}
+    \begin{itemize}
+        \item Full-stack Guild Leader
+        \item Rockstar of the Quarter
+        \item Onboarding mentor to engineers and engineering managers
+        \item Mentored two apprentice software engineers through Quorum Accelerate Program
+        \item Second longest tenured employee
+        \item Longest tenured engineer
+    \end{itemize}
+\end{minipage}
+% \begin{minipage}[t]{.3\linewidth}
+%	\textbf{Leadership}\\
+%	\textbullet\hspace{.1em} Full-stack Guild Leader\\
+%	\textbullet\hspace{.1em} Rockstar of the Quarter\\ % Q2 2021
+%	\textbullet\hspace{.1em} Mentored two apprentice software engineers through Quorum Accelerate Program\\
+%	\textbullet\hspace{.1em} Onboarding mentor to engineers and engineering managers\\
+%	\textbullet\hspace{.1em} Most tenured engineer\\
+%	\textbullet\hspace{.1em} Second most tenured employee
+% \end{minipage}
+\hfill
+\begin{minipage}[t]{.25\linewidth}
+	\textbf{Duties}
+    \begin{itemize}
+        \item Code review
+        \item 24hr on-call
+        \item Daily deployment
+        \item Technical Design Documents
+        \item “Learning Lab” presentations
+        \item Interviews (technical/design)
+    \end{itemize}
+\end{minipage}
+
+% \begin{minipage}[t]{0.48\linewidth}
+%     \begin{tabular}[t]{|L|R|}
+%     \hline
+%     Header 1 & Header 2Header 2Header 2Header 2Header 2Header 2Header 2Header 2Header 2Header 2Header 2Header 2Header 2Header 2Header 2 \\ \hline
+%     Data 1   & Data 2   \\ \hline
+%     Data 3   & Data 4   \\ \hline
+%     \end{tabular}
+% \end{minipage}
+% \begin{minipage}[t]{0.48\linewidth}
+%     \begin{tabular}[t]{|L|R|}
+%     \hline
+%     Header 1 & \\ \hline
+%     Value 1  & Value 2  \\ \hline
+%     Value 3  & Value 4  \\ \hline
+%     \end{tabular}
+% \end{minipage}
+
+% presentations
+% https://docs.google.com/presentation/d/15C2gvZYFMvT4Vs7riK8pZi0INcs3DxDsAVWCN5oVijU/
+
+\subsection*{Massachusetts Institute of Technology: Lincoln Laboratory \hfill \normalfont{Lexington, MA}}
+% Hanscom AFB
+
+\begin{tabular}[t]{@{}l!{\VRule}l@{}}
+{\footnotesize Summer 2016} & {\bf Research Intern}\\
+Technologies & Java, Android SDK, Google Maps SDK, JavaScript, HTML, CSS, SQL
+\end{tabular}\hfill {\footnotesize (40 hours/week)}
+
+% Java, Android SDK, Google Maps SDK, JavaScript, HTML, CSS, SQL
+% Sponsored by Department of Homeland Security (DHS) Science and Technology Directorate.
+% \noindent
+% \begin{center}
+% Java, Android SDK, Google Maps SDK, JavaScript, HTML, CSS, SQL
+% \end{center}
+% {\centering Java, Android SDK, Google Maps SDK, JavaScript, HTML, CSS, SQL\par}
+
+\vspace{5pt}
+
+\begin{minipage}[t]{0.5\linewidth}
+	\begin{itemize}
+		\item Worked on the \href{https://www.dhs.gov/publication/national-hurricane-program-technology-modernization-local-evacuation-alert-verification}{Local Evacuation Alert Verification} (LEAV) program for \href{https://www.dhs.gov/publication/national-hurricane-program-technology-modernization-hurrevac-extended-hv-x}{HURREVAC-eXtended} (HVX) with the Humanitarian Assistance and Disaster Relief Systems Group at MIT LL on Hanscom Air Force Base.
+	\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+	\begin{itemize}
+		\item Designed and built an Android application for end users (LEAV) and a JavaScript (EXT-JS) module for the Emergency Manager front-end (HVX).
+	\end{itemize}
+\end{minipage}
+
+\vspace{3pt}
+
+% Sponsored by the Department of Homeland Security (DHS) Science and Technology Directorate.
+
+% \begin{itemize}
+%   \item Worked on the DHS-sponsored Local Evacuation Alert Verification (LEAV) program for HURREVAC-eXtended (HVX) with the Humanitarian Assistance and Disaster Relief Systems Group 44 in Division 4 at MIT LL on Hanscom Air Force Base.
+%   \item Designed and built an Android application for end users (LEAV) and a JavaScript (EXT-JS) module for the Emergency Manager front-end (HVX).
+% \end{itemize}
+
+\section*{Technical Skills}
+% https://tex.stackexchange.com/a/215351
+\begin{tabular}{@{}l!{\VRule}R@{}}
+  \textbf{Languages} & Python, JavaScript, Go, SQL, \LaTeX \\
+  \textbf{Databases} & PostgreSQL, PostGIS, SQLite, Elasticsearch \\
+  \textbf{Web} & Django, React, D3, HTML5, CSS3, DOM, XUL/XPCOM \\
+  % & Styled Components, cypress, babel, enzyme, jest, npm, webpack, gulp \\
+  \textbf{Devops} & AWS (EC2, RDS, S3, Lambda, DMS, Route53), Atlassian (Jira, Confluence, Opsgenie), Docker, Kubernetes, Ansible, Jenkins, Travis \\
+  % \textbf{Unix} & macOS, linux, bash/sh/zsh, XQuartz, pkgsrc/brew/macports \\
 \end{tabular}
-
-\subsection*{Massachusetts Institute of Technology: Lincoln Laboratory (MIT LL)}
-\begin{itemize}
-  \item Worked on the Local Evacuation Alert Verification (LEAV) program for HURREVAC-eXtended (HVX) with the Humanitarian Assistance and Disaster Relief Systems group
-  \item Designed and built an Android application for end users (LEAV) and a JavaScript (EXT-JS) module for the Emergency Manager front-end (HVX)
-\end{itemize}
-
-% \section*{Leadership}
-
-% \begin{tabular}{L!{\VRule}R}
-% 2023--today & {\bf The Cairo Unit Owners Association Board of Directors} \hfill Washington, DC\\
-% {\footnotesize 2023} & Director\\
-% \end{tabular}
-
 
 % \newpage
 
-% \section*{Technical Skills}
-% % https://tex.stackexchange.com/a/215351
-% \begin{tabular}{L!{\VRule}R}
-%   \textbf{Languages} & Python, JavaScript, Go, SQL, \LaTeX \\
-%   \textbf{Databases} & PostgreSQL, PostGIS \\
-%   \textbf{Web} & HTML5, CSS3, DOM, XUL/XPCOM \\
-%   \textbf{Libraries} & React, Django, D3, Elasticsearch \\
-%   % & Styled Components, cypress, babel, enzyme, jest, npm, webpack, gulp \\  
-%   \textbf{Devops} & AWS (EC2, RDS, S3, Route53), Atlassian (Jira, Opsgenie), Ansible, Travis CI \\
-%   % \textbf{Unix} & macOS, linux, bash/sh/zsh, XQuartz, pkgsrc/brew/macports \\
-% \end{tabular}
+\section*{Education}
+\begin{tabular}{@{}ll@{}}
+% \footnotesize
+	\textbf{Gettysburg College, Gettysburg, PA} & \\
+ Bachelor of Science in Computer Science {\footnotesize \textsc{(\href{https://www.gettysburg.edu/academic-programs/computer-science/programs/honors-programs}{3.60, Honors})}} and Philosophy {\footnotesize \textsc{(\href{https://web.archive.org/web/20170310055408/https://www.gettysburg.edu/academics/philosophy/awards/}{3.73, Honors})}} & \\
+\end{tabular}
 
-\pagebreak
+\begin{tabular}{@{}l!{\VRule}l!{\VRule}l@{}}
+\textbf{Computer Science} & \textbf{Capstone} \textit{Adam's Wellness Family Connection} & Advisor Dr.~Rod Tosten \\
+{\footnotesize Class of 2017} & \href{https://www.gettysburg.edu/academic-programs/computer-science/programs/honors-programs}{Outstanding Computer Science Student Award} & \\
+\textbf{Philosophy} & \textbf{Thesis} \textit{\href{https://www.gettysburg.edu/academic-programs/philosophy/student-research/senior-thesis-abstracts-2017.dot}{Virtual Futures: Virtuality as Political Praxis}} & Advisor Dr.~Lisa Portmess \\
+& \textbf{Capstone} \textit{Infinite Horizons: The World to Mind Question} & Advisor Dr.~Daniel DeNicola \\
+\textbf{Extracurricular} & \href{https://www.gettysburg.edu/eisenhower-institute/undergraduate-programs/fellowships/undergraduate-fellows}{Eisenhower Institute Undergraduate Fellow} (one of eight) & Advisor Dr.~Shirley Warshaw \\
+{\footnotesize 2016--2017} & Gettysburg Political Philosophy Collective & Co-President\\
+{\footnotesize 2016--2017} & Gettysburg College Independents & Treasurer\\
+{\footnotesize 2015--2017} & Gettysburg Association for Computing Machinery (ACM) chapter & Secretary, Vice President
+\end{tabular}
 
 % \section*{Recent Projects}
+\section*{Professional Projects}
+\subsection*{Quorum Analytics \hfill \textnormal{Washington, DC}}
+
+% {\bf \href{https://www.quorum.us/products/pac/}{PAC Hybrid}} {\footnotesize 2024}
+
+\begin{tabular}{@{}l!{\VRule}R@{}}
+	{\bf \href{https://www.quorum.us/products/pac/}{PAC Hybrid}} & {\footnotesize 2024}\\
+	\textbf{Position} & Technical lead (search, dashboards, back-end, SQL) \& team leader\\
+	\textbf{Team} & 8 engineers, 2 product managers, 2 QA engineers, 2 engineering managers, 1 engineering director\\
+	\textbf{Technologies} & Django, Python, React, JavaScript, PostgreSQL, MySQL, Kubernetes, AWS RDS/DMS \\
+\end{tabular}
+
+\textbf{Summary}
+% Designed and launched the Quorum PAC Hybrid FEC Reporting Platform, integrating Cision's Government Relations PAC Product to enhance federal filing compliance with evolving FEC financial regulations. Developed the full-stack Search infrastructure and MVP for the Dashboard integration.
+Designed, implemented, and launched the Quorum PAC Hybrid Federal Election Commission (FEC) reporting platform, integrating Cision's market leading Government Relations PAC Product into the Quorum PAC federal filing platform and ensuring client compliance with evolving FEC financial regulatory enforcement requirements and reporting procedures. Wrote the full-stack Search infrastructure and MVP for the full-stack Dashboard integration.
+
+\begin{itemize}
+	\item Designed and implemented a novel search infrastructure enabling disparate filters to share values, meeting critical functional requirements and ensuring product viability.
+	\item Developed optimized O(1) QueryMethods to support complex summation and grouping over arbitrarily filtered PAC Transaction datasets in search and dashboards, replacing an inflexible yearly contribution caching model, enabling efficient searches across four datasets, and improving performance and scalability.
+	\item Discovered and implemented an undocumented Django feature, reducing PAC Hybrid search database query response time from 60 seconds to 20 milliseconds and boosting overall performance by an order of magnitude. Optimization ensured adherence to contractual SLOs, maintaining product viability for clients managing hundreds of thousands to millions of transactions. Additionally, resolved a decade-old performance issue affecting all queries involving partitioned table joins.
+	\item Conducted legal research by auditing 50{\Plus} years of FEC advisory opinions, identifying discrepancies and inconsistencies in the FEC's official list of national party committee C-numbers listed across the FEC website, advisory opinions, and the fec-cms GitHub repository. Research ensured client compliance with critical regulatory requirements due to elevated contribution limits for FEC-designated National Party Committees.\\
+\end{itemize}
+% \textbullet\hspace{.1em} Designed and implemented a novel search infrastructure enabling disparate filters to share values, meeting critical functional requirements and ensuring product viability.
+
+% \textbullet\hspace{.1em} Wrote novel search infrastructure which allows disparate filters to share values with each other, ensuring product viability of hard functional requirement.
+% queryinfrastructure which altered existing
+% Though previously deemed infeasable/impossible to implement in Quorum search, 
+
+% \textbullet\hspace{.1em} Developed optimized O(1) QueryMethods to support complex summation and grouping over arbitrarily filtered PAC Transaction datasets in search and dashboards, replacing an inflexible yearly contribution caching model, enabling efficient searches across four datasets, and improving performance and scalability.
+
+% \textbullet\hspace{.1em} Implemented optimized O(1) QueryMethods which support complex summation and grouping over arbitrarily filtered selections of PAC Transactions in search and dashboards, replacing an inflexible yearly contribution caching model and ensuring that Transactions can be efficiently searched among four different datasets. % (Contacts, PAC Organizations, Elections, and Transactions)
+
+% \textbullet\hspace{.1em} Discovered and implemented an undocumented Django feature, reducing PAC Hybrid search database query response time from 60 seconds to 20 milliseconds and boosting overall performance by an order of magnitude. Optimization ensured adherence to contractual SLOs, maintaining product viability for clients managing hundreds of thousands to millions of transactions. Additionally, resolved a decade-old performance issue affecting all queries involving partitioned table joins.
+
+% \textbullet\hspace{.1em} Researched, discovered, and implemented undocumented Django feature which decreased PAC Hybrid search db query response time from 60 seconds to 20 milliseconds and \href{https://imgur.com/a/HQbNSIL}{increased} overall performance by an order of magnitude, ensuring product market viability through adherence to contractual SLOs for clients with hundreds of thousands to millions of Transactions. Inadvertently fixed a decade+ old performance issue affecting all queries when joining on tables with partitions.
+
+% Contact
+% \href{}{\texttt{get\_extra\_restriction}}
+
+% Method appends arbitrary conditional query parameters to \texttt{JOIN ON} SQL clauses, ensuring the Postgres query planner correctly filters PAC tables being joined to their correct partition/schema while being accessed through a \texttt{VIEW}. Enhancement   
+% https://explain.depesz.com/s/OdtS
+% https://explain.depesz.com/s/UrAJ
+% https://explain.depesz.com/s/THxK
+% https://explain.depesz.com/s/73th
+
+% \textbullet\hspace{.1em} Conducted legal research by auditing 50{\Plus} years of FEC advisory opinions, identifying discrepancies and inconsistencies in the FEC's official list of national party committee C-numbers listed across the FEC website, advisory opinions, and the fec-cms GitHub repository. Research ensured client compliance with critical regulatory requirements due to elevated contribution limits for FEC-designated National Party Committees.\\
+
+% 11, 12, and 15 respectively
+% \textbullet\hspace{.1em} Performed legal research by auditing 50{\Plus} years of FEC advisory opinions, uncovering a discrepancy in the FEC's officially designated list of national party committee C-numbers, which were erroneously enumerated as lists of differing committees in three different locations: the FEC's website, past advisory opinions, and the fec-cms GitHub repository. Research ensured client legal regulatory compliance since FEC-designated National Party Committees have elevated contribution limits.\\
+ 
+% {\bf Quorum PAC} {\footnotesize 2021--2023}
+
+\begin{tabular}{@{}l!{\VRule}R@{}}
+	{\bf Quorum PAC} & {\footnotesize 2021--2023}\\
+	\textbf{Position} & Technical Lead (search, dashboards, FEC submission, forms, back-end, SQL)\\
+	\textbf{Team} & 8 Engineers\\
+	\textbf{Technologies} & Django, Python, React, JavaScript, PostgreSQL, Docker, Kubernetes, AWS RDS \\
+\end{tabular}
+
+\textbf{Summary}
+Designed and implemented full-stack search and dashboard infrastructure, an FEC submission microservice using FEC's VenPak software, and forms for state political committees, charity matching, and check processing in the new Quorum PAC FEC reporting platform, enabling Quorum's entry into the \$15M{\Plus} PAC software market and helping clients remain compliant, raise funds, and report results to the FEC.\\
+
+% Designed and implemented full-stack search and dashboard infrastructure, FEC submission microservice using FEC's VenPak software, and forms for state political committees, charity matching, and check processing for new Quorum PAC FEC reporting platform, bolstering Quorum's public affair civic tech platform through entry into the \$15M{\Plus} PAC software market and allowing new and existing clients to stay compliant, raise funds, and report results to the Federal Election Commission.\\
+
+% {\bf Search UI/UX} {\footnotesize 2021}
+
+\begin{tabular}{@{}l!{\VRule}R@{}}
+	{\bf Search UI/UX} & {\footnotesize 2021}\\
+	\textbf{Position} & Technical Lead\\
+	\textbf{Team} & 4 engineers (2 apprentices), 1 designer, 1 engineering manager\\
+	\textbf{Technologies} & Django, Python, React, JavaScript, PostgreSQL, AWS RDS\\
+\end{tabular}
+
+\textbf{Summary}
+Gathered requirements, designed, and implemented functional and UI/UX enhancements for Quorum’s search feature, the default homepage for all users. Mentored two apprentice engineers transitioning from non-engineering careers by providing constant guidance and facilitating their technical growth. Wrote the project technical design document (TDD), collaborated closely with product and design teams, and developed reusable design system components. Delivered key new functionality, including arbitrary filter and filter group searching by name, value, placeholder, or filter options; novel ordering system enabling users to sort 15 datasets by 27 unique database columns; redesigned global search pop-down, allowing seamless access to 37 datasets from any Quorum feature or location.\\
+
+% Gathered requirements, designed, implemented and facilitated user interface/experience, design, and functional enhancements to Quorum search feature, which is the default homepage for all users. Mentored and taught two apprentice engineers, both of whom had recently pivoted from non-engineering careers to software engineering. Wrote the project TDD, regularly collaborated with product and design teams, wrote the design system components, delegated. New functionality included:\\
+% \textbullet\hspace{.1em} arbitrary searching of Search filters and filter groups by name, value, placeholder, or filter options\\
+% amendment, attachment, bill, docket, document, event, media, note, public_organization, regulation, send_email, send_email_archived, send_sms, supporter, vote
+% amendment_introduced,
+% amendment_number, attachment_added, bill_alphanumeric, bill_current_status_date, bill_introduced_date, bill_numeric, docket_created, document_date_time, event_created, event_when, media_date, note_created, note_date, public_organization_created, public_organization_name, public_organization_name_weighted, public_organization_updated, regulation_detailed_status_date, regulation_detailed_status_date_id, regulation_proposal_date, send_email_archived_sent, send_email_sent, send_sms_sent, supporter_created, supporter_updated, vote_created
+% \textbullet\hspace{.1em} novel ordering system which allows users to order 15 different search datasets by 27 unique database columns\\
+% \textbullet\hspace{.1em} redesigned global search pop-down capable of searching any of the 37 search datasets from any feature or location in Quorum\\
+
+% {\bf \href{https://www.quorum.us/solutions/reporting/}{Dashboards}} {\footnotesize 2019--2020}
+
+\begin{tabular}{@{}l!{\VRule}R@{}}
+	{\bf \href{https://www.quorum.us/solutions/reporting/}{Dashboards}} & {\footnotesize 2019--2020}\\
+	\textbf{Position} &  Technical Lead\\
+	\textbf{Team} & 2 engineers, 1 designer, 1 engineering manager\\
+	\textbf{Technologies} & Django, SQL, Python, React, D3, react-grid-layout, Javascript, Postgres, AWS RDS\\
+\end{tabular}
+
+\textbf{Summary}
+Developed an industry-first, full-stack Dashboard feature empowering non-technical users to analyze and visualize data through an intuitive interface, enabling visualization, filtering, and grouping of key metrics and performance indicators and centralization of information for tracking progress, identifying trends, and evaluating performance benchmarks.
+
+\begin{itemize}
+	\item Designed and implemented 9 widget types (e.g., List, Calendar, Visualization, etc.) to address diverse user needs.
+	\item Wrote 73 Django SQL query methods spanning 25 datasets for complex column, date, and sum grouping for visualizations.
+	\item Created portable D3-based visualization components (Bar, Pie, Line, and Map) utilized in dashboards and other Quorum tools such as search visualizations and official district maps.
+	\item Engineered a novel GraphQL-like data shaping system for efficient data storage, serialization, and caching.
+	\item Identified and resolved critical bugs in Chromium URI parsing and react-grid-layout to enhance dashboard performance.
+\end{itemize}
+% \textbullet\hspace{.1em} Designed and implemented 9 widget types (e.g., List, Calendar, Visualization, etc.) to address diverse user needs.
+
+% \textbullet\hspace{.1em} Wrote 73 Django SQL query methods spanning 25 datasets for complex column, date, and sum grouping for visualizations.
+
+% (Bar, Pie, Line, and Map) Created portable D3-based visualization components utilized in dashboards and other Quorum tools like search visualizations and official district maps.
+% \textbullet\hspace{.1em} Created portable D3-based visualization components (Bar, Pie, Line, and Map) utilized in dashboards and other Quorum tools such as search visualizations and official district maps.
+
+% \textbullet\hspace{.1em} Engineered a novel GraphQL-like data shaping system for efficient data storage, serialization, and caching.
+
+% \textbullet\hspace{.1em} Identified and resolved critical bugs in Chromium URI parsing and react-grid-layout to enhance dashboard performance.\\
+
+% \textbullet\hspace{.1em} Enabled creation of publicly shareable dashboards and integrated advanced features such as trending topics and recent searches.\\
+
+% Researched, designed, and implemented first-of-its-kind industry leading full-stack Dashboard feature which allows users with no prior data science knowledge to visualize, filter, and group key metrics and performance indicators, centralize relevant information, track progress, identify trends, and evaluate performance against benchmarks in a consolidated and easy-to-understand format. Dashboard functionality that I wrote includes:\\
+% \textbullet\hspace{.1em} 9 distinct widget types (List, Calendar Events, Number, Text, Visualization, Quicklink, Favorite Searches, Recent Searches, Trending Topics)\\
+% \textbullet\hspace{.1em} Portable D3 visualization design system components for Bar, Pie, Line, and Map visualization widgets used in Dashboards and throughout Quorum, including in search visualizations, Official profile district maps, and the download center\\
+% \textbullet\hspace{.1em} Wrote novel graphql-like shaper system with collaborator which allows naive widget data shape to be easily stored, serialized, and cached\\
+% \textbullet\hspace{.1em} 73 custom Django SQL QueryMethods spanning 25 disparate datasets for more complex Visualization Widget group by's\\
+% \textbullet\hspace{.1em} Arbitrary widget positioning, resizing, and saving through react-grid-layout\\
+% \textbullet\hspace{.1em} PNG/PDF downloads of individual widgets or the entire Dashboard\\
+% \textbullet\hspace{.1em} \href{https://bugzilla.mozilla.org/show_bug.cgi?id=1708064}{Discovered} a bug in the \href{https://bugs.chromium.org/p/chromium/issues/detail?id=1204473}{Chromium} URI parser and in \href{https://github.com/react-grid-layout/react-grid-layout/pull/892#issuecomment-584350480}{react-grid-layout}\\
+% \textbullet\hspace{.1em} Publicly sharable dashboards\\
+
+% {\bf Committee \& Presidential Transcripts} {\footnotesize 2019}
+
+\begin{tabular}{@{}l!{\VRule}R@{}}
+	{\bf Transcripts} & {\footnotesize 2019}\\
+	\textbf{Position} & Front-end Lead\\
+	\textbf{Team} & 2 engineers, 2 engineering managers, CTO/co-founder\\
+	\textbf{Technologies} & Django, Python, React, JavaScript, PostgreSQL, AWS S3/RDS\\
+\end{tabular}
+
+\textbf{Summary}
+Developed the front-end for the Committee and Presidential Transcripts feature, enabling users to search, download, and visualize transcripts of congressional hearings and presidential speeches within an hour of completion.
+
+Implemented bi-directional video-transcript synchronization, which enabled auto-scrolling and highlighting of transcript statements during video playback or manual scrubbing and added functionality to sync video playback to specific timestamps when transcript statements are clicked.
+
+Designed and built a committee profile overview page which included rewriting a non-performant API endpoint using a novel QueryMethod to support arbitrary filtering of database columns by enum attributes, significantly improving performance and scalability.\\
+
+% Wrote front-end for committee and presidential transcripts feature which allows users to search, download, and visualize transcripts for congressional committee hearings and presidential speeches within an hour of their completion. Implemented bi-directional sync between video and individual transcript statements, including auto-updating feature which scrolls to and highlights relevant transcript statement as video is playing or when manually scrubbed and updates video to relevant timestamp when a specific transcript statement is clicked. Also wrote committee profile overview page, which included a rewrite of non-performant API endpoint using a novel QueryMethod which generalizes arbitrary filtering of database columns by an arbitrary enum value attribute\\
+
+% {\bf Bulk Actions} {\footnotesize 2019}
+
+\begin{tabular}{@{}l!{\VRule}R@{}}
+	{\bf Bulk Actions} & {\footnotesize 2019}\\
+	\textbf{Position} & Technical Lead\\
+	\textbf{Team} & 1 engineer, 1 engineering manager, CTO/co-founder\\
+	\textbf{Technologies} & Django, SQL, Python, React, JavaScript, PostgreSQL, AWS RDS\\
+\end{tabular}
+
+\textbf{Summary}
+% Researched, designed, and implemented full-stack Bulk Action feature which allows users to select up to 1 million rows in 17 search datasets in order to perform 13 possible actions (Set Stance, Set Priority, Archive, Approve, Assign, Set Custom Field, Set Issue, Set Permissions, Set Organization, Merge, Unsuppress, Set External Contact, Set Alignment).
+% Over the course of the project, I researched the most optimal method to update up to 1 million rows in a reasonable amount of time through both Django ORM and raw SQL queries. My work culminated in 13 bulk action methods which perform O(1) SQL UPDATEs. The feature has been bug-free since it was first launched in 2018.\\
+Designed and implemented a full-stack Bulk Action feature enabling users to select and update up to 1 million rows across 17 datasets with 13 action types. Researched and optimized batch updates using Django ORM and raw SQL, culminating in O(1) SQL UPDATEs for scalable performance. Delivered 13 robust bulk actions, supporting high-efficiency client data processing and mutation with no reported bugs since launch in 2018. Enhanced user productivity by enabling seamless, large-scale updates in a single operation.\\
+ % Replaced legacy spreadsheet-based bulk uploading system for batch updates of client data.\\
+% {\bf \href{https://www.quorum.us/products/international/}{International}} {\footnotesize 2018}
+
+\begin{tabular}{@{}l!{\VRule}R@{}}
+	{\bf \href{https://www.quorum.us/products/international/}{International}} & {\footnotesize 2018}\\
+	\textbf{Position} & Front-end Lead\\
+	\textbf{Team} & 2 engineers, 1 engineering manager, CTO/co-founder\\
+	\textbf{Technologies} & Django, SQL, Python, React, JavaScript, PostgreSQL, AWS RDS\\
+\end{tabular}
+
+\textbf{Summary}
+Scaled Quorum product to 2 new continents and dozens of new countries by writing the front-end for the international search feature, which allows clients to gather intelligence, identify trends, and communicate with key international stakeholders. I modified the existing official, legislation, and regulation search datasets to support filtering and visualizing international data.\\
+
+% {\bf \href{https://www.quorum.us/solutions/regulatory-tracking/}{Regulations}} {\footnotesize 2018}
+
+\begin{tabular}{@{}l!{\VRule}R@{}}
+	{\bf \href{https://www.quorum.us/solutions/regulatory-tracking/}{Regulations}} & {\footnotesize 2018}\\
+	\textbf{Position} & Front-end Lead\\
+	\textbf{Team} & 6 engineers, 1 engineering manager, CTO/co-founder\\
+	\textbf{Technologies} & Django, SQL, Python, React, JavaScript, PostgreSQL, AWS RDS\\
+\end{tabular}
+
+\textbf{Summary}
+Wrote the front-end search and profile for the regulations feature, which gives clients access to comprehensive state and federal regulatory data and tracking tools. My work included dozens of filters and QueryMethods, support for alerts, lists, and downloads, and ability to set stance, priorities, and issues. I rewrote the existing Bill timeline to support Regulations and other arbitrary datasets in the future.\\
+
+% {\bf Search} {\footnotesize 2018}
+
+\begin{tabular}{@{}l!{\VRule}R@{}}
+	{\bf Search} & {\footnotesize 2018}\\
+	\textbf{Position} & Engineer\\
+	\textbf{Team} & 2 engineers, 1 engineering manager, CTO/co-founder\\
+	\textbf{Technologies} & Django, SQL, Python, React, JavaScript, PostgreSQL, AWS RDS\\
+\end{tabular}
+
+\textbf{Summary}
+Re-wrote infrastructure and expanded functionality for search feature, which is the default homepage for all Quorum clients. Updated 30+ datasets with new information cards, filters, csv downloads, and visualizations. Contributed toward shared hybrid infrastructure which powered search on both the desktop React application and React Native mobile application. Due to unique functional requirements, I researched the React internals and HTML specification and wrote a \href{https://gist.github.com/JohnDDuncanIII/495c10cd461f87c03e292846f6d87078}{library} which converts raw HTML into React Elements by recursively processing DOM nodes and converting them into React elements.
+
 % \begin{itemize}
-% \item 2019--today: {\bf A Trading Platform for an Investment Bank}\\
-% {\bf Position}: Principal architect \& team leader\\
-% {\bf Team}: 30 engineers\\
-% {\bf Technologies}: Python, Javascript/React, Java, Kafka, Kubernetes, Athena/Spark, MongoDB, Postgres, Airflow\\
-% {\bf Summary}: A client is building a new trading platform that brings the entire trading process online, eliminating the need for phone calls and emails between investors and traders. Surveillance, risk management, and reconciliation happen automatically and in real-time rather than at the end of the trading day, with customized data flows between relevant departments. The platform enhances transparency, expands trading capacity, improves alpha generation, and helps traders manage risk more effectively. The platform uses modern, composable data architecture, sourcing real-time data from a variety of providers and exchanges. The range of supported assets is continuously expanding and currently includes mortgages, corporate loans, high-risk construction loans, digital currencies, and traditional securities. Engineered to automate tasks such as gathering and normalization of data and generation of analytics, the platform allows data scientists to focus on algorithm design instead of data processing. The platform was designed to be cloud-agnostic, a client can easily license its technology to institutional investors, asset managers, hedge funds, and proprietary trading firms.
+% https://www.quorum.us/products/pac/
+% https://www.quorum.us/solutions/pac-management-software/
+% https://www.quorum.us/blog/modernize-pac-program/
+% https://www.quorum.us/products/pac-classic/
+% https://finance.yahoo.com/news/quorum-strengthens-pac-management-upgrades-130000596.html?guccounter=1
+% https://www.businesswire.com/news/home/20230227005128/en/Quorum-Launches-New-PAC-Product-Largest-Development-in-PAC-Software-in-Over-a-Decade
+% https://x.com/QuorumAnalytics/status/1849088653152186859
+% https://www.youtube.com/watch?v=A6YDZsnMijA
+% https://www.youtube.com/watch?v=MTtybjcOtNg
+% https://www.youtube.com/watch?v=MNMhk0BA37Y
+% mark reiley https://www.linkedin.com/posts/markreillyonline_meet-quorum-pac-activity-7254933033164640258-T91w
+% chris https://www.linkedin.com/posts/chrismcfadden_managing-a-pac-means-balancing-fundraising-activity-7254888332298444800-NEXX
+% quorum https://www.linkedin.com/posts/quorum-analytics-inc-_managing-a-pac-means-balancing-fundraising-activity-7254854472986701824-nZX8
+% quorum https://www.linkedin.com/posts/quorum-analytics-inc-_quorum-pac-software-launch-activity-7035988341732859904-pt4_/
+% quorum https://www.linkedin.com/posts/quorum-analytics-inc-_running-a-political-action-committee-pac-activity-7262501834253127684-37Bu
+% quorum blog https://www.quorum.us/blog/modernize-pac-program/
+% https://www.prweb.com/releases/vocus_government_relations_pac_software_is_now_cision_government_relations/prweb13249648.htm
+
+% \item 2021--2023: {\bf Quorum PAC} \\
+% {\bf Position}: Technical Lead (search, dashboards, fec submission, backend, sql, forms)\\
+% {\bf Team}: 8 Engineers\\
+% {\bf Technologies}: Django, Python, React, Javascript, Postgres, Docker, Kubernetes, AWS RDS\\
+% {\bf Summary}: Designed and implemented full-stack search and dashboard infrastructure, FEC submission microservice using FEC's VenPak software, and forms for state political committees, charity matching, and check processing for new Quorum PAC FEC reporting platform, bolstering Quorum's public affair civic tech platform through entry into the \$15M{\Plus} PAC software market and allowing new and existing clients to stay compliant, raise funds, and report results to the Federal Election Commission.
+% political action committees (PACs) optimize fundraising efforts, ensure compliance and improve reporting
+
+% \item {\bf Search UI/UX} {\footnotesize 2021}\\
+% \item 2021: {\bf Search UI/UX}\\
+% {\bf Position}: Technical Lead\\
+% {\bf Team}: 2 engineers, 2 apprentices, 1 designer, 1 engineering manager\\
+% {\bf Technologies}: Django, Python, React, Javascript, Postgres, AWS RDS\\
+% {\bf Summary}: Gathered requirements, designed, implemented and facilitated design/ui and functional/ux enhancements to Quorum search feature, which is the default homepage for all users. Mentored and taught two apprentice engineers, both of whom had recently pivoted from non-engineering careers to software engineering. Wrote the project TDD, regularly collaborated with product and design teams, wrote the design system components, delegated. New functionality included:
+% - arbitrary searching of Search filters and filter groups by name, value, placeholder, or filter options
+% amendment, attachment, bill, docket, document, event, media, note, public_organization, regulation, send_email, send_email_archived, send_sms, supporter, vote
+% amendment_introduced,
+% amendment_number, attachment_added, bill_alphanumeric, bill_current_status_date, bill_introduced_date, bill_numeric, docket_created, document_date_time, event_created, event_when, media_date, note_created, note_date, public_organization_created, public_organization_name, public_organization_name_weighted, public_organization_updated, regulation_detailed_status_date, regulation_detailed_status_date_id, regulation_proposal_date, send_email_archived_sent, send_email_sent, send_sms_sent, supporter_created, supporter_updated, vote_created
+% - novel ordering system which allows users to filter 15 different search datasets by 27 unique database columns
+% - redesigned global search popdown capable searching any one of the 37 search datasets from any feature in Quorum
+
+% 
+% https://www.quorum.us/blog/public-affairs-dashboards/
+% https://www.quorum.us/blog/interactive-dashboard-covid-19-and-social-media-in-congress-covid/
+% \item {\bf \href{https://www.quorum.us/solutions/reporting/}{Dashboards}} {\footnotesize 2019--2020}\\
+% \item 2019--2020: {\bf \href{https://www.quorum.us/solutions/reporting/}{Dashboards}}\\
+% {\bf Position}: Technical Lead\\
+% {\bf Team}: 2 engineers, 1 designer, 1 engineering manager\\
+% {\bf Technologies}: Django, SQL, Python, React, D3, react-grid-layout, Javascript, Postgres, AWS RDS\\
+% {\bf Summary}: Researched, designed, and implemented first-of-its-kind industry leading full-stack Dashboard feature which allows users with no prior data science knowledge to visualize, filter, and group key metrics and performance indicators, centralize relevant information, track progress, identify trends, and evaluate performance against benchmarks in a consolidated and easy-to-understand format. Dashboard functionality that I wrote includes:
+% - 9 distinct widget types (List, Calendar Events, Number, Text, Visualization, Quicklink, Favorite Searches, Recent Searches, Trending Topics)
+% - Portable D3 visualization design system components for Bar, Pie, Line, and Map visualization widgets used in Dashboards and throughout Quorum, including in search visualizations, Official profile district maps, and the download center
+% - Wrote novel graphql-like shaper system with collaborator which allows naive widget data shape to be easily stored, serialized, and cached
+% - 73 custom Django SQL QueryMethods spanning 25 disparate datasets for more complex Visualization Widget group by's
+% - Arbitrary widget positioning, resizing, and saving through react-grid-layout
+% - PNG/PDF downloads of individual widgets or the entire Dashboard
+% - \href{https://bugzilla.mozilla.org/show_bug.cgi?id=1708064}{Discovered} a bug in the \href{https://bugs.chromium.org/p/chromium/issues/detail?id=1204473}{Chromium} URI parser and in \href{https://github.com/react-grid-layout/react-grid-layout/pull/892#issuecomment-584350480}{react-grid-layout}
+% - Publicly sharable dashboards
+
+% \item {\bf Transcripts} {\footnotesize 2019}\\
+% % \item 2019: {\bf Transcripts}\\
+% {\bf Position}: Front-end Lead\\
+% {\bf Team}: 2 engineers, 2 engineering managers, CTO/cofounder\\
+% {\bf Technologies}: Django, Python, React, Javascript, Postgres, AWS S3/RDS\\
+% {\bf Summary}: Wrote frontend for committee and presidential transcripts feature which allows users to search, download, and visualize transcripts for congressional committee hearings and presidential speeches within an hour of their completion. Implemented bi-directional sync between video and individual transcript statements, including auto-updating feature which scrolls to and highlights relevant transcript statement as video is playing or when manually scrubbed and updates video to relevant timestamp when a specific transcript statement is clicked. Also wrote committee profile overview page, which included a rewrite of non-performant API endpoint using a novel QueryMethod which genericizes arbitrary filtering of database columns by an arbtirary enum value attribute
+
+% \item {\bf Bulk Actions} {\footnotesize 2019}\\
+% % \item 2019: {\bf Bulk Actions}\\
+% {\bf Position}: Technical Lead\\
+% {\bf Team}: 1 engineer, 1 engineering manager, CTO/cofounder\\
+% {\bf Technologies}: Django, SQL, Python, React, JavaScript, PostgreSQL, AWS RDS\\
+% {\bf Summary}: Researched, designed, and implemented full-stack Bulk Action feature which allows users to select up to 1 million rows in 17 search datasets in order to perform 13 possible actions (Set Stance, Set Priority, Archive, Approve, Assign, Set Custom Field, Set Issue, Set Permissions, Set Organization, Merge, Unsuppress, Set External Contact, Set Alignment).
+% Over the course of the project, I researched the most optimal method to update up to 1 million rows in a reasonable amount of time through both Django ORM and raw SQL queries. My work culminated in 13 bulk action methods which perform O(1) SQL UPDATEs. The feature has been bug-free since it was first launched in 2018.
+
+% \item {\bf \href{https://www.quorum.us/products/international/}{International}} {\footnotesize 2018}\\
+% % \item 2018: {\bf \href{https://www.quorum.us/products/international/}{International}}\\
+% {\bf Position}: Front-end Lead\\
+% {\bf Team}: 2 engineers, 1 engineering manager, CTO/co-founder\\
+% {\bf Technologies}: Django, SQL, Python, React, JavaScript, PostgreSQL, AWS RDS\\
+% {\bf Summary}: Wrote the front-end search implementation for the international search feature, which allows users to gather intelligence, identify trends, and communicate with key international stakeholders. I modified the existing official, legislation, and regulation search datasets to support filtering and visualizing international data.
+
+% \item {\bf Regulations} {\footnotesize 2018}\\
+% % \item 2018: {\bf Regulations}\\
+% {\bf Position}: Front-end Lead\\
+% {\bf Team}: 1 engineer, 1 engineering manager, CTO/co-founder\\
+% {\bf Technologies}: Django, SQL, Python, React, JavaScript, PostgreSQL, AWS RDS\\
+% {\bf Summary}: Wrote the front-end search and profile implementation for the regulations feature, which gives users access to comprehensive state and federal regulatory data and tracking tools. My work included dozens of filters and QueryMethods and Bulk Action support, support for alerts, lists, and downloads, and ability to set stance, priorities, and issues. I rewrote the existing Bill timeline to support Regulations and other arbitrary datasets in the future.
+
+% \item {\bf Search} {\footnotesize 2018}\\
+% % \item 2018: {\bf Search}\\
+% {\bf Position}: Pair\\
+% {\bf Team}: 2 engineers, 1 engineering manager, CTO/co-founder\\
+% {\bf Technologies}:  Django, SQL, Python, React, JavaScript, PostgreSQL, AWS RDS\\
+% {\bf Summary}: Due to data constraints, wrote helper which converts raw HTML React Elements by recursively processing DOM nodes and converting them into React elements.
+
+% A client is building a new trading platform that brings the entire trading process online, eliminating the need for phone calls and emails between investors and traders. Surveillance, risk management, and reconciliation happen automatically and in real-time rather than at the end of the trading day, with customized data flows between relevant departments. 
+
+% The platform enhances transparency, expands trading capacity, improves alpha generation, and helps traders manage risk more effectively. The platform uses modern, composable data architecture, sourcing real-time data from a variety of providers and exchanges. The range of supported assets is continuously expanding and currently includes mortgages, corporate loans, high-risk construction loans, digital currencies, and traditional securities. Engineered to automate tasks such as gathering and normalization of data and generation of analytics, the platform allows data scientists to focus on algorithm design instead of data processing. The platform was designed to be cloud-agnostic, a client can easily license its technology to institutional investors, asset managers, hedge funds, and proprietary trading firms.
 
 % \item 2018--2019: {\bf Private Capital Markets Platform}\\
 % {\bf Position}: Principal architect \& team leader\\
@@ -225,5 +654,28 @@ Summer 2016 & {\bf Massachusetts Institute of Technology: Lincoln Laboratory} \h
 % \end{itemize}
 
 % \url{https://www.dataart.com/downloads/dataart_dzfk_k_timofeev.pdf}
+
+\section*{Leadership}
+% Unit Owners Association
+% https://www.dropbox.com/scl/fo/3ysczlm4lfdko45dprs9f/h?e=2&preview=Special+Election+Candidate+Interest+-+John+Duncan+III.pdf&rlkey=k9w60ij95hdawndaj9taitaku&dl=0
+\subsection*{The Cairo Board of Directors \hfill \textnormal{1615 Q St NW Washington, DC}}
+
+\begin{tabular}{@{}l!{\VRule}l}
+{\footnotesize 2024--today} & Vice President\\
+{\footnotesize 2023--today} & Secretary\\
+\end{tabular}
+
+\begin{itemize}
+	\item Collaborated with horticulturist from Harvard's Dumbarton Oaks Gardens in Georgetown and landscape architect from the renowned Oehme, van Sweden \& Associates landscape design firm in Capitol Hill to design, plant, install, and maintain heirloom pollinator perennial gardens for The Cairo (1894) in Dupont Circle. The Cairo, a former hotel turned condominium, is listed on both the DC Inventory of Historic Sites (1990) and the National Register of Historic Places (1994).
+	% \item Design integrated heirloom plants which are concomitant with period appropriate Victorian varieties. % and encompasses east and west perenial gardens, two monumental patio planter boxes flanking Sullivanesque entryway, interior peristyle courtyard ferns, rooftop herb garden, four sidewalk tree boxes, and southeastern patio.
+\end{itemize}
+
+% Plants were sourced wholesale and from Merrifield Garden Center in Fairfax, VA\@.
+
+% Proposed and secured funding from association budget committee and submitted proposal through gardening committee.
+% on CAD blueprint
+% what DC legal zoning code refers to as
+% \newpage
+% \pagebreak
 
 \end{document}
