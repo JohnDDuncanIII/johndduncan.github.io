@@ -8,6 +8,7 @@
 % https://neolefty.org/resume/resume.txt
 % https://gitlab.com/cnewstead/infdesc
 % https://jenny.cool/resume/
+% https://joel.fm/static/9a5389fff6b25558219245d7170b33a7/joel-hawkins-torres-resume.pdf
 
 % https://texblog.org/2013/02/13/latex-documentclass-options-illustrated/#papersize
 \documentclass[]{article}
@@ -16,9 +17,25 @@
 % \geometry{paperheight=11.7in,paperwidth=8.5in}
 
 \usepackage[
-  margin=2cm,
+	% showframe,
+	nomarginpar,
+	left=0.5in,
+	right=0.5in,
+	top=0.25in,
+	bottom=0in,
 ]{geometry}
-\usepackage{array, colortbl, enumitem, lipsum, microtype, xcolor}
+\usepackage{
+	array,
+	colortbl,
+	enumitem,
+	lipsum,
+	microtype,
+	% https://www.overleaf.com/learn/latex/Text_alignment
+	% ragged2e,
+	ulem,
+	xcolor,
+	% layout,
+}
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[hidelinks]{hyperref}
@@ -63,13 +80,6 @@
 \def\Plus{\texttt{+}}
 \def\Minus{\texttt{-}}
 
-\geometry{
-  left=0.5in,
-  right=0.5in,
-  top=0.5in,
-  bottom=0.5in
-}
-
 % Don't indent paragraphs.
 \setlength\parindent{0em}
 
@@ -94,12 +104,12 @@
 \frenchspacing
 
 \begin{document}
-
+% \layout
 {\huge \bfseries \name}\hfill {\color{gray}Last updated on \today}\\
 
 \begin{tabular}{@{}l!{\VRule}l@{}}
 	Phone & \phone\\
-	Location & Dupont Circle, Washington, DC\\
+	Location & Washington, DC\\
 	Status & US Citizen \\
 \end{tabular}
 \hfill
@@ -126,11 +136,12 @@
 \subsection*{Quorum Analytics \hfill \textnormal{Washington, DC}}
 
 \begin{tabular}[t]{@{}l!{\VRule}l@{}}
-{\footnotesize 2022--2024} & {\bf Senior Software Engineer}\\
-{\footnotesize 2020--2022} & {\bf Software Engineer II}\\
-{\footnotesize 2018--2020} & {\bf Software Engineer} \\
-Technologies & Python, Django, PostgreSQL, React, JavaScript, HTML, CSS, D3, Redux, React Native
-\end{tabular}\hfill {\footnotesize (50 to 70 hours/week)}
+{\footnotesize 2022--2024} & Senior Software Engineer\\
+{\footnotesize 2020--2022} & Software Engineer II\\
+{\footnotesize 2018--2020} & Software Engineer\\
+\end{tabular}\hfill {\footnotesize (50 to 70{\Plus} hours/week)}
+
+Python, Django, PostgreSQL, React, JavaScript, TypeScript, HTML, CSS, D3, Redux, React Native, PostGIS, Elasticsearch
 
 % Python, Django, PostgreSQL, React, JavaScript, HTML, CSS, D3, Redux, React Native
 % \noindent
@@ -148,11 +159,17 @@ Technologies & Python, Django, PostgreSQL, React, JavaScript, HTML, CSS, D3, Red
 %   \item Instrumental in scaling the business from \$9m to \$60m{\Plus} ARR\@ and the engineering team by an order of magnitude.
 % \end{itemize}
 
-\begin{minipage}[t]{0.5\linewidth}
+Wrote and launched over a dozen flagship products for Quorum’s industry-leading civic tech and public affairs platform, consistently solving the team's most complex technical challenges while delivering projects on time and under budget.
+% Wrote and launched over a dozen flagship products for Quorum's industry-leading civic tech and public affairs platform by consistently solving the most complicated technical challenges and delivering work on time and under budget.
+% problems and technical challenges.
+% Wrote and launched over a dozen flagship products for Quorum's industry-leading civic tech and public affairs platform, delivering innovative solutions best-in-class technical innovation by consistently solving complex problems and delivering work on time and under budget.
+ % Wrote and launched over a dozen flagship products on time and under budget for Quorum’s best-in-class civic tech and public affairs platform by consistently solving Quorum's most complex technical challenges.
+
+\begin{minipage}[t]{0.48\linewidth}
     \begin{itemize}
-		\item Researched, designed, developed, implemented, and launched over a dozen flagship products, features, and critical systems for Quorum's B2B SaaS civic tech public affairs platform.
-		\item Instrumental in scaling the business from \$9m to \$64m{\Plus} ARR and the engineering team from 12 to 120{\Plus}.
-		\item Served as technical resource \& mentor to dozens of engineers.
+	% Researched, designed, developed, implemented, , features, and critical systems B2B SaaS  and growing the engineering team from 12 to 120+
+		\item Instrumental in helping scale ARR from \$9M to \$64M{\Plus}.
+		\item Authored 5k{\Plus} commits, 1k{\Plus} code reviews, 700{\Plus} PRs, and conducted 100{\Plus} technical interviews.
     \end{itemize}
 
 	% \textbullet\hspace{.1em} Researched, designed, developed, implemented, and launched over a dozen flagship products, features, and critical systems for Quorum's B2B SaaS civic tech public affairs platform.\\
@@ -164,16 +181,34 @@ Technologies & Python, Django, PostgreSQL, React, JavaScript, HTML, CSS, D3, Red
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
     \begin{itemize}
-		\item Led cross-functional teams to collect, interpret, process, organize, update, present, and visualizing legislative, regulatory, compliance, and user-generated data.
-		\item Delivered open ended \& high-ambiguity projects on time and under budget.
-		\item Authored 5k{\Plus} commits, 1k{\Plus} code reviews, and 700{\Plus} PRs
+	% collection and organization of visualization
+		\item Led cross-functional teams in collection, organization, and presentation of legislative, regulatory, compliance, financial, geospatial, and user-generated datasets.
+		% \item Led cross-functional teams to collect, interpret, process, organize, update, present, and visualize legislative, regulatory, compliance, financial, geospatial, and user data.
     \end{itemize}
 	% and intractable engineering
 \end{minipage}
 
 \vspace{5pt}
-\begin{minipage}[t]{0.4\linewidth}
-	\textbf{Projects}\\
+% \hfill
+\begin{minipage}[t]{0.29\linewidth}
+    \uline{Leadership}
+    \begin{itemize}
+		\item \href{https://bugzilla.mozilla.org/show_bug.cgi?id=1708064}{Discovered} \href{https://bugs.chromium.org/p/chromium/issues/detail?id=1204473}{bug} in Google Chrome URL parser
+		% https://software.hixie.ch/utilities/js/live-dom-viewer/?saved=9236
+		% https://software.hixie.ch/utilities/js/live-dom-viewer/?saved=9239
+        \item Wrote design system
+        \item Created full-stack guild
+        \item Led Quorum Accelerate apprenticeship program
+		\item Mentored dozens of engineers
+        \item Onboarding coach
+        \item Rockstar of the Quarter
+        % \item Upgraded major dependencies
+        % \item Longest tenured engineer, Second longest tenured employee
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.38\linewidth}
+	\uline{Projects}\\
 	\begin{tabular}[t]{@{}l!{\VRule}l!{\VRule}l}
 		% Search/Performance
 		PAC Hybrid & Technical Lead & Team of 10 \\
@@ -181,25 +216,13 @@ Technologies & Python, Django, PostgreSQL, React, JavaScript, HTML, CSS, D3, Red
 		Quorum PAC & Technical Lead & Team of 8 \\ % implemented, launched, and supported launch of new feature for compliance with FEC regulations
 		% \multicolumn{2}{l}{\textbullet\hspace{\labelsep} Wrote PAC Dashboards, PAC Search, served as tech lead for FEC submission/validation/PDF printing containerization, and wrote State Committee and Print Check forms}\\
 		Search UI/UX & Technical Lead & Team of 4\\ % rewrote, refactored, and expanded functionality of search feature including filter search
-		Dashboards & Technical Lead & Pair \\
-		Transcripts & Front-end Lead & Pair \\ % Committee & Presidental
-		Bulk Actions & Technical Lead & Independent \\
-		International & Front-end Lead & Pair \\
-		Regulations & Front-end Lead & Independent \\
-		Search & Pair & Team of 2 \\ % Wrote infrastructure which powers the default feature in Quorum
+		Dashboards & Technical Lead & Team of 2 \\
+		Transcripts & Front-end Lead & Team of 2 \\ % Committee & Presidental
+		Bulk Actions & Technical Lead & Team of 1 \\
+		International & Front-end Lead & Team of 2 \\
+		Regulations & Front-end Lead & Team of 1 \\
+		Search & Engineer & Team of 2 \\ % Wrote infrastructure which powers the default feature in Quorum
 	\end{tabular}\\
-\end{minipage}
-% \hfill
-\begin{minipage}[t]{0.325\linewidth}
-    \textbf{Leadership}
-    \begin{itemize}
-        \item Full-stack Guild Leader
-        \item Rockstar of the Quarter
-        \item Onboarding mentor to engineers and engineering managers
-        \item Mentored two apprentice software engineers through Quorum Accelerate Program
-        \item Second longest tenured employee
-        \item Longest tenured engineer
-    \end{itemize}
 \end{minipage}
 % \begin{minipage}[t]{.3\linewidth}
 %	\textbf{Leadership}\\
@@ -211,15 +234,18 @@ Technologies & Python, Django, PostgreSQL, React, JavaScript, HTML, CSS, D3, Red
 %	\textbullet\hspace{.1em} Second most tenured employee
 % \end{minipage}
 \hfill
-\begin{minipage}[t]{.25\linewidth}
-	\textbf{Duties}
+\begin{minipage}[t]{.3\linewidth}
+	\uline{Duties}
     \begin{itemize}
         \item Code review
-        \item 24hr on-call
-        \item Daily deployment
+        \item Tests (regression, integration, unit)
+        \item Mentorship, coaching, onboarding
+        \item Interviews (technical, design)
         \item Technical Design Documents
+        \item Product Requirements Documents
         \item “Learning Lab” presentations
-        \item Interviews (technical/design)
+        \item 24hr on-call shifts
+        \item Daily deployment
     \end{itemize}
 \end{minipage}
 
@@ -243,13 +269,14 @@ Technologies & Python, Django, PostgreSQL, React, JavaScript, HTML, CSS, D3, Red
 % presentations
 % https://docs.google.com/presentation/d/15C2gvZYFMvT4Vs7riK8pZi0INcs3DxDsAVWCN5oVijU/
 
-\subsection*{Massachusetts Institute of Technology: Lincoln Laboratory \hfill \normalfont{Lexington, MA}}
+\subsection*{Massachusetts Institute of Technology (MIT LL): Lincoln Laboratory \hfill \normalfont{Lexington, MA}}
 % Hanscom AFB
 
 \begin{tabular}[t]{@{}l!{\VRule}l@{}}
-{\footnotesize Summer 2016} & {\bf Research Intern}\\
-Technologies & Java, Android SDK, Google Maps SDK, JavaScript, HTML, CSS, SQL
+{\footnotesize Summer 2016} & Research Intern\\
 \end{tabular}\hfill {\footnotesize (40 hours/week)}
+
+Java, Android SDK, Google Maps SDK, JavaScript, ExtJS, HTML, CSS, SQL, Acme (Plan 9)
 
 % Java, Android SDK, Google Maps SDK, JavaScript, HTML, CSS, SQL
 % Sponsored by Department of Homeland Security (DHS) Science and Technology Directorate.
@@ -260,16 +287,20 @@ Technologies & Java, Android SDK, Google Maps SDK, JavaScript, HTML, CSS, SQL
 % {\centering Java, Android SDK, Google Maps SDK, JavaScript, HTML, CSS, SQL\par}
 
 \vspace{5pt}
+\href{https://docs.google.com/presentation/d/1d6u7eK2fBJElrRpEn1KlkTfReKO_tHj5iCAGb6vgtmg}{Wrote} \href{https://www.dhs.gov/publication/national-hurricane-program-technology-modernization-local-evacuation-alert-verification}{Local Evacuation Alert Verification} (LEAV, sponsored by DHS) program for \href{https://www.dhs.gov/publication/national-hurricane-program-technology-modernization-hurrevac-extended-hv-x}{HURREVAC-eXtended} (HVX, sponsored by FEMA) with the Humanitarian Assistance and Disaster Relief Systems (HADR, Group 44) at MIT LL on Hanscom AFB.
 
-\begin{minipage}[t]{0.5\linewidth}
+% Sponsored by the DHS Science \& Technology Directorate and the FEMA National Hurricane Program Technology Modernization initiative.
+
+\begin{minipage}[t]{0.48\linewidth}
 	\begin{itemize}
-		\item Worked on the \href{https://www.dhs.gov/publication/national-hurricane-program-technology-modernization-local-evacuation-alert-verification}{Local Evacuation Alert Verification} (LEAV) program for \href{https://www.dhs.gov/publication/national-hurricane-program-technology-modernization-hurrevac-extended-hv-x}{HURREVAC-eXtended} (HVX) with the Humanitarian Assistance and Disaster Relief Systems Group at MIT LL on Hanscom Air Force Base.
+		\item Designed and built LEAV, an Android application that routes users to shelters, visualizes live evacuation zone status through an interactive map, and enables communication between Emergency Managers and evacuees.
 	\end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
 	\begin{itemize}
-		\item Designed and built an Android application for end users (LEAV) and a JavaScript (EXT-JS) module for the Emergency Manager front-end (HVX).
+		\item Developed an interactive JavaScript module for HVX that enables Emergency Managers to dynamically update and monitor the status of evacuation zones in a web interface.
+		\item Reduced WFS-T request size by an order of magnitude.
 	\end{itemize}
 \end{minipage}
 
@@ -283,24 +314,51 @@ Technologies & Java, Android SDK, Google Maps SDK, JavaScript, HTML, CSS, SQL
 % \end{itemize}
 
 \section*{Technical Skills}
-% https://tex.stackexchange.com/a/215351
-\begin{tabular}{@{}l!{\VRule}R@{}}
-  \textbf{Languages} & Python, JavaScript, Go, SQL, \LaTeX \\
-  \textbf{Databases} & PostgreSQL, PostGIS, SQLite, Elasticsearch \\
-  \textbf{Web} & Django, React, D3, HTML5, CSS3, DOM, XUL/XPCOM \\
+
+\begin{minipage}[t]{0.5\linewidth}
+\begin{tabular}[t]{@{}l!{\VRule}R@{}}
+  \textbf{Languages} & Python, JavaScript, TypeScript, Go, SQL, \LaTeX \\
+  \textbf{Databases} & PostgreSQL, PostGIS, Elasticsearch, SQLite \\
+  \textbf{Web} & \sloppy Django, React, Next.js, D3, HTML5, CSS3 \\
   % & Styled Components, cypress, babel, enzyme, jest, npm, webpack, gulp \\
-  \textbf{Devops} & AWS (EC2, RDS, S3, Lambda, DMS, Route53), Atlassian (Jira, Confluence, Opsgenie), Docker, Kubernetes, Ansible, Jenkins, Travis \\
+  \textbf{Devops} & AWS (EC2, RDS, S3, Lambda, DMS, Route53)\newline Atlassian (Jira, Confluence, Opsgenie) \\
   % \textbf{Unix} & macOS, linux, bash/sh/zsh, XQuartz, pkgsrc/brew/macports \\
 \end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.44\linewidth}
+\begin{tabular}[t]{@{}l!{\VRule}l@{}}
+  \textbf{SCM \& CI/CD} & Git, Github, Jenkins, Travis \\
+  \textbf{Infrastructure} & Docker, Kubernetes, Ansible \\
+  \textbf{Observability} & Sentry, Datadog, Grafana \\
+  \textbf{Operating Systems} & macOS, Plan 9, Linux \\
+\end{tabular}
+\end{minipage}
+
+% \section*{Technical Skills}
+% % https://tex.stackexchange.com/a/215351
+% \begin{tabular}{@{}l!{\VRule}R@{}}
+%   \textbf{Languages} & Python, JavaScript, Go, SQL, \LaTeX \\
+%   \textbf{Databases} & PostgreSQL, PostGIS, SQLite, Elasticsearch \\
+%   \textbf{Web} & Django, React, D3, HTML5, CSS3, DOM, XUL/XPCOM \\
+%   % & Styled Components, cypress, babel, enzyme, jest, npm, webpack, gulp \\
+%   \textbf{Devops} & AWS (EC2, RDS, S3, Lambda, DMS, Route53), Atlassian (Jira, Confluence, Opsgenie), Docker, Kubernetes, Ansible, Jenkins, Travis \\
+%   % \textbf{Unix} & macOS, linux, bash/sh/zsh, XQuartz, pkgsrc/brew/macports \\
+% \end{tabular}
 
 % \newpage
 
 \section*{Education}
-\begin{tabular}{@{}ll@{}}
-% \footnotesize
-	\textbf{Gettysburg College, Gettysburg, PA} & \\
- Bachelor of Science in Computer Science {\footnotesize \textsc{(\href{https://www.gettysburg.edu/academic-programs/computer-science/programs/honors-programs}{3.60, Honors})}} and Philosophy {\footnotesize \textsc{(\href{https://web.archive.org/web/20170310055408/https://www.gettysburg.edu/academics/philosophy/awards/}{3.73, Honors})}} & \\
-\end{tabular}
+
+\textbf{Gettysburg College} \hfill Gettysburg, PA
+
+ Bachelor of Science in Computer Science {\footnotesize \textsc{(\href{https://www.gettysburg.edu/academic-programs/computer-science/programs/honors-programs}{3.60, Honors})}} and Philosophy {\footnotesize \textsc{(\href{https://web.archive.org/web/20170310055408/https://www.gettysburg.edu/academics/philosophy/awards/}{3.73, Honors})}} \hfill {\footnotesize 2013--2017}
+
+\href{https://www.gettysburg.edu/academic-programs/computer-science/programs/honors-programs}{Outstanding Computer Science Student Award} \hfill {\footnotesize Class of 2017}
+
+% \begin{tabular}{@{}l!{\VRule}l}
+% {\footnotesize Class of 2017} & \href{https://www.gettysburg.edu/academic-programs/computer-science/programs/honors-programs}{Outstanding Computer Science Student Award} \\
+% \end{tabular}
 
 \begin{tabular}{@{}l!{\VRule}l!{\VRule}l@{}}
 \textbf{Computer Science} & \textbf{Capstone} \textit{Adam's Wellness Family Connection} & Advisor Dr.~Rod Tosten \\
@@ -601,7 +659,7 @@ Re-wrote infrastructure and expanded functionality for search feature, which is 
 % {\bf Technologies}:  Django, SQL, Python, React, JavaScript, PostgreSQL, AWS RDS\\
 % {\bf Summary}: Due to data constraints, wrote helper which converts raw HTML React Elements by recursively processing DOM nodes and converting them into React elements.
 
-% A client is building a new trading platform that brings the entire trading process online, eliminating the need for phone calls and emails between investors and traders. Surveillance, risk management, and reconciliation happen automatically and in real-time rather than at the end of the trading day, with customized data flows between relevant departments. 
+% A client is building a new trading platform that brings the entire trading process online, eliminating the need for phone calls and emails between investors and traders. Surveillance, risk management, and reconciliation happen automatically and in real-time rather than at the end of the trading day, with customized data flows between relevant departments.
 
 % The platform enhances transparency, expands trading capacity, improves alpha generation, and helps traders manage risk more effectively. The platform uses modern, composable data architecture, sourcing real-time data from a variety of providers and exchanges. The range of supported assets is continuously expanding and currently includes mortgages, corporate loans, high-risk construction loans, digital currencies, and traditional securities. Engineered to automate tasks such as gathering and normalization of data and generation of analytics, the platform allows data scientists to focus on algorithm design instead of data processing. The platform was designed to be cloud-agnostic, a client can easily license its technology to institutional investors, asset managers, hedge funds, and proprietary trading firms.
 
@@ -655,21 +713,6 @@ Re-wrote infrastructure and expanded functionality for search feature, which is 
 
 % \url{https://www.dataart.com/downloads/dataart_dzfk_k_timofeev.pdf}
 
-\section*{Leadership}
-% Unit Owners Association
-% https://www.dropbox.com/scl/fo/3ysczlm4lfdko45dprs9f/h?e=2&preview=Special+Election+Candidate+Interest+-+John+Duncan+III.pdf&rlkey=k9w60ij95hdawndaj9taitaku&dl=0
-\subsection*{The Cairo Board of Directors \hfill \textnormal{1615 Q St NW Washington, DC}}
-
-\begin{tabular}{@{}l!{\VRule}l}
-{\footnotesize 2024--today} & Vice President\\
-{\footnotesize 2023--today} & Secretary\\
-\end{tabular}
-
-\begin{itemize}
-	\item Collaborated with horticulturist from Harvard's Dumbarton Oaks Gardens in Georgetown and landscape architect from the renowned Oehme, van Sweden \& Associates landscape design firm in Capitol Hill to design, plant, install, and maintain heirloom pollinator perennial gardens for The Cairo (1894) in Dupont Circle. The Cairo, a former hotel turned condominium, is listed on both the DC Inventory of Historic Sites (1990) and the National Register of Historic Places (1994).
-	% \item Design integrated heirloom plants which are concomitant with period appropriate Victorian varieties. % and encompasses east and west perenial gardens, two monumental patio planter boxes flanking Sullivanesque entryway, interior peristyle courtyard ferns, rooftop herb garden, four sidewalk tree boxes, and southeastern patio.
-\end{itemize}
-
 % Plants were sourced wholesale and from Merrifield Garden Center in Fairfax, VA\@.
 
 % Proposed and secured funding from association budget committee and submitted proposal through gardening committee.
@@ -677,5 +720,45 @@ Re-wrote infrastructure and expanded functionality for search feature, which is 
 % what DC legal zoning code refers to as
 % \newpage
 % \pagebreak
+
+% \section*{References}
+
+% Quorum: Jonathan Marks (CTO), Jack Harris (Front-end team lead), Steven Yoon (Manager), Frank X. White (Manager), Willy Lazari (Manager)
+% MIT LL: Charles E. Rose (Technical Staff)
+% Gettysburg College: Dr. Todd W. Neller (Professor, Computer Science Department), Dr. Lisa Portmess (Bittinger Professor of Philosophy, Philosophy Department), Dr. Charles W. Kann, III (Adjunct Professor, Johns Hopkins Whiting School of Engineering)
+
+\section*{Leadership}
+% Unit Owners Association
+% https://www.dropbox.com/scl/fo/3ysczlm4lfdko45dprs9f/h?e=2&preview=Special+Election+Candidate+Interest+-+John+Duncan+III.pdf&rlkey=k9w60ij95hdawndaj9taitaku&dl=0
+\subsection*{The Cairo Board of Directors \hfill \textnormal{Washington, DC}}
+
+% \begin{tabular}{@{}l!{\VRule}l}
+% {\footnotesize 2024--today} & Vice President\\
+% {\footnotesize 2023--today} & Secretary\\
+% \end{tabular}
+
+\begin{minipage}[t]{0.48\linewidth}
+	Co-led a comprehensive board transformation to eliminate deficit in \$1M{\Plus} annual budget. Implemented a strategic financial management plan by auditing finances, cutting wasteful spending, restructuring staff, strengthening vendor accountability, and developing an aggressive capital budget improvement strategy—all while keeping fee increases under 5\%.
+	% Co-led comprehensive board transformation to eliminate deficit through a multi-year strategic financial management plan for annual budget exceeding \$1M{\Plus}. Audited finances, reduced wasteful spending, restructured staff, strengthened vendor accountability, and created an aggressive capital improvement plan while keeping fee increases under 5\%.
+		% \item Co-led comprehensive board transformation to eliminate a deficit through a multi-year strategic financial management plan of \$1M{\Plus} annual budget. Drove comprehensive reforms by auditing finances, cutting wasteful spending, reorganizing staff, improving vendor accountability, and designing an aggressive capital budget improvement plan while maintaining annual fee increases below 5\%.
+
+		 % Audited financials, cut wasteful spending, reorganized staff, enhanced vendor accountability, and designed aggressive capital budget building modernization plan while maintaining yearly association fee increases below 5\%.
+		% \item Led board transformation by auditing financials, cutting wasteful spending, restructuring building staff, and holding the management company to account. The board’s strategic \$1m{\Plus} yearly budget turned a deficit into a surplus and inaugurated adoption of an aggressive capital reserves investment and improvement plan while keeping the increase in monthly fees less than 5\%.
+
+	% \textbullet\hspace{.1em} Researched, designed, developed, implemented, and launched over a dozen flagship products, features, and critical systems for Quorum's B2B SaaS civic tech public affairs platform.\\
+	% https://www.linkedin.com/in/jforr/
+	% https://www.linkedin.com/in/chrismcfadden/
+	% \textbullet\hspace{.1em} Instrumental in scaling the business from \$9m to \$60m{\Plus} ARR and the engineering team from 12 to 120{\Plus} \\
+	% \textbullet\hspace{.1em} Served as technical resource \& mentor to dozens of engineers
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+	Partnered with a horticulturist from Harvard’s Dumbarton Oaks Gardens and a landscape architect from Oehme, van Sweden \& Associates to design and install heirloom perennial pollinator garden for The Cairo, a historic 1894 building listed on the DC Inventory of Historic Sites (1990) and the National Register of Historic Places (1994).
+		% \item Collaborated with horticulturist from Harvard's Dumbarton Oaks Gardens in Georgetown and landscape architect from the Oehme, van Sweden \& Associates landscape design firm to design, plant, install, and maintain heirloom pollinator perennial gardens for The Cairo (1894) in Dupont Circle. The Cairo is listed on both the DC Inventory of Historic Sites (1990) and the National Register of Historic Places (1994).
+\end{minipage}
+
+% \begin{itemize}
+%	% \item Design integrated heirloom plants which are concomitant with period appropriate Victorian varieties. % and encompasses east and west perenial gardens, two monumental patio planter boxes flanking Sullivanesque entryway, interior peristyle courtyard ferns, rooftop herb garden, four sidewalk tree boxes, and southeastern patio.
+% \end{itemize}
 
 \end{document}
