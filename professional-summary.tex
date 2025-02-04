@@ -1,0 +1,131 @@
+\documentclass[]{article}
+
+\usepackage[
+	nomarginpar,
+	left=0.5in,
+	right=0.5in,
+	top=0.25in,
+	bottom=0in,
+]{geometry}
+\usepackage{
+	array,
+	colortbl,
+	enumitem,
+	lipsum,
+	microtype,
+	ulem,
+	xcolor,
+}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[hidelinks]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[compact]{titlesec}
+
+\setlist[itemize]{leftmargin=*, topsep=0pt, nosep,label={\textbullet}}
+
+\newcolumntype{L}{>{\raggedleft}p{0.13\textwidth}}
+\newcolumntype{R}{p{0.8\textwidth}}
+\definecolor{lightgray}{gray}{0.8}
+\newcommand\VRule{\color{lightgray}\vrule width 0.5pt}
+\setlength{\arrayrulewidth}{0.5pt}
+\arrayrulecolor{lightgray}
+
+\titleformat{\section}
+	{\normalfont\large\bfseries\scshape}
+	{\thesection}
+	{1em}
+	{}
+	[{\titlerule[0.5pt]}]
+
+\titleformat{\subsection}
+  {\normalfont\normalsize\bfseries}
+  {\thesubsection}
+  {1em}
+  {}
+
+\titlespacing*{\subsection} {0pt}{2ex}{0ex}
+
+\def\name{John D. Duncan, III}
+\def\phone{(240) 688-7187}
+% \def\email{duncanjdiii+jobs@googlemail.com}
+\def\email{cv@johnduncan.io}
+\def\webpage{https://johnduncan.io}
+\def\linkedin{https://linkedin.com/in/johndduncan}
+\def\github{https://github.com/johndduncaniii}
+
+\def\Plus{\texttt{+}}
+\def\Minus{\texttt{-}}
+
+\setlength\parindent{0em}
+\markright{\name}
+\thispagestyle{empty}
+\frenchspacing
+
+\begin{document}
+
+{\huge \bfseries \name}\\
+
+\begin{tabular}{@{}l!{\VRule}l@{}}
+	Phone & \phone\\
+	Location & Washington, DC\\
+	Status & US Citizen \\
+\end{tabular}
+\hfill
+\begin{tabular}{@{}l!{\VRule}r@{}}
+	Email & \href{mailto:\email}{\tt \email}\\ % \faGoogle
+	Homepage & \href{\webpage}{\tt \webpage}\\
+	Github & \href{\github}{\tt \github}\\ % \faGithub
+	Linkedin  & \href{\linkedin}{\tt \linkedin}\\ % \faLinkedin
+\end{tabular}\\
+
+\section*{Motivation}
+
+Making things that are useful to people and that work well.
+
+\section*{Professional Projects}
+
+\subsection*{Quorum Analytics \hfill \textnormal{Washington, DC}}
+
+% dramatically increasing sales opportunities and increasing the strategic market position of the company
+% , establishing Quorum as the industry-leading PAC management solution
+
+As an early engineer at Quorum Analytics, the best-in-class public affairs civic tech platform, I drove growth from \$9M to \$64M+ ARR as a technical lead by consistently solving Quorum's most complex challenges to deliver over a dozen projects on time and under budget. During my tenure, I authored 5k{\Plus} commits, reviewed 1k{\Plus} pull requests, and mentored dozens of engineers. Most recently, I launched PAC Hybrid, expanding Quorum's business into the \$15M+ PAC market:
+
+% As an early engineer at Quorum Analytics—the industry-leading public affairs platform for civic tech—I launched over a dozen flagship products and features, helping grow the company ARR from <\$9M to \$64M{\Plus}. During my tenure, I authored 5k{\Plus} commits, reviewed 1k{\Plus} pull requests, conducted 100{\Plus} interviews, and mentored dozens of engineers as a technical lead, consistently solving the team’s most complex technical challenges to ensure projects were delivered on time and under budget. I most recently launched PAC Hybrid, Quorum’s entry into the \$15M+ Political Action Committee software market:
+\begin{enumerate}
+    \item Discovered critical discrepancies in Federal Election Commission (FEC) national party committee C-number ids across advisory opinions, website data, and official GitHub repository spanning 50{\Plus} years of legal records.
+    \item Developed end-to-end search, filtering, and data visualization features for four datasets, including backend sql querymethods, API design, and frontend UI components.
+    \item Designed a database synchronization infrastructure to instantly sync billions of rows between Quorum and legacy CisionPAC databases.
+    \item Reduced database query latency from 60 seconds to 20 milliseconds by optimizing Postgres partition and schema constraints, improving transaction dataset query performance by over 3000x and permanently fixing a 10{\Plus} year old bug.
+    % \item Optimized PAC database query response time from 60 seconds to 20 milliseconds by instructing the Postgres query planner to constrain joins to the client’s relevant partition and schema, improving query performance for all filters in the transaction dataset by an order of magnitude.
+    \item Coached engineers to optimize a database migration by replacing sequential queries with a single constant-time operation, reducing execution time from two weeks to under five seconds and improving backfill migration performance by over 240,000x.
+\end{enumerate}
+
+My full CV with a detailed project history is available on my website: \href{https://johnduncan.io/cv.pdf}{https://johnduncan.io/cv.pdf}.
+
+\subsection*{Massachusetts Institute of Technology: Lincoln Laboratory (MIT: LL) \hfill \textnormal{Lexington, MA}}
+
+During my internship at MIT Lincoln Laboratory, I wrote Local Evacuation Alert Verification (LEAV), an Android application sponsored by the Department of Homeland Security (DHS) which assists hurricane evacuees by routing them to shelters, displaying real-time evacuation zone statuses through an interactive map, and facilitating communication between State Emergency Managers (EMs) and evacuees. Additionally, I designed an interactive module for HURREVAC-eXtended (HVX), a Federal Emergency Management Agency (FEMA)-sponsored platform, enabling EMs to dynamically update and monitor evacuation zone statuses via a web interface.
+
+% During my internship at MIT LL, I wrote an Android application Local Evacuation Alert Verification (LEAV, sponsored by DHS) that routes evacuees to shelters, visualizes live evacuation zone status through an interactive map, and enables communication between State Emergency Managers (EMs) and evacuees. I also developed an interactive module for HURREVAC-eXtended (HVX, sponsored by FEMA) that enables EMs to dynamically update and monitor the status of evacuation zones in a web interface.
+
+\section*{Leadership}
+
+\subsection*{The Cairo \hfill \textnormal{Washington, DC}}
+
+Outside of work, I co-led a comprehensive board transformation for The Cairo (1894), a historic building listed on the DC Inventory of Historic Sites (1990) and the National Register of Historic Places (1994), overseeing its \$1M+ annual budget. I facilitated the creation of a strategic financial management plan that included auditing finances, eliminating wasteful spending, restructuring staff, enhancing vendor accountability, and developing a proactive capital improvement strategy—all while keeping fee increases below 5\%.\\
+
+% Outside of work, I co-led a comprehensive board transformation for The Cairo, a historic 1894 building listed on the DC Inventory of Historic Sites (1990) and the National Register of Historic Places (1994) with an annual budget exceeding \$1M. I implemented a strategic financial management plan by auditing finances, cutting wasteful spending, restructuring staff, strengthening vendor accountability, and developing an aggressive capital budget improvement strategy—all while limiting fee increases to under 5\%.\\
+
+Additionally, I partnered with a horticulturist from Harvard’s Dumbarton Oaks Gardens and a landscape architect from Oehme, van Sweden \& Associates to design and install a perennial pollinator garden, incorporating heirloom plants that are concomitant with period-appropriate Victorian varieties.
+
+\subsection*{Eisenhower Institute \hfill \textnormal{Gettysburg, PA}}
+
+During my undergraduate studies, I served as an Eisenhower Institute Undergraduate Fellow (EIUF), a program designed to cultivate political leadership skills and empower young leaders to tackle society’s most challenging public policy issues.
+
+\section*{Personal Projects}
+
+In my free time, I enjoy challenging myself by working on idiosyncratic projects across diverse domains. Recently, I built a Golang query builder compatible with Django ORM syntax, uncovered a bug in the Google Chromium URI parser, discovered a novel method to losslessly convert legacy Apple Macintosh data fork fonts to macOS resource forks, ported James Ashton’s X-Face decoder from C to Golang, and created a Mozilla XUL/XPCOM add-on to display ‘face’ images from email and newsgroup message headers. I also have a passion for design and previously won an interface design competition.
+
+\end{document}
