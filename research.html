@@ -5,31 +5,263 @@
 	<meta name="description" content="reseasrch">
 	<link rel="stylesheet" type="text/css" href="css/style.css"/>
 	<title>research</title>
-	<link rel="inspiration" href="">
+	<link rel="inspiration" href="https://research.swtch.com/">
+	<link rel="inspiration" href="https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/">
+	<link rel="inspiration" href="https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/">
+	<link rel="inspiration" href="https://ciechanow.ski/">
+	<link rel="preload" href="img/xface.gif" as="image" type="image/gif"/>
+	<link rel="preload" href="css/img/hr.gif" as="image" type="image/gif"/>
+	<link rel="preload" href="css/img/pin.xbm.gif" as="image" type="image/gif">
+	<link rel="preload" href="css/img/pin-pressed.gif" as="image" type="image/gif">
+	<link rel="preload" href="img/updated.png" as="image" type="image/png">
+	<style>
+		:root {
+			--mono-font: "Berkeley Mono", "JetBrains Mono", "Fira Code", San Francisco Mono, Monaco, "Consolas", "Lucida Console", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
+			--sans-font: -apple-system, BlinkMacSystemFont, "avenir next", avenir, helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial, sans-serif
+		}
+
+		.only-print {
+			display: none
+		}
+
+		a {
+			color: #000;
+			text-decoration-skip-ink: auto;
+		}
+
+		a:visited {
+			color: #333
+		}
+
+		ul {
+			margin: 1rem 0
+		}
+
+		ul ul {
+			margin: 0
+		}
+
+		.small,small {
+			font-size: 14px
+		}
+
+		h2 {
+			margin-bottom: .5rem;
+			line-height: 1.25;
+			font-weight: 600;
+			font-size: 1.5rem;
+			letter-spacing: .009em
+		}
+
+		.limiter {
+			max-width: 640px;
+			padding-left: 20px;
+			padding-right: 20px;
+			margin-left: auto;
+			margin-right: auto
+		}
+
+		.pad2y {
+			padding-top: 20px;
+			padding-bottom: 20px
+		}
+
+		.books,.writing {
+			display: grid;
+			grid-column-gap: 5px;
+			grid-row-gap: 5px;
+			line-height: 1.6;
+		}
+
+		.writing {
+			grid-template-columns: 1fr min-content
+		}
+
+		.books {
+			grid-template-columns: 1fr .75fr min-content 70px
+		}
+
+		.books a,.writing a {
+			font-weight: 500;
+			letter-spacing: -.015em
+		}
+
+		.books>div,.writing>div {
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
+		.books time,.writing time {
+			padding-right: .25em;
+			color: #333;
+			font-variant-numeric: tabular-nums;
+			letter-spacing: -.012em;
+			white-space: pre
+		}
+
+		.micro>div {
+			margin-bottom: 20px;
+			border: 1px solid #000;
+			border-radius: 2px
+		}
+
+		.body li,.micro li {
+			list-style-type: "-  "
+		}
+
+		.micro>div>.body {
+			background-color: #f9f9f9;
+			padding: 20px
+		}
+
+		.micro>div>div:first-child {
+			padding: 10px 20px;
+			border-bottom: 1px solid #000;
+			display: flex;
+			justify-content: space-between
+		}
+
+		.micro>div>div:first-child>a {
+			font-weight: 700
+		}
+
+		.micro>div>div:first-child>h2 {
+			font-size: inherit;
+			margin: 0;
+			line-height: inherit
+		}
+
+		.micro>div>div:first-child>time {
+			white-space: pre
+		}
+
+		.micro a {
+			color: #00f
+		}
+
+		@media screen and (max-width: 640px) {
+			.limiter {
+				width:auto
+			}
+
+			.books,.writing {
+				grid-template-columns: 1fr;
+				grid-row-gap: 0
+			}
+
+			.books div,.writing div {
+				white-space: normal
+			}
+
+			.books div:nth-child(4n),.writing time {
+				padding-bottom: 20px
+			}
+		}
+
+		@media screen and (min-width: 640px) {
+			.nu a {
+				text-decoration:none
+			}
+
+			.nu a:hover {
+				text-decoration: underline
+			}
+		}
+
+		@media screen and (max-width: 1024px) {
+			.header-wrap {
+				border-bottom:1px solid #000;
+				padding-bottom: 20px
+			}
+		}
+
+		@media screen and (min-width: 1025px) {
+			.header {
+				position:absolute;
+				top: 42px;
+				right: 50%;
+				margin-right: 340px!important;
+				letter-spacing: -.009em
+			}
+		}
+
+		@media print {
+			.no-print {
+				display: none
+			}
+
+			.only-print {
+				display: block
+			}
+
+			body {
+				margin: 0
+			}
+
+			.limiter {
+				max-width: 100%!important;
+				margin: 0!important;
+				padding: 0!important
+			}
+		}
+
+		.m {
+			color: #007f7f
+		}
+
+		.s {
+			color: #d01040
+		}
+	</style>
 </head>
 
 <body>
-	<header class="text">
-		<a href="index.html">Home</a>
-		<a href="portfolio.html">Portfolio</a>
-		<a href="cv.pdf">Resume</a>
-		<a href="research.html"><b>Articles</b></a>
-		<a href="interests.html">Interests</a>
-		<a href="https://www.yourworldoftext.com/~johnduncan/">Guestbook</a>
+	<header>
+		<div class="text">
+			<a href="index.html" title="Home"><img src="img/susankare/navhome.gif">Home</a>
+			<a href="resume.pdf" title="Resume"><img src="img/susankare/navresume.gif">Resume</a>
+			<a href="portfolio.html" title="Portfolio"><img src="img/susankare/navportfolio.gif">Portfolio</a>
+			<div class="highlighted">
+				<a href="research.html" title="Articles"><img src="img/susankare/navarticles.gif">Articles</a>		
+				<span>⇡</span>
+			</div>
+			<a href="https://www.yourworldoftext.com/~johnduncan/" title="Guestbook"><img src="img/susankare/navmail.gif">Guestbook</a>
+		</div>
+
+		<div class="info">
+<pre class="right nomargin">John Duncan
+c/o Quorum
+1 Thomas Circle
+Washington, DC 20005</pre>
+			<a href="http://www.dairiki.org/xface/xface.php?xface=%22dS%3Dexdec%2BW_UIU-3u%3B%23%7DnMS%7DIF1SKB%22%3BkNLiY%28S%7DLxSXj5myL9ah32r%22z%3BkX6t%24L-H%25E%7CfN%7Dp%22MDV6QL%7C%7C%40i%60WRth%3FdQfm5%28%3FY%5EABJz%5C%2FUE%7CelUyeGz%60C0dbwVNL%3D.9MJ9%3C3VZCnYU%7EQemCXs%5E%2F%5D%7B1Piu%5DoT%5Ed%3Dw%24j4i-j%28li3My%5Ept.wtRT%40%5BeJYI%28X3_1yn4L%3BC8m%25DZsRzX%27g_%2ACdxC1%7D%3An2MRr%29%2C%22%22bfG%7D%3Frb%7Bd9eoJ%40W0gg%3Fl%29P_8q7l%21%28%21%5C5ixU%25%3FH8U9el%3FOv%3CX%40D%2F%3Al%21%2FbR_%22K-P&preview=1&enlarge=4">
+				<img
+					class="right"
+					src="img/xface.gif"
+					onmouseover="this.src='img/xface-hover.gif'"
+					onmouseout="this.src='img/xface.gif'"
+				>
+			</a>
+		</div>
 	</header>
+	<hr>
 
 	<main>
-		<!-- <a href="index.html"><img src="img/renéefrench/back.gif"></a> -->
-		<h2 class="toc-title">research!john</h2>
-
-		<p><a rel="me" href="https://substack.com/@johnduncan">substack</a></p>
-
-		<footer>
+		<div class="writing nu">
+			<div><a href="/2025/10/08/recently" title="#1">Recently</a></div><time>2025-10-08</time>
+		</div>
+		<div class="social center">
+			<p><a rel="me" href="https://substack.com/@johnduncan">substack</a></p>
+		</div>
+		<hr>
+		<footer class="center">
+			<a href="index.html" title="Home"><img id="pin" class="center crisp margin" src="css/img/pin.xbm.gif" alt="Pin"></a>
+			<img class="center crisp margin" src="img/updated.png" alt="Last Updated October 8th, 2025">
 <pre>
-Copyright &copy; John Duncan <script>document.write(new Date().getFullYear());</script><noscript>2024</noscript>.
-All Rights Reserved.
-</pre>
+<div style="display: flex ; flex-direction: column; gap: 3px;">
+<!-- <span class="center">You are visitor number <a href="https://stuff.mit.edu/doc/counter-howto.html"><img class="crisp" src="https://stuff.mit.edu/cgi/counter/johnduncan.io" style="vertical-align:middle" alt=""></a></span> -->
+<span>Copyright &copy; John D. Duncan, III <span id="currentYear">2011–2025</span>. All Rights Reserved.</span></div></pre>
+<script>document.getElementById("currentYear").textContent = `2011–${new Date().getFullYear()}`</script>
 		</footer>
 	</main>
 </body>
-</html>

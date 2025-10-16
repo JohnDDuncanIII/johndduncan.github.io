@@ -1,0 +1,591 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8">
+	<meta name="Author" content="John Duncan"/>
+	<meta name="description" content="reseasrch">
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="css/coldsteel/coldsteel.css"/>
+	<link rel="stylesheet" type="text/css" href="weather.css">
+	<title>weather</title>
+	<script src="toc.js" type="module"></script>
+	<link rel="preload" href="img/xface.gif" as="image" type="image/gif"/>
+	<link rel="preload" href="css/img/hr.gif" as="image" type="image/gif"/>
+	<link rel="preload" href="css/img/pin.xbm.gif" as="image" type="image/gif">
+	<link rel="preload" href="css/img/pin-pressed.gif" as="image" type="image/gif">
+	<link rel="preload" href="css/img/bigswitch_on.xbm.gif" as="image" type="image/gif">
+	<link rel="preload" href="css/img/bigswitch_pressed.xbm.gif" as="image" type="image/gif">
+	<link rel="preload" href="css/img/bigswitch_on_pressed.xbm.gif" as="image" type="image/gif">
+	<link rel="inspiration" href="https://weatherstar.netbymatt.com/">
+</head>
+
+<html class="maps">
+	<body class="maps">
+		<header>
+			<div class="text">
+				<a href="index.html" title="Home"><img src="img/susankare/navhome.gif">Home</a>
+				<a href="resume.pdf" title="Resume"><img src="img/susankare/navresume.gif">Resume</a>
+				<a href="portfolio.html" title="Portfolio"><img src="img/susankare/navportfolio.gif">Portfolio</a>
+				<a href="research.html" title="Articles"><img src="img/susankare/navarticles.gif">Articles</a>
+				<a href="https://www.yourworldoftext.com/~johnduncan/" title="Guestbook"><img src="img/susankare/navmail.gif">Guestbook</a>
+				<div class="highlighted">
+					<a href="weather.html" title="Articles"><img src="img/susankare/navblank.gif">Weather</a>
+					<span>⇡</span>
+				</div>
+			</div>
+			<div class="info">
+	<pre class="right nomargin">John Duncan
+c/o Quorum
+1 Thomas Circle
+Washington, DC 20005</pre>
+				<a href="http://www.dairiki.org/xface/xface.php?xface=%22dS%3Dexdec%2BW_UIU-3u%3B%23%7DnMS%7DIF1SKB%22%3BkNLiY%28S%7DLxSXj5myL9ah32r%22z%3BkX6t%24L-H%25E%7CfN%7Dp%22MDV6QL%7C%7C%40i%60WRth%3FdQfm5%28%3FY%5EABJz%5C%2FUE%7CelUyeGz%60C0dbwVNL%3D.9MJ9%3C3VZCnYU%7EQemCXs%5E%2F%5D%7B1Piu%5DoT%5Ed%3Dw%24j4i-j%28li3My%5Ept.wtRT%40%5BeJYI%28X3_1yn4L%3BC8m%25DZsRzX%27g_%2ACdxC1%7D%3An2MRr%29%2C%22%22bfG%7D%3Frb%7Bd9eoJ%40W0gg%3Fl%29P_8q7l%21%28%21%5C5ixU%25%3FH8U9el%3FOv%3CX%40D%2F%3Al%21%2FbR_%22K-P&preview=1&enlarge=4">
+					<img
+						class="right"
+						src="img/xface.gif"
+						onmouseover="this.src='img/xface-hover.gif'"
+						onmouseout="this.src='img/xface.gif'"
+					>
+				</a>
+			</div>
+		</header>
+		<hr>
+		<main>
+			<div class="toc">
+				<ul id="toc">
+					<li>
+						<details>
+							<summary><a href="#accuweather">AccuWeather</a></summary>
+							<ul>
+								<li><a href="#accuweather-air-quality">Air Quality</a></li>
+								<li><a href="#accuweather-precipitation-amount">Precipipation Amount</a></li>
+								<li><a href="#accuweather-precipipation-probability">Precipipation Probability</a></li>
+								<li><a href="#accuweather-24hr-precipitation-radar">24-hr Precipipation Radar</a></li>
+								<li><a href="#accuweather-flight-delays">Flight Delays</a></li>
+								<li><a href="#accuweather-ice-amount">Ice Amount</a></li>
+								<li><a href="#accuweather-lightning-strikes">Lightning Strikes</a></li>
+								<li><a href="#accuweather-weather-fronts">Weather (fronts)</a></li>
+								<li><a href="#accuweather-weather-fronts-48hr">Weather (fronts) 48hr</a></li>
+								<li><a href="#accuweather-pollen">Pollen</a></li>
+								<li><a href="#accuweather-pollen-tree">Pollen (tree)</a></li>
+								<li><a href="#accuweather-pollen-grass">Pollen (grass)</a></li>
+								<li><a href="#accuweather-pollen-weed">Pollen (weed)</a></li>
+								<li><a href="#accuweather-snow">Snow</a></li>
+								<li><a href="#accuweather-temp-high">Temperature (high)</a></li>
+								<li><a href="#accuweather-temp-low">Temperature (low)</a></li>
+								<li><a href="#accuweather-thunderstorm-prob">Thunderstorm Probability</a></li>
+								<li><a href="#accuweather-uv-index">UV Index</a></li>
+								<li><a href="#accuweather-watches-warnings">Watches & Warnings</a></li>
+								<li><a href="#accuweather-wind-gust">Wind Gust</a></li>
+								<li><a href="#accuweather-wind-speed">Wind Speed</a></li>
+								<li><a href="#accuweather-wind-chill">Wind Chill</a></li>
+								<li><a href="#accuweather-heat-index">Heat Index</a></li>
+								<li><a href="#accuweather-travel-weather-today">Travel Weather Today</a></li>
+								<li><a href="#accuweather-travel-weather-tonight">Travel Weather Tonight</a></li>
+								<li><a href="#accuweather-severe-weather-risk">Severe Weather Risk</a></li>
+								<li><a href="#accuweather-allergies-dust-dander">Allergies, Dust & Dander</a></li>
+								<li><a href="#accuweather-migraine-headache">Migraine Headache</a></li>
+								<li><a href="#accuweather-arthritis-pain">Arthritis Pain</a></li>
+								<li><a href="#accuweather-common-cold">Common Cold</a></li>
+								<li><a href="#accuweather-flu">Flu</a></li>
+								<li><a href="#accuweather-asthma-risk">Asthma Risk</a></li>
+								<li><a href="#accuweather-sinus-headache">Sinus Headache</a></li>
+								<li><a href="#accuweather-stargazing">Stargazing</a></li>
+								<li><a href="#accuweather-golf-weather">Golf Weather</a></li>
+								<li><a href="#accuweather-skiing">Skiing</a></li>
+								<li><a href="#accuweather-hunting">Hunting</a></li>
+								<li><a href="#accuweather-fishing">Fishing</a></li>
+								<li><a href="#accuweather-beach-pool">Beach & Pool</a></li>
+								<li><a href="#accuweather-sailing">Sailing</a></li>
+								<li><a href="#accuweather-morning-bus-stop">Morning Bus Stop</a></li>
+								<li><a href="#accuweather-outdoor-diy">Outdoor DIY</a></li>
+								<li><a href="#accuweather-home-energy-efficiency">Home Energy Efficiency</a></li>
+								<li><a href="#accuweather-outdoor-entertaining-bbq">Outdoor Entertaining (BBQ)</a></li>
+								<li><a href="#accuweather-snow-day-potential">Snow Day Potential</a></li>
+								<li><a href="#accuweather-low-temperature">Low Temperature</a></li>
+								<li><a href="#accuweather-relative-humidity">Relative Humidity</a></li>
+								<li><a href="#accuweather-outdoor-entertaining-mosquito-activity">Outdoor Entertaining (mosquito activity)</a></li>
+								<li><a href="#accuweather-hair-frizz">Hair Frizz</a></li>
+								<li><a href="#accuweather-drought-status">Drought Status</a></li>
+								<li><a href="#accuweather-current-soil-conditions">Current Soil Conditions</a></li>
+								<li><a href="#accuweather-overnight-freeze">Overnight Freeze</a></li>
+								<li><a href="#accuweather-degree-days-heating">Degree Days (heating)</a></li>
+								<li><a href="#accuweather-degree-days-cooling">Degree Days (cooling)</a></li>
+								<li><a href="#accuweather-evapotranspiration">Evapotranspiration</a></li>
+								<li><a href="#accuweather-48-hour-precipitation-forecast">48 Hour Precipitation Forecast</a></li>
+								<li><a href="#accuweather-48-hour-snowfall">48 Hour Snowfall</a></li>
+								<li><a href="#accuweather-48-hour-ice">48 Hour Ice</a></li>
+								<li><a href="#accuweather-radar-static">Radar (static)</a></li>
+								<li><a href="#accuweather-satellite-static">Satellite (static)</a></li>
+								<li><a href="#accuweather-alaska">Alaska</a></li>
+								<li><a href="#accuweather-hawaii">Hawaii</a></li>
+								<li><a href="#accuweather-us">US</a></li>
+								<li><a href="#accuweather-small">Small</a></li>
+								<li><a href="#accuweather-enhanced">Enhanced</a></li>
+								<li><a href="#accuweather-standard">Standard</a></li>
+								<li><a href="#accuweather-visible">Visible</a></li>
+								<li><a href="#accuweather-colored-water-vapor">Colored Water Vapor</a></li>
+								<li><a href="#accuweather-visible-infrared-west">Visible Infrared (west)</a></li>
+								<li><a href="#accuweather-visible-infrared-east">Visible Infrared (east)</a></li>
+								<li><a href="#accuweather-us">US</a></li>
+								<li><a href="#accuweather-alaska">Alaska</a></li>
+								<li><a href="#accuweather-hawaii">Hawaii</a></li>
+								<li><a href="#accuweather-jet-stream-today">Jet Stream (today)</a></li>
+								<li><a href="#accuweather-jet-stream-tomorrow">Jet Stream (tomorrow)</a></li>
+								<li><a href="#accuweather-surface-map-today">Surface Map Today</a></li>
+								<li><a href="#accuweather-surface-map-tomorrow-am">Surface Map Tomorrow AM</a></li>
+								<li><a href="#accuweather-surface-map-tomorrow-pm">Surface Map Tomorrow PM</a></li>
+								<li><a href="#accuweather-surface-map-two-day-am">Surface Map two-day am</a></li>
+								<li><a href="#accuweather-surface-map-two-day-pm">Surface Map two-day pm</a></li>
+							</ul>
+						</details>
+						</li>
+						<li>
+						<details>
+							<summary><a href="#wunderground">Weather Underground</a></summary>
+							<ul>
+								<li><a href="#wunderground-maximum-temperature">Maximum Temperature</a></li>
+								<li><a href="#wunderground-us-dew-point">US Dew Point</a></li>
+								<li><a href="#wunderground-alaska-dew-point">Alaska Dew Point</a></li>
+								<li><a href="#wunderground-us-temp">US Temperature</a></li>
+								<li><a href="#wunderground-us-radar">US Radar</a></li>
+								<li><a href="#wunderground-us-humidity">US Humidity</a></li>
+								<li><a href="#wunderground-us-wind-chill">US Wind Chill</a></li>
+								<li><a href="#wunderground-us-heat-index">US Heat Index</a></li>
+								<li><a href="#wunderground-us-wind">US Wind</a></li>
+								<li><a href="#wunderground-us-visibility">US Visibility</a></li>
+								<li><a href="#wunderground-us-visibility-satellite">US Visibility Satellite</a></li>
+								<li><a href="#wunderground-us-satellite-map">US Satellite Map</a></li>
+								<li><a href="#wunderground-us-fronts">US Fronts</a></li>
+								<li><a href="#wunderground-us-precip">US Precipitation</a></li>
+								<li><a href="#wunderground-us-jet-stream">US Jet Stream</a></li>
+								<li><a href="#wunderground-us-uv">US UV</a></li>
+								<li><a href="#wunderground-us-flu">US Flu</a></li>
+								<li><a href="#wunderground-us-air-quality">US Air Quality</a></li>
+								<li><a href="#wunderground-us-flight-rules">US Flight Rules</a></li>
+								<li><a href="#wunderground-us-regional">US Regional</a></li>
+								<li><a href="#wunderground-us-nexrad">US NEXRAD</a></li>
+								<li><a href="#wunderground-models">Models</a></li>
+								<li><a href="#wunderground-air-observations">Air Observations</a></li>
+							</ul>
+						</details>
+					</li>
+				</ul>
+				<img id="toggle" style="float: right;" src="css/img/toggle3.xbm.gif" alt="expand all" title="expand all">
+			</div>
+			<hr class="thin center smaller">
+
+			<div class="maps">
+				<details id="accuweather">
+					<summary>
+						<div class="summary">
+							<h2 class="initial">AccuWeather</h2><span class="gray text-sc"></span>
+						</div>
+						<hr>
+					</summary>
+					<section>
+						<aside>
+							<div class="thaer">
+								<p class="center"><a href="http://web.archive.org/web/20070225111924/http://wwwa.accuweather.com/maps-temperature.asp?partner=accuweather&traveler=0&type=apt">http://wwwa.accuweather.com/maps-temperature</a></p>
+
+								<p class="left">In September 2016, during my internship at <a href="https://web.mit.edu/">Massachusetts Institute of Technology</a>'s <a href="https://www.ll.mit.edu/">Lincoln Laboratory</a> (MIT LL), I researched, mapped, and archived the entirety of <a href="https://www.accuweather.com/">AccuWeather</a> live weather map bitmaps by scraping the <a href="https://web.archive.org/">Internet Archive</a>.</p>
+							</div>
+						</aside>
+
+						<h3 class="center" id="accuweather-air-quality">Air Quality</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/air_pollen/640x480/us__todairq.gif" alt="" loading="lazy"><br>
+						<img src="http://wwwa.accuweather.com/phoenix2/images/common/keys/air_quality_210x40.gif" alt="" loading="lazy"><br>
+
+						<h3 class="center" id="accuweather-precipitation-amount">Precipipation Amount</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/liq/640x480/us__0024liq.gif" alt="" loading="lazy"><br>
+						<img src="http://wwwa.accuweather.com/phoenix2/images/common/keys/liq_210x40.gif" alt="" loading="lazy"><br>
+
+						<h3 class="center" id="accuweather-precipipation-probability">Precipipation Probability</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/polp/640x480/us__todpolp.gif" alt="" loading="lazy"><br>
+						<img src="http://wwwa.accuweather.com/phoenix2/images/common/keys/probability_of_precip_210x40.gif" alt="" loading="lazy"><br>
+
+						<h3 class="center" id="accuweather-24hr-precipitation-radar">24-hr Precipipation Radar</h3>
+						<img src="http://sirocco.accuweather.com/nx_mosaic_640x480c/24hr/inm24hrus_.gif" alt="" loading="lazy"><br>
+						<img src="http://vortex.accuweather.com/adc2010/images/keys/radar24hrf.png" alt="" loading="lazy"><br>
+
+						<h3 class="center" id="accuweather-flight-delays">Flight Delays</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/flight/640x480/us__todflightdelay.gif" alt="" loading="lazy"><br>
+						<img src=" http://wwwa.accuweather.com/phoenix2/images/common/keys/flight_delay_210x40.gif" alt="" loading="lazy"><br>
+
+						<h3 class="center" id="accuweather-ice-amount">Ice Amount</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/ice/640x480/US__0024ice.gif" alt="" loading="lazy"><br>
+						<img src="http://vortex.accuweather.com/adc2010/images/keys/iceamtf.png" alt="" loading="lazy"><br>
+
+						<h3 class="center" id="accuweather-lightning-strikes">Lightning Strikes</h3>
+						<img src="http://sirocco.accuweather.com/adc_images/lightning/us_60_640x480.gif" alt="" loading="lazy"><br>
+						<img src="http://vortex.accuweather.com/adc2004/common/images/keys/400x40/severe_lightning.gif" alt="" loading="lazy"><br>
+
+						<h3 class="center" id="accuweather-weather-fronts">Weather (fronts)</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/sfc/640x480/us__todsfc.gif" alt="" loading="lazy"><br>
+
+						<h3 class="center" id="accuweather-weather-fronts-48hr">Weather (fronts) 48hr</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/sfc/640x480/us__48hrsfc.gif" alt="" loading="lazy"><br>
+
+						<h3 class="center" id="accuweather-pollen">Pollen</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/air_pollen/640x480/us__todoverall.gif" alt="" loading="lazy"><br>
+
+						<h3 class="center" id="accuweather-pollen-tree">Pollen (tree)</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/air_pollen/640x480/us__todtree.gif" alt="" loading="lazy"><br>
+
+						<h3 class="center" id="accuweather-pollen-grass">Pollen (grass)</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/air_pollen/640x480/us__todgrass.gif" alt="" loading="lazy"><br>
+
+						<h3 class="center" id="accuweather-pollen-weed">Pollen (weed)</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/air_pollen/640x480/us__todragweed.gif" alt="" loading="lazy"><br>
+						<img src="http://vortex.accuweather.com/adc2010/images/keys/pollen-325.png" alt="" loading="lazy"><br>
+
+						<h3 class="center" id="accuweather-snow">Snow</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/snow/640x480/US__0024snow.gif" alt="" loading="lazy"><br>
+						<img src="http://vortex.accuweather.com/adc2010/images/keys/snowamtf.png" alt="" loading="lazy"><br>
+
+						<h3 class="center" id="accuweather-temp-high">Temp (high)</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/fhgh/640x480/us__todhigh.gif" alt="" loading="lazy"><br>
+						<img src="http://vortex.accuweather.com/phoenix2/images/common/keys/temp_fah_400x40.gif" alt="" loading="lazy"><br>
+
+						<h3 class="center" id="accuweather-temp-low">Temp (low)</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/flow/640x480/us__tonlow.gif" alt="" loading="lazy"><br>
+						<img src="http://wwwa.accuweather.com/phoenix2/images/common/keys/temp_fah_210x40.gif" alt="" loading="lazy"><br>
+						<img src="http://vortex.accuweather.com/adc2004/common/images/keys/400x40/temp_predicted.gif" alt="" loading="lazy"><br>
+
+						<h3 class="center" id="accuweather-thunderstorm-prob">Thunderstorm Prob</h3>
+						<img src=" http://sirocco.accuweather.com/adc_images2/english/forecast/tstmp/640x480/us__todtstmp.gif" alt="" loading="lazy"><br>
+
+						<img src="http://wwwa.accuweather.com/phoenix2/images/common/keys/prob_tstorms_210x40.gif" alt="" loading="lazy"><br>
+
+						<h3 class="center" id="accuweather-uv-index">UV Index</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/uvi/640x480/us__toduvi.gif" alt="" loading="lazy"><br>
+
+						<img src="http://wwwa.accuweather.com/phoenix2/images/common/keys/uv_210x40.gif" alt="" loading="lazy"><br>
+
+						<h3 class="center" id="accuweather-watches-warnings">Watches & Warnings</h3>
+						<img src="http://sirocco.accuweather.com/adc_images/svrwx/640x480us_/isvrwxus_.gif" alt="" loading="lazy"><br>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/current/svrwx/640x480/isvrwxus_.gif" alt="" loading="lazy"><br>
+
+						<img src="http://sirocco.accuweather.com/web_images/svrwx/key/swskeys.gif" alt="" loading="lazy"><br>
+
+						<h3 class="center" id="accuweather-wind-gust">Wind Gust</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/gus/640x480/us__todgus.gif" alt="" loading="lazy"><br>
+
+						<img src="http://wwwa.accuweather.com/phoenix2/images/common/keys/wind_gust_210x40.gif" alt="" loading="lazy"><br>
+
+						<h3 class="center" id="accuweather-wind-speed">Wind Speed</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/wsp/640x480/us__todwsp.gif" alt="" loading="lazy"><br>
+						<img src="http://wwwa.accuweather.com/phoenix2/images/common/keys/wind_speed_210x40.gif" alt="" loading="lazy"><br>
+						<img src="http://vortex.accuweather.com/adc2010/images/keys/windf.png" alt="" loading="lazy"><br>
+
+						<h3 class="center" id="accuweather-wind-chill">Wind Chill</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/wch/640x480/us__todwch.gif" alt="" loading="lazy"><br>
+
+						<h3 class="center" id="accuweather-heat-index">Heat Index</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/apt/640x480/us__todapt.gif" alt="" loading="lazy"><br>
+						<img src="http://vortex.accuweather.com/adc2004/common/images/keys/400x40/temp_predicted.gif" alt="" loading="lazy"><br>
+
+						<h3 class="center" id="accuweather-travel-weather-today">Travel Weather Today</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/travel/640x480/us__todtravel.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-travel-weather-tonight">Travel Weather Tonight</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/travel/640x480/us__tomtravel.gif" alt="" loading="lazy"><br>
+						<img src="http://vortex.accuweather.com/adc2010/images/keys/travel-summerf-325.png" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-severe-weather-risk">Severe Weather Risk</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/svrwx/640x480/US__todsvrwxrisk.gif" alt="" loading="lazy"><br>
+						<img src="http://vortex.accuweather.com/adc2010/images/keys/severerisk-325.png" alt="" loading="lazy"><br>
+
+						<h3 class="center" id="accuweather-allergies-dust-dander">Allergies, Dust & Dander</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/dust/640x480/us__day1.gif" alt="" loading="lazy"><br>
+						<img src="http://vortex.accuweather.com/adc2010/images/keys/lifetsyle-beneficial-extreme-tall.png" alt="" loading="lazy"><br>
+
+						<h3 class="center" id="accuweather-migraine-headache">Migraine Headache</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/migraine/640x480/us__day1.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-arthritis-pain">Arthritis Pain</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/arthritis/640x480/us__day1.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-common-cold">Common Cold</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/cold/640x480/us__day1.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-flu">Flu</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/flu/640x480/us__day1.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-asthma-risk">Asthma Risk</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/asthma/640x480/us__day1.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-sinus-headache">Sinus Headache</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/sinus/640x480/us__day1.gif" alt="" loading="lazy"><br>
+						<img src="http://vortex.accuweather.com/adc2010/images/keys/lifetsyle-beneficial-extreme.png" alt="" loading="lazy"><br>
+
+						<h3 class="center" id="accuweather-stargazing">Stargazing</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/stargazing/640x480/us__day1.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-golf-weather">Golf Weather</h3>
+						<img src=" http://sirocco.accuweather.com/adc_images2/english/forecast/golf/640x480/us__day1.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-skiing">Skiing</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/ski/640x480/us__day1.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-hunting">Hunting</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/hunting/640x480/us__day1.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-fishing">Fishing</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/fishing/640x480/us__day1.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-beach-pool">Beach & Pool</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/beach/640x480/us__day1.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-sailing">Sailing</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/sailing/640x480/us__day1.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-morning-bus-stop">Morning Bus Stop</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/busstop/640x480/us__day1.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-outdoor-diy">Outdoor DIY</h3>
+						<img src=" http://sirocco.accuweather.com/adc_images2/english/forecast/construction/640x480/us__day1.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-home-energy-efficiency">Home Energy Efficiency</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/homeenergy/640x480/us__day1.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-outdoor-entertaining-bbq">Outdoor Entertaining (BBQ)</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/outdoorbbq/640x480/us__day1.gif" alt="" loading="lazy"><br>
+						<img src="http://vortex.accuweather.com/adc2010/images/keys/lifetsyle-poor-excellent-325.png" alt="" loading="lazy"><br>
+
+						<h3 class="center" id="accuweather-snow-day-potential">Snow Day Potential</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/snowday/640x480/us__day1.gif" alt="" loading="lazy"><br>
+						<img src="http://vortex.accuweather.com/adc2010/images/keys/lifetsyle-veryunlikely-verylikely-325.png" alt="" loading="lazy"><br>
+
+						<h3 class="center" id="accuweather-low-temperature">Low Temperature</h3>
+						<!-- <br><img src="http://sirocco.accuweather.com/adc_images2/english/forecast/flow/640x480/us__todlow.gif" alt="" loading="lazy"><br> -->
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/flow/400x300/us__todlow.gif" alt="" loading="lazy"><br>
+						<img src="http://vortex.accuweather.com/adc2010/images/keys/temp3f-325.png" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-relative-humidity">Relative Humidity</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/rhu/640x480/us__todrhu.gif" alt="" loading="lazy"><br>
+						<img src="http://vortex.accuweather.com/adc2010/images/keys/relativehumidity-325.png" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-outdoor-entertaining-mosquito-activity">Outdoor Entertaining (mosquito activity)</h3>
+						<img src=" http://sirocco.accuweather.com/adc_images2/english/forecast/mosquito/640x480/us__day1.gif" alt="" loading="lazy"><br>
+						<img src=" http://vortex.accuweather.com/adc2010/images/keys/lifetsyle-low-extreme-325.png" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-hair-frizz">Hair Frizz</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/frizz/640x480/us__day1.gif" alt="" loading="lazy"><br>
+						<img src=" http://vortex.accuweather.com/adc2010/images/keys/lifetsyle-unlikely-emergency-325.png" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-drought-status">Drought Status</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/current/drought/640x480/us__drought.gif" alt="" loading="lazy"><br>
+						<img src="http://vortex.accuweather.com/adc2010/images/keys/drought-325.png" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-current-soil-conditions">Current Soil Conditions</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/current/soil/640x480/us__soil.gif" alt="" loading="lazy"><br>
+						<img src=" http://vortex.accuweather.com/adc2010/images/keys/soilmoisture-325.png" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-overnight-freeze">Overnight Freeze</h3>
+						<!-- <br><img src="http://sirocco.accuweather.com/adc_images2/english/forecast/frz/640x480/us__todfrz.gif" alt="" loading="lazy"><br> -->
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/frz/400x300/us__todfrz.gif" alt="" loading="lazy"><br>
+						<img src="http://vortex.accuweather.com/adc2010/images/keys/freezef-325.png" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-degree-days-heating">Degree Days (heating)</h3>
+						<img src=" http://sirocco.accuweather.com/adc_images2/english/forecast/hdd/640x480/us__todhdd.gif" alt="" loading="lazy"><br>
+						<img src="http://vortex.accuweather.com/adc2010/images/keys/heatingdegreedays-325.png" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-degree-days-cooling">Degree Days (cooling)</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/cdd/640x480/us__todcdd.gif" alt="" loading="lazy"><br>
+						<img src="http://vortex.accuweather.com/adc2010/images/keys/coolingdegreedays-325.png" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-evapotranspiration">Evapotranspiration</h3>
+						<!-- <br><img src="http://sirocco.accuweather.com/adc_images2/english/forecast/evap/640x480/us__todevap.gif" alt="" loading="lazy"><br> -->
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/evap/400x300/us__todevap.gif" alt="" loading="lazy"><br>
+						<img src="http://vortex.accuweather.com/adc2010/images/keys/evapf-325.png" alt="" loading="lazy"><br>
+
+						<h3 class="center" id="accuweather-48-hour-precipitation-forecast">48 Hour Precipitation Forecast</h3>
+						<img src="http://vortex.accuweather.com/adc2004/common/images/winter/models/ufdb_precip_accuwx_adc640.png" alt="" loading="lazy"><br>
+						<img src="http://vortex.accuweather.com/adc2010/images/keys/ufdb-rainf-325.png" alt="" loading="lazy"><br>
+
+						<h3 class="center" id="accuweather-48-hour-snowfall">48 Hour Snowfall</h3>
+						<img src="http://vortex.accuweather.com/adc2004/common/images/winter/models/ufdb_snow_accuwx_adc640.png" alt="" loading="lazy"><br>
+						<img src="http://vortex.accuweather.com/adc2010/images/keys/ufdb-snowf-325.png" alt="" loading="lazy"><br>
+
+						<h3 class="center" id="accuweather-48-hour-ice">48 Hour Ice</h3>
+						<img src="http://vortex.accuweather.com/adc2004/common/images/winter/models/ufdb_ice_accuwx_adc640.png" alt="" loading="lazy"><br>
+						<img src="http://vortex.accuweather.com/adc2010/images/keys/ufdb-icef-325.png" alt="" loading="lazy"><br>
+
+						<h3 class="center" id="accuweather-radar-static">Radar (static)</h3>
+						<img src="http://sirocco.accuweather.com/nx_mosaic_640x480_public/sir/inmsirus_.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-satellite-static">Satellite (static)</h3>
+						<img src="http://sirocco.accuweather.com/sat_mosaic_640x480_public/ei/iseun.jpg" alt="" loading="lazy"><br>
+
+						<h2 class="center">Radar</h2>
+						<h3 class="center" id="accuweather-alaska">Alaska</h3>
+						<img src="http://sirocco.accuweather.com/nx_mosaic_640x480c/re/inmareak_.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-hawaii">Hawaii</h3>
+						<img src=" http://sirocco.accuweather.com/nx_mosaic_640x480c/re/inmarehi_.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-us">US</h3>
+						<img src="http://sirocco.accuweather.com/nx_mosaic_640x480_public/sir/inmasirus_.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-small">Small</h3>
+						<img src="http://sirocco.accuweather.com/adc_nxmos_400x300c/sir/inmsirun_293x214.gif" alt="" loading="lazy"><br>
+						<img src="http://vortex.accuweather.com/phoenix2/images/common/keys/radar_sir_400x40.gif" alt="" loading="lazy"><br>
+
+						<h2 class="center">Satellite</h2>
+						<h3 class="center" id="accuweather-enhanced">Enhanced</h3>
+						<img src="http://sirocco.accuweather.com/sat_mosaic_640x480_public/ei/isaeun.gif" alt="" loading="lazy"><br>
+						<img src="http://vortex.accuweather.com/adc2010/images/keys/sateif.png" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-standard">Standard</h3>
+						<img src="http://sirocco.accuweather.com/sat_mosaic_640x480_public/ir/isaun.gif" alt="" loading="lazy"><br>
+						<img src="http://vortex.accuweather.com/adc2010/images/keys/satirf.png" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-visible">Visible</h3>
+						<img src="http://sirocco.accuweather.com/sat_mosaic_640x480_public/vis/isavun.gif" alt="" loading="lazy"><br>
+						<img src="http://vortex.accuweather.com/adc2010/images/keys/satvisf.png" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-colored-water-vapor">Colored Water Vapor</h3>
+						<img src="http://sirocco.accuweather.com/sat_mosaic_640x480_public/wv/isawvcun.gif" alt="" loading="lazy"><br>
+						<img src="http://vortex.accuweather.com/adc2010/images/keys/satwvf.png" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-visible-infrared-west">Visible Infrared (west)</h3>
+						<img src="http://sirocco.accuweather.com/sat_mosaic_640x480_public/vr/isvrwest.jpg" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-visible-infrared-east">Visible Infrared (east)</h3>
+						<img src="http://sirocco.accuweather.com/sat_mosaic_640x480_public/vr/isvreast.jpg" alt="" loading="lazy"><br>
+
+						<h2 class="center">Radar & Satellite:</h2>
+						<h3 class="center" id="accuweather-us">US</h3>
+						<img src="http://sirocco.accuweather.com/sat_mosaic_640x480_public/rs/isarun.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-alaska">Alaska</h3>
+						<img src="http://sirocco.accuweather.com/sat_mosaic_640x480_public/rs/isarak_.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-hawaii">Hawaii</h3>
+						<img src="http://sirocco.accuweather.com/sat_mosaic_640x480_public/rs/isarhi_.gif" alt="" loading="lazy"><br>
+						<img src="http://vortex.accuweather.com/adc2010/images/keys/radarrsf.png" alt="" loading="lazy"><br>
+
+						<h3 class="center" id="accuweather-jet-stream-today">Jet stream (today)</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/jet/640x480/us__todjet.jpg" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-jet-stream-tomorrow">Jet stream (tomorrow)</h3>
+						<img src="http://sirocco.accuweather.com/adc_images2/english/forecast/jet/640x480/us__tomjet.jpg" alt="" loading="lazy"><br>
+
+						<h3 class="center" id="accuweather-surface-map-today">Surface map today</h3>
+						<img src="http://vortex.accuweather.com/publicgfx/ussu0000.jpg" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-surface-map-tomorrow-am">Surface map tomorrow am</h3>
+						<img src="http://vortex.accuweather.com/publicgfx/ussu0030.jpg" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-surface-map-tomorrow-pm">Surface map tomorrow pm</h3>
+						<img src="http://vortex.accuweather.com/publicgfx/ussu0060.jpg" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-surface-map-two-day-am">Surface map two-day am</h3>
+						<img src="http://vortex.accuweather.com/publicgfx/ussu0090.jpg" alt="" loading="lazy"><br>
+						<h3 class="center" id="accuweather-surface-map-two-day-pm">Surface map two-day pm</h3>
+						<img src="http://vortex.accuweather.com/publicgfx/ussu0119.jpg" alt="" loading="lazy"><br>
+					</section>
+				</details>
+
+				<details id="wunderground">
+					<summary>
+						<div class="summary">
+							<h2 class="initial">Weather Underground</h2><span class="gray text-sc"></span>
+						</div>
+						<hr>
+					</summary>
+					<section>
+						<aside>
+							<div class="thaer">
+								<p class="center"><a href="http://web.archive.org/web/20080626073646/http://www.wunderground.com/US/Region/US/2xTemperature.html">http://www.wunderground.com/US/Region/US/</a></p>
+								<p class="center"><a href="https://www.wunderground.com/maps">https://www.wunderground.com/maps</a></p>
+
+								<p class="left">In September 2016, during my internship at <a href="https://web.mit.edu/">Massachusetts Institute of Technology</a>'s <a href="https://www.ll.mit.edu/">Lincoln Laboratory</a> (MIT LL), I researched, mapped, and archived the entirety of <a href="https://www.wunderground.com/">Weather Underground</a> live weather map bitmaps by scraping the <a href="https://web.archive.org/">Internet Archive</a>.</p>
+
+								<p>Files named us_*.gif can be copied into 640x480/2xus_*_(animated).gif to display an animated version.</p>
+
+								<p>“_animated” is optional</p>
+
+								<p>Note: As of 2017, Weather Underground has decomissioned their static forecast service and none of the following links work anymore.</p>
+							</div>
+						</aside>
+
+						<h3 class="center" id="wunderground-maximum-temperature">Maximum Temperature</h3>
+						<img src="https://web.archive.org/web/20190930040303if_/https://icons.wunderground.com/data/640x480/2xus_mx2.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="wunderground-us-dew-point">US Dew Point</h3>
+						<img src="https://web.archive.org/web/20160813090759if_/http://www.wunderground.com/data/images/us_dp.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20180827021720if_/http://maps.wunderground.com/data/640x480/2xus_dp_anim.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="wunderground-alaska-dew-point">Alaska Dew Point</h3>
+						<img src="https://web.archive.org/web/20150426005447if_/http://www.wunderground.com/data/images/ak_dp.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="wunderground-us-temp">US Temp:</h3>
+						<img src="https://web.archive.org/web/20191025033842if_/https://www.wunderground.com/data/images/us_st.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20200315044532if_/https://www.wunderground.com/data/640x480/2xus_st_anim.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="wunderground-us-radar">US Radar</h3>
+						<img src="https://web.archive.org/web/20191025033842if_/https://www.wunderground.com/data/images/us_rd.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20191204073854if_/https://www.wunderground.com/data/640x480/2xus_rd_anim.gif" alt="" loading="lazy"><br>
+						<img src="https://icons.wxug.com/data/weather-maps/radar/united-states/united-states-current-radar-animation.gif" alt="" loading="lazy">
+						<h3 class="center" id="wunderground-us-humidity">US Humidity</h3>
+						<img src="https://web.archive.org/web/20160813090754if_/http://www.wunderground.com/data/images/us_rh.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20161226222124if_/http://maps.wunderground.com/data/640x480/2xus_rh_anim.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="wunderground-us-wind-chill">US Wind Chill</h3>
+						<img src="https://web.archive.org/web/20160423115215if_/http://www.wunderground.com/data/images/us_wc.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20131225040201if_/http://www.wunderground.com/data/640x480/2xus_wc_anim.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20180827030433/http://maps.wunderground.com/data/640x480/2xus_wc_anim.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="wunderground-us-heat-index">US Heat Index</h3>
+						<img src="https://web.archive.org/web/20160417152252if_/http://www.wunderground.com/data/images/us_hi.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20131225040034if_/http://www.wunderground.com/data/640x480/2xus_hi_anim.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20180827020056if_/http://maps.wunderground.com/data/640x480/2xus_hi_anim.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="wunderground-us-wind">US Wind</h3>
+						<img src="https://web.archive.org/web/20160813090755if_/http://www.wunderground.com/data/images/us_ws.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20191219061819if_/https://www.wunderground.com/data/images/us_ws.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20161226161131if_/http://maps.wunderground.com/data/640x480/2xus_ws_anim.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20180823112917if_/http://maps.wunderground.com/data/640x480/2xus_ws_anim.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="wunderground-us-visibility">US Visibility</h3>
+						<img src="https://web.archive.org/web/20160413034615if_/http://maps.wunderground.com/data/images/us_vs.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20161226160934if_/http://maps.wunderground.com/data/640x480/2xus_vs_anim.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="wunderground-us-visibility-satellite">US Visibility Satellite</h3>
+						<img src="hhttps://web.archive.org/web/20160824143433if_/http://maps.wunderground.com/data/images/us_vi.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20190708084457if_/https://www.wunderground.com/data/images/us_vi.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20160407232318if_/http://maps.wunderground.com/data/640x480/2xus_vi_anim.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20180827020628if_/http://maps.wunderground.com/data/640x480/2xus_vi_anim.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="wunderground-us-satellite-map">US Satellite Map</h3>
+						<img src="https://web.archive.org/web/20160418002618if_/http://www.wunderground.com/data/images/us_ir.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20160603052331if_/http://www.wunderground.com/data/640x480/2xus_ir_anim.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="wunderground-us-fronts">US Fronts</h3>
+						<img src="https://web.archive.org/web/20200331180917if_/https://www.wunderground.com/data/images/us_sf.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20190807171819if_/https://www.wunderground.com/data/640x480/2xus_sf_anim.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="wunderground-us-precip">US Snow</h3>
+						<img src="https://web.archive.org/web/20160222162039if_/http://www.wunderground.com/data/images/us_snow.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20131225060334if_/http://www.wunderground.com/data/640x480/2xus_snow_anim.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="wunderground-us-precip">US Precip</h3>
+						<img src="https://web.archive.org/web/20150426010041if_/http://www.wunderground.com/data/images/us_nws_precip.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20170817062535if_/http://icons.wunderground.com/data/images/us_nws_precip.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="wunderground-us-jet-stream">US Jet Stream</h3>
+						<img src="https://web.archive.org/web/20160825194132if_/http://maps.wunderground.com/data/images/us_jt.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20160407172436if_/http://maps.wunderground.com/data/640x480/2xus_jt_anim.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="wunderground-us-uv">US UV</h3>
+						<img src="https://web.archive.org/web/20020410034036if_/http://wunderground.com:80/data/images/us_uv_anim.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20160619075157if_/http://icons.wunderground.com/data/640x480/2xus_uv_anim.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20190102210003if_/http://icons.wunderground.com/data/640x480/2xus_uv_anim.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="wunderground-us-flu">US Flu</h3>
+						<img src="https://web.archive.org/web/20171130210500if_/https://icons.wunderground.com/data/640x480/2xus_flu.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20150910092726if_/http://icons.wunderground.com/data/640x480/2xus_flu_anim.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="wunderground-us-air-quality">US Air Quality</h3>
+						<img src="https://web.archive.org/web/20150426010343if_/http://www.wunderground.com/data/images/us_ozone.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20190308230102if_/https://www.wunderground.com/data/640x480/2xus_ozone.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20161001041827if_/http://icons.wunderground.com/data/640x480/2xus_ozone.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20110930002347if_/http://www.wunderground.com/data/640x480/2xus_ozone.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20060614030222if_/http://maps.wunderground.com:80/data/640x480/2xus_ozone_anim.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20131225063416if_/http://www.wunderground.com/data/640x480/2xus_ozone_anim.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="wunderground-us-flight-rules">US Flight Rules:</h3>
+						<img src="https://web.archive.org/web/20161103203113if_/https://icons.wunderground.com/data/images/us_flight.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20170107185313if_/http://maps.wunderground.com/data/640x480/2xus_flight_anim.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="wunderground-us-regional">US Regional</h3>
+						<img src="https://web.archive.org/web/20170330232735if_/http://icons.wunderground.com/data/640x480/us_nids_mixedmosaic.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20131228040228if_/http://icons-pe.wxug.com/graphics/RadarLegendMixed.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="wunderground-us-nexrad">US NEXRAD</h3>
+						<img src="https://web.archive.org/web/20081030235523if_/http://icons-sf.wunderground.com/data/nids/USNIDSMap_current.gif" alt="" loading="lazy"><br>
+						<h3 class="center" id="wunderground-models">Models</h3>
+						<aside class="thaer">add 3 for each successive gif; continue until NAM SUPRE reaches 84</aside>
+						<img src="https://web.archive.org/web/20060506094218if_/http://maps.wunderground.com/data/models/NAM/US/NAM_US_SURPRE_24.gif?t=0005062006" alt="" loading="lazy"><br>
+						<h3 class="center" id="wunderground-air-observations">Air Observations (Pilot)</h3>
+						<aside class="thaer">increase by 25 until altitude reaches 450</aside>
+						<img src="https://web.archive.org/web/20170720163454if_/https://www.wunderground.com/data/640x480/pilot/us_stnplt_25.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20170720170338if_/https://www.wunderground.com/data/640x480/pilot/us_stnplt_50.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20170720162332if_/https://www.wunderground.com/data/640x480/pilot/us_stnplt_75.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20170720162916if_/https://www.wunderground.com/data/640x480/pilot/us_stnplt_100.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20170720164629if_/https://www.wunderground.com/data/640x480/pilot/us_stnplt_150.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20170720171245if_/https://www.wunderground.com/data/640x480/pilot/us_stnplt_200.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20170720165639if_/https://www.wunderground.com/data/640x480/pilot/us_stnplt_250.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20170720192229if_/https://www.wunderground.com/data/640x480/pilot/us_stnplt_300.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20170720193146if_/https://www.wunderground.com/data/640x480/pilot/us_stnplt_350.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20170720185737if_/https://www.wunderground.com/data/640x480/pilot/us_stnplt_400.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20170720190644if_/https://www.wunderground.com/data/640x480/pilot/us_stnplt_450.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20170720183628if_/https://www.wunderground.com/data/640x480/pilot/us_freezinglevel_25_12.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20150906025610if_/http://www.wunderground.com/data/640x480/pilot/us_freezinglevel_25_156.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20170720181252if_/https://www.wunderground.com/data/640x480/pilot/us_windsaloft_100_12.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20170720185226if_/https://www.wunderground.com/data/640x480/pilot/us_rnumber_100_12.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20150827172801if_/http://www.wunderground.com/data/640x480/pilot/us_rnumber_200_12.gif" alt="" loading="lazy"><br>
+						<img src="https://web.archive.org/web/20170720192137if_/https://www.wunderground.com/data/640x480/pilot/us_temp_100_12.gif" alt="" loading="lazy"><br>
+					</section>
+				</details>
+			</div>
+
+			<p class="center"><a href="weather.txt">weather.txt</a></p>
+
+			<div class="content" id="weatherBox"></div>
+
+			<hr>
+
+			<footer class="center">
+				<a href="index.html" title="Home"><img id="pin" class="center crisp margin" src="css/img/pin.xbm.gif" alt="Pin" loading="lazy"></a>
+				<img class="center crisp margin" src="img/updated.png" alt="Last Updated October 8th, 2025" loading="lazy">
+<pre>
+<div class="left" style="display: flex ; flex-direction: column; gap: 3px;">
+<!-- <span class="center">You are visitor number <a href="https://stuff.mit.edu/doc/counter-howto.html"><img class="crisp" src="https://stuff.mit.edu/cgi/counter/johnduncan.io" style="vertical-align:middle" alt="" loading="lazy"></a></span> -->
+<span>Copyright &copy; John D. Duncan, III <span id="currentYear">2011–2025</span>. All Rights Reserved.</span>
+<span>All maps Copyright &copy; <a href="https://www.accuweather.com/">AccuWeather, Inc</a>. All Rights Reserved.</span></div></pre>
+<script>document.getElementById("currentYear").textContent = `2011–${new Date().getFullYear()}`</script>
+			</footer>
+		</main>
+		<script src="weather.js" type="module"></script>
+	</body>
+</html>

@@ -1,0 +1,190 @@
+\documentclass[]{article}
+
+\usepackage[
+	nomarginpar,
+	left=0.5in,
+	right=0.5in,
+	top=0.25in,
+	bottom=0in,
+]{geometry}
+\usepackage{
+	array,
+	colortbl,
+	enumitem,
+	lipsum,
+	parskip,
+	microtype,
+	ulem,
+	xcolor,
+}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[hidelinks]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[compact]{titlesec}
+
+\setlist[itemize]{leftmargin=*, topsep=0pt, nosep,label={\textbullet}}
+
+\newcolumntype{L}{>{\raggedleft}p{0.13\textwidth}}
+\newcolumntype{R}{p{0.8\textwidth}}
+\definecolor{lightgray}{gray}{0.8}
+\newcommand\VRule{\color{lightgray}\vrule width 0.5pt}
+\setlength{\arrayrulewidth}{0.5pt}
+\arrayrulecolor{lightgray}
+
+\titleformat{\section}
+	{\normalfont\large\bfseries\scshape}
+	{\thesection}
+	{1em}
+	{}
+	[{\titlerule[0.5pt]}]
+
+\titleformat{\subsection}
+  {\normalfont\normalsize\bfseries}
+  {\thesubsection}
+  {1em}
+  {}
+
+\titlespacing*{\subsection} {0pt}{2ex}{0ex}
+
+\def\name{John D. Duncan, III}
+\def\phone{(240) 688-7187}
+% \def\email{duncanjdiii+jobs@googlemail.com}
+\def\email{cv@johnduncan.io}
+\def\webpage{https://johnduncan.io}
+\def\linkedin{https://linkedin.com/in/johndduncan}
+\def\github{https://github.com/johndduncaniii}
+
+\def\Plus{\texttt{+}}
+\def\Minus{\texttt{-}}
+
+\setlength\parindent{0em}
+\markright{\name}
+\thispagestyle{empty}
+\frenchspacing
+
+\begin{document}
+
+{\huge \bfseries \name}
+
+\begin{tabular}{@{}l!{\VRule}l@{}}
+	Phone & \phone\\
+	Location & Washington, DC\\
+	Status & US Citizen \\
+\end{tabular}
+\hfill
+\begin{tabular}{@{}l!{\VRule}r@{}}
+	Email & \href{mailto:\email}{\tt \email}\\ % \faGoogle
+	Homepage & \href{\webpage}{\tt \webpage}\\
+	Github & \href{\github}{\tt \github}\\ % \faGithub
+	Linkedin  & \href{\linkedin}{\tt \linkedin}\\ % \faLinkedin
+\end{tabular}
+
+Dear Hiring Team at Tailscale,
+
+% from \$9M to \$64M+ ARR over nearly seven years. As a technical lead, I drove growth by solving Quorum's most complex engineering challenges, mentored dozens of engineers as a player/coach and consistently delivered major projects on time and under budget. I'm an inquisitive engineer
+% creative
+
+I'm John Duncan, a senior software engineer who helped scale Quorum Analytics—the best-in-class civic tech and public affairs platform—from a bootstrapped startup to a global company serving over 2,000 clients, including over 50\% of the Fortune 100. I thrive on solving ambiguous problems, balancing pragmatism while maintaining high standards. A former coworker once said that “[my] work really embod[ies] the idea that no problem is unsolvable, especially when you seek first to understand.” My natural curiosity drives me to deeply understand systems, leading to clean, efficient, and maintainable code that can be easily documented, maintained, extended, and deleted. I'm excited about the opportunity to bring my extensive full-stack expertise to Tailscale's marketing team.
+
+% I'm John Duncan, a senior software engineer with extensive experience building and scaling web applications that drive business growth. Having helped Quorum Analytics grow from \$9M to \$64M{\Plus} ARR over nearly seven years, I'm excited about the opportunity to bring my frontend expertise to Tailscale's web development team.
+
+% Your job posting for a Frontend Web Developer on LinkedIn caught my attention, as it aligns with my skills and passion for creating web experiences. While I've primarily worked with React and related technologies, I'm confident my experience would translate well to your tech stack.
+
+At Quorum, I consistently delivered large-scale, cross-functional, and high-impact projects on time and under budget. As a  technical lead, I drove growth by consitently solving the team's most complex engineering challenges.
+
+% As a technical lead, I consistently solved the team's most complex technical challenges while delivering projects on time and under budget.
+
+\begin{enumerate}
+	\item \textbf{Led large-scale, cross-functional projects}: I recently launched PAC Hybrid, expanding Quorum into the \$15M{\Plus} PAC market and requiring constant cross-functional communication between engineers, product managers, management, QA engineers, professional services, marketing, and leadership teams to deliver a complex integration under a tight deadline. In addition to the technical research and implementation, this involved coordinating across teams, managing stakeholder expectations, and ensuring consistent communication throughout the development lifecycle, where I:
+
+	\begin{itemize}
+		\item Discovered critical discrepancies in Federal Election Commission (FEC)-designated national party committee C-number ids officially listed across 50{\Plus} years of legal advisory opinions, FEC website data, and official fec-cms GitHub repository.
+		\item Developed end-to-end search, filtering, and data visualization features for four datasets, including backend sql queries, API endpoints, frontend UI functionality, and the technical design document (TDD) for the Dashboards integration.
+		\item Designed a service to instantly synchronize billions of rows between the Quorum and CisionPAC databases.
+		\item Reduced database query latency from 60 seconds to 20 milliseconds by optimizing query plan for partition and schema constraints, improving transaction dataset query performance by over 3000x and fixing a 10{\Plus} year old bug.
+		\item Coached engineers to optimize a database migration by replacing sequential queries with a single constant-time operation, reducing execution time from two weeks to under five seconds and improving backfill performance by over 240,000x.
+	\end{itemize}
+
+  Other projects of similar scope and complexity are listed in my full CV: \url{https://johnduncan.io/cv.pdf}.
+  \item \textbf{Thrived in fast-moving environments}: At Quorum, I consistently delivered projects on time and under budget in a high-growth startup environment, often working on multiple initiatives simultaneously. I'm accustomed to adapting quickly to changing requirements and priorities.
+  \item \textbf{Balanced strategic vision with hands-on implementation}: I've authored numerous technical design documents (TDDs), conducted user interviews with the design team, and worked closely with the product team on a sometimes daily basis to define product requirements documents (PRDs), all while working as a technical lead writing 5k{\Plus} commits, authoring 700{\Plus} pull requests, and performing 1000{\Plus} code reviews.
+  \item \textbf{Built and optimized full-stack infrastructure}: As technical lead for multiple flagship products, I developed products and features that balanced performance and user experience. I've worked extensively with Django, Python, PostgreSQL, SQL, JavaScript, and TypeScript, enabling me to understand the architectural considerations necessary to create beautiful, performant, accessible, scalable, and maintainable web experiences.
+  \item \textbf{Created reusable UI components}: I collaborated with our design team and founded the full-stack guild in order to write Quorum's first design system while working on the Dashboard visualization project, creating modular, reusable widgets and visualization components which maintain consistency and performance across the platform while improving developer efficiency.
+\end{enumerate}
+% creative
+
+A portion of my major work at Quorum is highlighted in my portfolio: \url{https://johnduncan.io/portfolio#quorum}.
+
+I'm particularly drawn to Tailscale's mission of building a better internet and your commitment to creating a kind, thoughtful team culture. I believe my combination of technical expertise, leadership experience, ability to work effectively with cross-functional stakeholders, and expertise in leading projects from from conception to execution makes me an ideal candidate for this position.
+
+I'm excited about the opportunity to apply my skills to help scale Tailscale's web presence and contribute to the company's continued growth. I would love to discuss how my background aligns with the position and how I can help drive Tailscale's web strategy forward. 
+
+Thank you for considering my application!
+
+Sincerely,
+
+John D. Duncan, III
+
+% chatgpt
+% Dear Hiring Team at Tailscale,
+
+% I am excited to apply for the Web Developer position at Tailscale. With a strong background in front-end development, Next.js, and structured content systems, I am eager to contribute to building a best-in-class web experience that enhances your brand and empowers stakeholders.
+
+% At Quorum Analytics, I played a key role in scaling the company’s flagship public affairs platform, helping grow ARR from $9M to $64M+. I led the development of multiple high-impact projects, authored thousands of commits, conducted extensive code reviews, and mentored engineers across teams. My expertise in Next.js, React, TypeScript, and modern web technologies has allowed me to architect scalable, performant solutions that streamline content management and optimize workflows.
+
+% A few highlights of my experience that align with this role:
+
+% Sanity CMS Expertise: I have experience designing structured content models that enhance editorial flexibility while reducing reliance on developers for content updates.
+
+% Next.js and Frontend Engineering: I have built and optimized multiple Next.js applications, implementing reusable UI components, server-side rendering strategies, and static site generation for high-performance web experiences.
+
+% Cross-Functional Leadership: I thrive in fast-paced environments, collaborating closely with designers, product managers, and engineers to drive large-scale web initiatives from ideation to launch.
+
+% Process and Workflow Optimization: I enjoy refining workflows to improve efficiency, ensuring that content teams can iterate quickly while maintaining high-quality standards.
+
+% Beyond my technical skills, I am highly organized and proactive, comfortable leading web projects without a project manager. I value strong communication and collaboration, and I am eager to contribute to a team that prioritizes both technical excellence and a supportive culture.
+
+% I would love the opportunity to discuss how my skills and experience align with Tailscale’s vision for its web presence. Please feel free to reach out at your convenience—I look forward to the conversation.
+
+% Best regards,
+
+% John D. Duncan, III
+% [Phone Number]
+% [Email Address]
+% [Portfolio or Website]
+
+% original
+
+% I'm John Duncan, a software engineer who helped scale Quorum Analytics—the best-in-class civic tech and public affairs platform—from \$9M to \$64M+ ARR over nearly seven years. As technical lead, I drove growth by solving Quorum's most complex engineering challenges, mentoring dozens of engineers, and consistently delivering major projects on time and under budget. I'm an inquisitive engineer who thrives on solving ambiguous problems, balancing pragmatic trade-offs while maintaining high standards. My natural curiosity drives me to deeply understand systems, leading to elegant and maintainable solutions that can be easily documented, maintained, extended, or deleted.
+
+% During my tenure at Quorum, I authored 5,000{\Plus} commits, reviewed 1,000{\Plus} pull requests, and conducted 100{\Plus} interviews. Most recently, I launched PAC Hybrid, expanding Quorum’s business into the \$15M{\Plus} PAC market, where I:
+% \begin{enumerate}
+%	\item Discovered critical discrepancies in Federal Election Commission (FEC) national party committee C-number ids across 50{\Plus} years of advisory opinion legal records, website data, and official GitHub repository.
+%	\item Architected end-to-end PAC search analytics platform spanning four datasets, implementing dozens of optimized Django SQL query methods, RESTful APIs, and interactive data visualizations.
+%	\item Designed a database synchronization infrastructure to instantly sync billions of rows between Quorum and legacy CisionPAC databases.
+%	\item Reduced database query latency from 60 seconds to 20 milliseconds by optimizing Postgres partition and schema constraints, improving transaction dataset query performance by over 3000x and permanently fixing a 10{\Plus} year old bug.
+%	\item Coached engineers to optimize a database migration by replacing sequential queries with a single constant-time operation, reducing execution time from two weeks to under five seconds and improving backfill migration performance by over 240,000x.
+% \end{enumerate}
+
+% I wrote, designed, led, and/or facilitated the PAC Hybrid, Quorum PAC, Search, Dashboards, Committee \& Presidential Transcripts, Bulk Actions, International, and Regulations projects. My full \href{https://johnduncan.io/cv.pdf}{CV} with a detailed project history and \href{https://johnduncan.io/portfolio#quorum}{portfolio} of my work are both available on my homepage: \href{https://johnduncan.io/}{https://johnduncan.io/}.
+
+% At Quorum, I developed strong expertise in all aspects of full-stack development:\\
+% Back-end: Python, Django, PostgreSQL, PostGIS, Elasticsearch, Tastypie\\
+% Front-end: React, React Native, TypeScript, JavaScript, Redux, D3, HTML5, CSS3
+
+% I’ve worked as a software engineer while also collaborating cross-functionally with design and product teams, stepping in as needed to drive progress. For example, I collaborated with our former head of design to implement Quorum's design system and perform user interviews to better understand customer needs while also working closely with the PAC product team to define requirements, write technical design documents (TDDs) and product requirements documents (PRDs), perform legal and industry research, and set overall team deliverables. I played a major role in the overall aesthetics, user interface, and user experience of the Quorum platform over my nearly seven years at the company.
+
+% In college, I taught myself JavaScript, HTML, and CSS in order to build my old homepage, which was a 90’s-themed net art project that I worked on between 2014--2017: \href{http://cs.gettysburg.edu/~duncjo01/}{http://cs.gettysburg.edu/\~duncjo01/}.
+
+% I originally discovered the MTA's front-end engineering role from your post on Hacker News in July 2024, but the timing wasn't right; now, as I am planning on relocating from DC to New York, I'm excited to apply for the position. Beyond my technical qualifications, I have a strong hobbyist interest im urban transit and city planning—I closely follow developments in mass transit systems \& urban zoning policy and regularly interface with the DC government as a board member of the tallest privately owned building in DC.
+
+% I graduated from Gettysburg College with a Bachelor of Science in Computer Science (3.60, Honors) and Philosophy (3.73, Honors) and was awarded the class of 2017 Outstanding Computer Science Student award.
+
+% I look forward to hearing back from you!
+
+% Thanks,
+
+% John
+
+\end{document}

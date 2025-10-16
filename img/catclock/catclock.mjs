@@ -18,6 +18,8 @@ const tick = () => {
 
 	document.getElementById("minutes").style.transform = `rotate(${minutesDegrees}deg)`
 	document.getElementById("hours").style.transform = `rotate(${hoursDegrees}deg)`
+	document.getElementById("catclock-img").alt = d.toLocaleString()
+	document.getElementById("catclock").title = d.toLocaleString()
 }
 
 // update clock hand(s) once per minute

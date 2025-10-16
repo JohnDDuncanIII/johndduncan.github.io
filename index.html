@@ -1,25 +1,33 @@
 <!doctype html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="canonical" href="https://johnduncan.io/">
 	<meta name="Author" content="John Duncan"/>
 	<meta name="description" content="The personal homepage of John Duncan" />
 	<meta name="description" content="concept engineering for the year 00">
 	<meta name="description" content="conjuring the apocalypse">
+
 	<link rel="preload" href="img/xface.gif" as="image" type="image/gif"/>
+	<link rel="preload" href="css/img/hr.gif" as="image" type="image/gif"/>
+
 	<link rel="preload" href="img/renéefrench/tea.gif" as="image" type="image/gif"/>
 	<link rel="preload" href="img/renéefrench/cup.gif" as="image" type="image/gif"/>
 	<link rel="preload" href="img/renéefrench/cake.gif" as="image" type="image/gif"/>
 	<link rel="preload" href="img/renéefrench/bug.gif" as="image" type="image/gif"/>
 	<link rel="preload" href="img/homepage@johnduncan.io.png" as="image" type="image/png"/>
+
 	<link rel="preload" href="img/catclock/catclock.gif" as="image" type="image/gif"/>
 	<link rel="preload" href="img/catclock/minutes.gif" as="image" type="image/gif"/>
 	<link rel="preload" href="img/catclock/hours.gif" as="image" type="image/gif"/>
-	<link rel="preload" href="img/renéefrench/fragssenna.jpg" as="image" type="image/jpg"/>
-	<link rel="preload" href="img/renéefrench/tleggirlwoodsm.jpg"  as="image" typgife="image/jpg"/>
-	<link rel="preload" href="img/renéefrench/augie.png" as="image" type="image/gif"/>
-	<link rel="preload" href="img/renéefrench/tflowerssm.jpg" as="image" type="image/gif"/>
+
+	<link rel="preload" href="css/img/pin-pressed.gif" as="image" type="image/gif">
+	
 	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Assistant:600&display=swap">
+
 	<title>john</title>
 
 	<link rel="me" href="https://keybase.io/johnduncan">
@@ -52,12 +60,18 @@
 	<link rel="me" href="https://join.skype.com/invite/DVRIliLeOAMJ"> <!--duncanjd3-->
 	<link rel="me" href="https://www.twitch.tv/johndduncan">
 	<link rel="me" href="https://www.tumblr.com/johndduncan">
+	<link rel="me" href="johnduncan@irc.rizon.net">
 	<!-- whatsapp, signal -->
-	
+
+	<link rel="inspiration" href="http://stanleylieber.com/">
 	<link rel="inspiration" href="http://uriel.cat-v.org/profile">
 	<link rel="inspiration" href="http://9front.org/who/uriel/">
 	<link rel="inspiration" href="https://fauux.neocities.org/">
 	<link rel="inspiration" href="https://macwright.com/">
+	<link rel="inspiration" href="https://karrisaarinen.com/">
+	<link rel="inspiration" href="https://ciechanow.ski/">
+	<link rel="inspiration" href="https://jakub.kr/">
+	<link rel="inspiration" href="https://www.ekzhang.com/">
 	<link rel="inspiration" href="https://thaer.no/">
 	<link rel="inspiration" href="https://swtch.com/~rsc/">
 	<link rel="inspiration" href="https://upspin.io/">
@@ -75,27 +89,31 @@
 	<link rel="inspiration" href="https://vladimir.prelovac.com/">
 	<link rel="inspiration" href="https://joshuaminsoo.kim/">
 	<link rel="inspiration" href="https://www.agner.org/">
+	<link rel="inspiration" href="https://antofthy.gitlab.io/">
+	<link rel="inspiration" href="https://kinzler.com/me/">
 
 	<script type="module" src="img/catclock/catclock.mjs"></script>
 </head>
 
-<body>
-	<div style="display: flex; justify-content: space-between;">
-		<header class="text">
-			<a href="index.html"><b>Home</b></a>
-			<a href="portfolio.html">Portfolio</a>
-			<a href="cv.pdf">Resume</a>
-			<a href="research.html">Articles</a>
-			<a href="interests.html">Interests</a>
-			<a href="https://www.yourworldoftext.com/~johnduncan/">Guestbook</a>
-		</header>
+<body class="home">
+	<header>
+		<div class="text">
+			<div class="highlighted">
+				<a href="index.html" title="Home"><img src="img/susankare/navhome.gif">Home</a>
+				<span>⇡</span>
+			</div>
+			<a href="resume.pdf" title="Resume"><img src="img/susankare/navresume.gif">Resume</a>
+			<a href="portfolio.html" title="Portfolio"><img src="img/susankare/navportfolio.gif">Portfolio</a>
+			<a href="research.html" title="Articles"><img src="img/susankare/navarticles.gif">Articles</a>
+			<a href="https://www.yourworldoftext.com/~johnduncan/" title="Guestbook"><img src="img/susankare/navmail.gif">Guestbook</a>
+			<!-- <a href="interests.html">Interests</a> -->
+		</div>
 
-		<header class="info">
-<pre class="right nomargin">
+		<div class="info">
+<pre class="right nomargin">John Duncan
 c/o Quorum
 1 Thomas Circle
-Washington, DC 20005
-</pre>
+Washington, DC 20005</pre>
 			<a href="http://www.dairiki.org/xface/xface.php?xface=%22dS%3Dexdec%2BW_UIU-3u%3B%23%7DnMS%7DIF1SKB%22%3BkNLiY%28S%7DLxSXj5myL9ah32r%22z%3BkX6t%24L-H%25E%7CfN%7Dp%22MDV6QL%7C%7C%40i%60WRth%3FdQfm5%28%3FY%5EABJz%5C%2FUE%7CelUyeGz%60C0dbwVNL%3D.9MJ9%3C3VZCnYU%7EQemCXs%5E%2F%5D%7B1Piu%5DoT%5Ed%3Dw%24j4i-j%28li3My%5Ept.wtRT%40%5BeJYI%28X3_1yn4L%3BC8m%25DZsRzX%27g_%2ACdxC1%7D%3An2MRr%29%2C%22%22bfG%7D%3Frb%7Bd9eoJ%40W0gg%3Fl%29P_8q7l%21%28%21%5C5ixU%25%3FH8U9el%3FOv%3CX%40D%2F%3Al%21%2FbR_%22K-P&preview=1&enlarge=4">
 				<img
 					class="right"
@@ -104,58 +122,75 @@ Washington, DC 20005
 					onmouseout="this.src='img/xface.gif'"
 				>
 			</a>
-		</header>
-	</div>
+		</div>
+	</header>
 
 	<main>
-		<header class="center img">
-			<a href="portfolio.html"><img src="img/renéefrench/tea.gif"></a>
-			<a href="cv.pdf"><img src="img/renéefrench/cup.gif"></a>
-			<a href="research.html"><img src="img/renéefrench/cake.gif"></a>
-			<a href="interests.html"><img src="img/renéefrench/bug.gif"></a>
-		</header>
-		<img class="center crisp" src="img/homepage@johnduncan.io.png">
-
 		<hr>
+		<div>
+			<header class="center images">
+				<a href="resume.pdf"><img src="img/renéefrench/cup.gif" alt="Resume" title="Resume"></a>
+				<a href="portfolio.html"><img src="img/renéefrench/tea.gif" alt="Portfolio" title="Portfolio"></a>
+				<a href="research.html"><img src="img/renéefrench/cake.gif" alt="Research" title="Articles"></a>
+				<a href="https://www.yourworldoftext.com/~johnduncan/"><img src="img/renéefrench/bug.gif" alt="Weather" title="Weather"></a>
+				<!-- <a href="interests.html"><img src="img/renéefrench/bug.gif"></a> -->
+			</header>
+
+			<img class="center crisp" src="img/homepage@johnduncan.io.png">
+			<hr class="thin center smaller">
+		</div>
 
 		<div id="catclock" class="catclock">
-			<img class="right" width="150" height="300" src="img/catclock/catclock.gif">
+			<img id="catclock-img" class="right" width="150" height="300" src="img/catclock/catclock.gif">
 			<img id="minutes" class="minutes" src="img/catclock/minutes.gif">
 			<img id="hours" class="hours" src="img/catclock/hours.gif">
 		</div>
 
-		<p>
-		<!-- My name is John Duncan. I'm a software engineer based in Washington, DC with over 7 years of industry experience and have worked at -->
-		My name is John Duncan. I'm a software engineer with over 7 years of industry experience based in Washington, DC, where I've been working at <a href="https://www.quorum.us/"><strong>Quorum Analytics</strong></a> since early 2018.
-		</p>
+		<div class="byline">
+			<p>John Duncan, software engineer <br><span class="text-lighter">at</span> <a href="https://www.quorum.us/">Quorum Analytics</a> <span class="text-lighter">since</span> 2018.</p>
+			<p>Historical preservation <br><span class="text-lighter">at</span> <a href="https://en.wikipedia.org/wiki/The_Cairo">The Cairo</a> <span class="text-lighter">since</span> 2023.</p>
+			<p>Previously, research intern <br><span class="text-lighter">for</span> <a href="https://www.ll.mit.edu/r-d/biotechnology-and-human-systems/humanitarian-assistance-and-disaster-relief-systems">Humanitarian Assistance <span class="text-lighter">and</span> Disaster Relief Systems</a><br><span class="text-lighter">at</span> <a href="https://web.mit.edu/">MIT</a> <a href="https://www.ll.mit.edu/">Lincoln Laboratory</a> <span class="text-lighter">in</span> Lexington, Massachusetts.</p>
+			<!-- on Hanscom Air Force Base
+			in the <a href="https://www.ll.mit.edu/r-d/homeland-protection">Homeland Protection</a> division (now <a href="https://www.ll.mit.edu/r-d/biotechnology-and-human-systems">Biotechnology and Human Systems</a>) -->
+			<p>Received Bachelors of Science <span class="text-sc">B.S.</span> <br><span class="text-lighter">in</span> Computer Science <span class="text-sc">Honors</span> <span class="text-lighter">and</span> Philosophy <span class="text-sc">Honors</span> <br><span class="text-lighter">from</span> <a href="https://www.gettysburg.edu/">Gettysburg College</a> <span class="text-lighter">in</span> Gettysburg, Pennsylvania.</p>
+			<p>From US, living <span class="text-lighter">in</span> DC.</p>
+		</div>
 
-		<p>
-		Previously, in the summer of 2016, I was a research intern for the <a href="https://www.ll.mit.edu/r-d/biotechnology-and-human-systems/humanitarian-assistance-and-disaster-relief-systems">Humanitarian Assistance and Disaster Relief Systems</a> group in the <a href="https://www.ll.mit.edu/r-d/homeland-protection">Homeland Protection</a> division (now <a href="https://www.ll.mit.edu/r-d/biotechnology-and-human-systems">Biotechnology and Human Systems</a>) at <a href="https://web.mit.edu/">MIT</a> <a href="https://www.ll.mit.edu/">Lincoln Laboratory</a> on Hanscom Air Force Base in Lexington, Massachusetts.
-		</p>
+		<!-- <p>Although my academic background is in computer science and philosophy, I consider computer graphics, interface design, human-computer interfaces, distributed systems, and media theory to be my primary areas of interest.</p> -->
 
-		<p>
-		I received a Bachelors of Science in Computer Science (<span class="text-sc">Honors</span>) and Philosophy (<span class="text-sc">Honors</span>) from Gettysburg College in Gettysburg, Pennsylvania.
-		</p>
+		<p><a href="weather.html">weather</a></p>
 
-		<p><a href="cv.pdf">cv</a> (<a href="cv.tex">.tex</a>)</p>
+		<p><a style="width: fit-content;" href="resume.pdf">resume</a> <span style="width: fit-content;"><a href="cv.pdf">cv</a> (<a href="cv.tex">.tex</a>)</span></p>
 
-		<p>
-		<a rel="me" href="https://github.com/johndduncaniii">github</a>
-		<a rel="me" href="https://twitter.com/johndduncan">twitter</a>
-		<a rel="me" href="https://www.linkedin.com/in/johndduncan/">linkedin</a>
-		<a rel="me" href="https://www.instagram.com/johndduncan/">instagram</a>
-		<a rel="me" href="https://letterboxd.com/johnduncan/">letterboxd</a>
-		<a rel="me" href="https://hachyderm.io/@johnduncan">mastodon</a>
-		<a rel="me" href="https://bsky.app/profile/johndduncan.bsky.social">bluesky</a>
-		<a rel="me" href="https://news.ycombinator.com/user?id=johnduncan">hn</a>
-		<a rel="me" href="https://keybase.io/johnduncan">keybase</a>
-		<a rel="me" cite="http://discord.com/users/513155938094678016" href="discord://-/users/513155938094678016">discord</a>
-		</p>
-		<span>johnduncan@irc.rizon.net</span>
+		<div class="social center">
+			<a rel="me" href="https://github.com/johndduncaniii">github</a>
+			<a rel="me" href="https://twitter.com/johndduncan">twitter</a>
+			<a rel="me" href="https://www.linkedin.com/in/johndduncan/">linkedin</a>
+			<a rel="me" href="https://www.instagram.com/johndduncan/">instagram</a>
+			<a rel="me" href="https://hachyderm.io/@johnduncan">mastodon</a>
+			<a rel="me" href="https://bsky.app/profile/johndduncan.bsky.social">bluesky</a>
+			<a rel="me" cite="http://discord.com/users/513155938094678016" href="discord://-/users/513155938094678016">discord</a>
+		</div>
 
-<blockquote><q cite="https://collections.library.yale.edu/catalog/2041434 p2 https://collections.library.yale.edu/iiif/2/1170919/full/full/0/default.jpg  https://www.jstor.org/stable/24724829">ch'io faccio il canto della guerra eterna Fra luce a fango.</q>
-<q>for I sing the song of the eternal war Between light and mud.</q>
+<blockquote><q cite="https://collections.library.yale.edu/catalog/2041434 p2 https://collections.library.yale.edu/iiif/2/1170919/full/full/0/default.jpg  https://www.jstor.org/stable/24724829">ch'io faccio il canto della guerra eterna Fra luce a fango. Addio, Marinetti!</q>
+<q>for I sing the song of the eternal war Between light and mud. Goodbye, Marinetti!</q>
 <table><tr><td>— Ezra Pound, Canto LXXII</td><td>1944 AD</td></tr></table></blockquote>
+
+<!-- <blockquote><q cite="https://archive.org/details/lessoiresdesai00mais/page/22/mode/2up p22">La terre entière, continuellement imbibée de sang, n'est qu'un autel immense où tout ce qui vit doit être immolé sans fin, sans mesure, sans relâche, jusqu'à la consommation des choses, jusqu'à l'extinction du mal, jusqu'à la mort de la mort</q>
+<q>The whole earth, perpetually steeped in blood, is nothing but a vast altar upon which all that is living must be immolated without end, without measure, without respite, until the consummation of things, until the extinction of evil, until the death of death.</q>
+<table><tr><td>— Joseph de Maistre, Les Soirées de Saint-Pétersbourg</td><td>1821 AD</td></tr></table></blockquote> -->
+
+<!-- <blockquote><q cite="https://www.projekt-gutenberg.org/novalis/fragmen1/chap005.html">Unser Leben ist kein Traum, aber es soll und wird vielleicht einer werden.</q>
+<q>Our life is not a dream, but it should and perhaps will become one.</q>
+<table><tr><td>— Novalis, Fragmente I: Magische Philosophie</td><td>1798 AD</td></tr></table></blockquote> -->
+
+<blockquote><q cite="Übers Erkennen und Empfinden in der menschlichen Seele (1774); cited from Bernhard Suphan (ed.) Herders sämmtliche Werke (Berlin: Weidmann, 1877-1913) vol. 8, p. 252.">Wir leben immer in einer Welt, die wir uns selbst bilden.</q>
+<q cite="Translation from Roy Pascal The German Sturm und Drang (Manchester: Manchester University Press, 1959) p. 136">We live always in a world that we ourselves construct.</q>
+<table><tr><td>— Johann Gottfried Herder, Übers Erkennen und Empfinden in der menschlichen Seele</td><td>1774 AD</td></tr></table></blockquote>
+
+<!-- <blockquote><q cite="Johann Georg Hamann, Sämtliche Werke, edited by Joseph Nadler (Vienna: Herder, 1949–1957); Johann Georg Hamann, Briefwechsel, edited by Walther Ziesemer and Arthur Henkel (Wiesbaden and Frankfurt: Insel, 1955–1979) https://archive.org/details/johanngeorghaman01gilduoft/page/100/mode/2up?q=%C3%A4u%C3%9Fer%C5%BFten https://hamann-ausgabe.de/HKB/Briefe/77#202-2 https://www.zeit.de/1946/10/der-magus-im-norden">Nichts oder alles zu thun; das Mittelmäßige iſt meine Antipathie; ... eher eines von den äußerſten.</q>
+<q cite="https://www.nybooks.com/articles/1993/10/21/the-magus-of-the-north/ https://www.goodreads.com/quotes/8742784-do-either-nothing-or-everything-the-mediocre-the-moderate-is">Do nothing or everything; mediocrity is my antipathy; ... I prefer an extreme.</q>
+<table><tr><td>— Johann Georg Hamann to J. G. Lindner,<br>des Magus in Norden: Leben und Schriften</td><td>May 20, 1756 AD</td></tr></table></blockquote> -->
 
 <!-- <blockquote><q cite="https://ilibrary.ru/text/1099/p.9/index.html">Он сошел вниз, избегая подолгу смотреть на нее, как на солнце, но он видел ее, как солнце, и не глядя.</q>
 <q>He stepped down, trying not to look long at her, as if she were the sun, yet he saw her, like the sun, even without looking.</q>
@@ -170,7 +205,7 @@ Washington, DC 20005
 <table><tr><td>— Robert Fludd, Utriusque Cosmi</td><td>1617 AD</td></tr></table></blockquote>
 
 <blockquote><q cite="https://www.persee.fr/doc/bsnaf_0081-1181_2015_num_2010_1_12110">Le Temps Venra</q>
-<q>the time will come</q>
+<q>The time will come</q>
 <table><tr><td>— Jean de Berry, Duke of Berry and Auvergne & Count of Poitiers and Montpensier</td><td>~1340–1416 AD</td></tr></table></blockquote>
 
 <blockquote><q cite="https://archive.org/details/gualterimapesden00mapwrich/mode/2up?q=sepeliuntur https://archive.org/details/gualterimapesden00mapwrich/page/194/mode/2up?q=sepeliuntur https://archive.org/details/b28748487/page/194/mode/2up?q=sepeliuntur https://ia800708.us.archive.org/view_archive.php?archive=/22/items/crossref-pre-1909-scholarly-works/10.1017%252Fs2042169900008452.zip&file=10.1017%252Fs2042169900012852.pdf p195">Mortui vivunt, vivi pro eis sepeliuntur</q>
@@ -185,9 +220,9 @@ Washington, DC 20005
 <q cite="https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0174%3APhaedrus%3Asection%3D249c">This is a recollection [anamnesis] of those things which our soul once beheld, when it journeyed with God...</q>
 <table><tr><td>— Plato, Phaedrus (249c)</td><td>~370 BC</td></tr></table></blockquote>
 
-<blockquote><q cite="https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0177%3AMeno%3Asection%3D81d">τὸ γὰρ ζητεῖν ἄρα καὶ τὸ μανθάνειν ἀνάμνησις ὅλον ἐστίν</q>
+<!-- <blockquote><q cite="https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0177%3AMeno%3Asection%3D81d">τὸ γὰρ ζητεῖν ἄρα καὶ τὸ μανθάνειν ἀνάμνησις ὅλον ἐστίν</q>
 <q cite="https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0178%3AMeno%3Asection%3D81d">For searching and learning are, as a whole, recollection [anamnesis]</q>
-<table><tr><td>— Plato, Meno (81d)</td><td>~385 BC</td></tr></table></blockquote>
+<table><tr><td>— Plato, Meno (81d)</td><td>~385 BC</td></tr></table></blockquote> -->
 
 <!-- <q cite="https://biblehub.com/interlinear/ecclesiastes/1-9.htm">mah-še·hā·yāh</q> -->
 <!-- <q cite="https://www.sefaria.org/Ecclesiastes.1.9">מַה־שֶּֽׁהָיָה֙ ה֣וּא שֶׁיִּהְיֶ֔ה וּמַה־שֶּׁנַּֽעֲשָׂ֔ה ה֖וּא שֶׁיֵּעָשֶׂ֑ה וְאֵ֥ין כׇּל־חָדָ֖שׁ תַּ֥חַת הַשָּֽׁמֶשׁ׃ </q> -->
@@ -222,7 +257,8 @@ http://oracc.iaas.upenn.edu/cuneifyplus" style="line-height: 0;">𒃻 𒌑𒄖 �
 		<hr>
 
 		<h2>Quorum</h2>
-		<a href="https://www.quorum.us/"><img src="img/renéefrench/fragssenna.jpg" cite="http://3.bp.blogspot.com/-4mUp5y3OXE8/UBM7uelQseI/AAAAAAAAFCI/vjmkNb97qSQ/s0/" class="center half"></a>
+		<a href="portfolio.html#quorum"><img class="center half" src="img/renéefrench/fragssenna.jpg" cite="https://reneefrench.blogspot.com/2012/07/blog-post_27.html http://3.bp.blogspot.com/-4mUp5y3OXE8/UBM7uelQseI/AAAAAAAAFCI/vjmkNb97qSQ/s0/fragssenna.jpg" loading="lazy"></a>
+
 		<blockquote><q cite="https://it.wikipedia.org/wiki/Discussioni_progetto:Linguistica/Archivio/18 https://archive.org/details/banco-rari-98/page/n3/mode/2up https://dpul.princeton.edu/gutenberg/catalog/9s161b505 http://www.dantecollection.com/index.php?id=1496&tx_ttnews%5Bcat%5D=23231&tx_ttnews%5Btt_news%5D=6391&cHash=756a8d92a9756689a1fcda27ab04e5a6 https://www.themorgan.org/incunables/134127 https://www.goodreads.com/author_blog_posts/24610251-voynich-reconsidered-la-divina-commedia https://he.wikipedia.org/wiki/%D7%AA%D7%91%D7%A0%D7%99%D7%AA:%D7%A6%D7%99%D7%98%D7%95%D7%98_%D7%99%D7%95%D7%9E%D7%99_30_%D7%91%D7%90%D7%A4%D7%A8%D7%99%D7%9C_2023 https://he.wikipedia.org/wiki/%D7%AA%D7%91%D7%A0%D7%99%D7%AA:%D7%A6%D7%99%D7%98%D7%95%D7%98_%D7%99%D7%95%D7%9E%D7%99_30_%D7%91%D7%90%D7%A4%D7%A8%D7%99%D7%9C_2023 https://archive.org/details/leprimequattroed00dant/page/n41/mode/2up">Nel mezo delcamin dinrã uita
 Mi trouai ᵱuna ſelua oſcura
 Che la diriƈta uia era ſmarrita</q> (Foligno, Neumeister/Angelini)
@@ -234,32 +270,46 @@ Ché la diritta via era smarrita.</q> (Gutenberg)
 <q cite="https://poets.org/poem/inferno-canto-i ">Midway along the journey of our life
 I found myself within a forest dark,
 For the straightforward pathway had been lost.</q> (Longfellow)
-<table><tr><td>— Dante, Comedìa: Inferno, Canto I</td><td>~1308-1321 AD<br>(Published 1472)</td></tr></table></blockquote>
-		<p>I spent nearly 7 years building the Quorum Analytics B2B SaaS civic tech public affairs platform. During my tenure, I researched, designed, built, launched, and maintained over a dozen of Quorum's flagship products, features, and critical systems.</p>
+<table><tr><td>— Dante, Comedìa: Inferno, Canto I</td><td>~1308-1321 AD<br>Published 1472</td></tr></table></blockquote>
 
-		<p>While I did a lot of programming, a large part of my role involved serving as a mentor and technical resource to dozens of engineers, managers, engineering directors, and the CTO.</p>
+		<p>Between 2018–2024, I wrote and launched flagship products for <a href="portfolio.html#quorum">Quorum Analytics</a>—the industry leading public affairs platform—helping drive growth from $9M to $64M+ ARR, scale the development team from 12 to 120+, and grow the company from a small bootstrapped startup to serving trade associations, advocacy groups, embassies, nonprofits, congressional offices, government agencies, over 50% of the Fortune 100, much of the Fortune 500, and 2,000+ clients globally.</p>
+
+		<p>As a player/coach technical lead, I mentored and served as a resource to engineers, managers, engineering directors, and the CTO, consistently solving the team's most complex engineering challenges and establishing Quorum as the best-in-class B2B SaaS software platform in the civic tech industry.</p>
+
+		<!-- <p>I spent nearly 7 years building the Quorum Analytics B2B SaaS civic tech public affairs platform. During my tenure, I researched, designed, built, launched, and maintained over a dozen of Quorum's flagship products, features, and critical systems.</p>
+
+		<p>While I did a lot of programming, a large part of my role involved serving as a mentor and technical resource to dozens of engineers, managers, engineering directors, and the CTO.</p> -->
 		<ul>
-			<li><a href="portfolio.html#pacdashboards">PAC Dashboards</a></li>
-			<li><a href="portfolio.html#search">Search</a></li>
+			<li><a href="portfolio.html#pac">PAC Hybrid</a></li>
+			<li><a href="portfolio.html#qpac">Quorum PAC</a></li>
+			<li><a href="portfolio.html#search-uiux">Search</a></li>
 			<li><a href="portfolio.html#dashboards">Dashboards</a></li>
 			<li><a href="portfolio.html#transcripts">Transcripts</a></li>
 			<li><a href="portfolio.html#bulkactions">Bulk Actions</a></li>
 			<li><a href="portfolio.html#international">International</a></li>
 			<li><a href="portfolio.html#regulations">Regulations</a></li>
+			<li><a href="portfolio.html#search">Search</a></li>
 		</ul>
 
 		<hr>
 
 		<h2>MIT Lincoln Laboratory</h2>
+		<a href="portfolio.html#mit"><img class="center half" src="img/renéefrench/tleggirlwoodsm.jpg" cite="https://reneefrench.blogspot.com/2008/09/traitor-tuesday.html http://3.bp.blogspot.com/_va9O40qIhaE/SL3dJOhmJWI/AAAAAAAAAvw/GTm9FrmDRRg/s0/tleggirlwoodsm.jpg" loading="lazy"></a>
 
 		<blockquote><q cite="https://archive.org/details/ita-bnc-in2-00002279-001/page/n142/mode/2up?q=entra http://www.dantecollection.com/index.php?id=1496&tx_ttnews%5Bcat%5D=23231&tx_ttnews%5Btt_news%5D=6569&cHash=bd77f4d46e6230e8bcce3268a9c442c0 https://digitaldante.columbia.edu/dante/divine-comedy/inferno/inferno-1/ https://www.internetculturale.it/directories/ViaggiNelTesto/dante/eng/b11.html https://archive.org/details/ita-bnc-in1-00000482-001">Coſi lanima noſtra incótinente che nel nuouo et mai nó fa ciò cāmino diqſta uita entra</q> (Florence, Bonaccorsi)
 
 <q cite="https://dante.princeton.edu/pdp/convivio.html https://dante.princeton.edu/cgi-bin/dante/DispMinorWork.pl?TITLE=Conv&REF=IV.xii.14-18 https://www.danteonline.it/italiano/opere.asp?idcod=000&idope=2&idliv1=4&idliv2=12&idliv3=1&idlang=OR&searchtext=9">[C]osì l’anima nostra, incontanente che nel nuovo e mai non fatto cammino di questa vita entra</q> (Florence, Edizione Nazionale)
 
 <q cite="https://dante.princeton.edu/pdp/convivio.html https://dante.princeton.edu/cgi-bin/dante/DispMinorWork.pl?TITLE=Conv&REF=IV.xii.14-18">[S]o our soul, as soon as it enters upon this new and never travelled road of life</q> (Princeton, Lansing)
-<table><tr><td>— Dante, Convivio: IV, xii, 14-18</td><td>~1304-1307 AD<br>(Published 1490)</td></tr></table></blockquote>
+<table><tr><td>— Dante, Convivio: IV, xii, 14-18</td><td>~1304-1307 AD<br>Published 1490</td></tr></table></blockquote>
 
-		<a href="https://www.ll.mit.edu/"><img src="img/renéefrench/tleggirlwoodsm.jpg" cite="http://3.bp.blogspot.com/_va9O40qIhaE/SL3dJOhmJWI/AAAAAAAAAvw/GTm9FrmDRRg/s0/" class="center half"></a>
+		<!-- <p>Wrote Local Evacuation Alert Verification (LEAV, sponsored by DHS S&T) for HURREVAC-eXtended (HVX, sponsored by FEMA) with the Humanitarian Assistance and Disaster Relief Systems (HADR) group at MIT LL on Hanscom AFB. -->
+		<p>In Summer 2016, I designed and wrote an Android application for <a href="https://www.dhs.gov/publication/national-hurricane-program-technology-modernization-local-evacuation-alert-verification">Local Evacuation Alert Verification</a> (<a href="portfolio.html#leav">LEAV</a>) and a JavaScript web module for LEAV's integration with <a href="https://www.dhs.gov/publication/national-hurricane-program-technology-modernization-hurrevac-extended-hv-x">HURREVAC-eXtended</a> (<a href="portfolio.html#leavem">HVX</a>) during my research internship with the <a href="https://www.ll.mit.edu/r-d/biotechnology-and-human-systems/humanitarian-assistance-and-disaster-relief-systems">Humanitarian Assistance and Disaster Relief Systems</a> group at <a href="https://web.mit.edu/">MIT</a>'s <a href="https://www.ll.mit.edu/">Lincoln Laboratory</a> on Hanscom AFB.</p>
+		<ul>
+			<li>LEAV routes hurricane evacuees to shelters, visualizes evacuation zone status in an interactive map, and facilitates communication between Emergency Managers (EMs) and evacuees; sponsored by the US <a href="https://www.dhs.gov/">Department of Homeland Security</a> (DHS) <a href="https://www.dhs.gov/science-and-technology">Science and Technology Directorate</a> (S&T)</li>
+			<li>HVX  enables Emergency Managers to update, visualize, and monitor the status of state evacuation zones in the HVX web interface; sponsored by the US <a href="https://www.fema.gov/">Federal Emergency Management Agency (FEMA)</a></li>
+		</ul>
+		<!-- <p>Received sponsorship for TS/SCI clearance and a return offer, which I declined to instead join Quorum as an early engineer.</p>
 		<p>
 		I interned with the <a href="https://www.ll.mit.edu/r-d/biotechnology-and-human-systems/humanitarian-assistance-and-disaster-relief-systems">Humanitarian Assistance and Disaster Relief Systems</a> group (Division 4 Group 44) on the <a href="https://www.dhs.gov/publication/national-hurricane-program-technology-modernization-local-evacuation-alert-verification">Local Evacuation Alert Verification</a> (LEAV) program for <a href="https://www.dhs.gov/publication/national-hurricane-program-technology-modernization-hurrevac-extended-hv-x">HURREVAC-eXtended</a> (HVX).
 		</p>
@@ -268,23 +318,50 @@ For the straightforward pathway had been lost.</q> (Longfellow)
 				Wrote and designed an <a href="portfolio.html#leav">Android application</a> for end users (LEAV) and a <a href="portfolio.html#hvx">JavaScript module</a> for the Emergency Manager front-end (HVX)
 			</li>
 		</ul>
-		<p>Sponsored by Federal Emergency Management Agency (FEMA) and the Department of Homeland Security (DHS) Science and Technology Directorate.</p>
+		-->
 		<hr>
 
+		<h2>Homepages</h2>
+		<a href="portfolio.html#homepages"><img class="center half" src="img/renéefrench/astorstear8c.jpg" cite="https://reneefrench.blogspot.com/2011/12/blog-post_11.html http://2.bp.blogspot.com/-7aKFEglC_fk/TuWL7c1ZFRI/AAAAAAAAEY8/D54XqWqvuPk/s0/astorstear8c.jpg" loading="lazy"></a>
+
+		<ul role="list">
+			<li>2024–present
+				<ul>
+					<li><a href="https://johnduncan.io">johnduncan.io, cloudflare</a></li>
+				</ul>
+			</li>
+			<li>2016–2024
+				<ul>
+					<li><a href="https://dataswamp.org/~john/">dataswamp.org, germany</a></li>
+					<li><a href="http://cs.gettysburg.edu/~duncjo01/">cs.gettysburg.edu, pennsylvania</a></li>
+				</ul>
+			</li>
+		</ul>
+		<hr>
+
+		<!--<a href="https://upspin.io/doc/mascot.md"><img class="logo right" src="img/renéefrench/augie.png" loading="lazy"></a>
 		<h2>Upspin</h2>
-		<a href="https://upspin.io/doc/mascot.md"><img class="logo right" src="img/renéefrench/augie.png"></a>
 		<p>
 		I am currently working on project using Go, Mozilla, Svelte and the <a href="https://upspin.io/">upspin</a> protocol.
 		</p>
+		<hr>-->
 
-		<footer style="text-align: center;">
-		<a href="https://dataswamp.org/~john/"><img class="xsmall" src="img/renéefrench/tflowerssm.jpg"  title="old homepage"></a>
-<pre class="left">
-Copyright &copy; John Duncan <script>document.write(new Date().getFullYear());</script><noscript>2024</noscript>.
-All images Copyright &copy; <a href="http://reneefrench.blogspot.com/">Renée French</a>.
-All Rights Reserved.
-</pre>
+		<footer>
+			<a href="index.html" title="Home"><img id="pin" class="center crisp margin" src="css/img/pin.xbm.gif" alt="Pin" loading="lazy"></a>
+			<img class="center crisp margin" src="img/updated.png" alt="Last Updated October 8th, 2025" loading="lazy">
+<pre>
+<div style="display: flex ; flex-direction: column; gap: 3px;">
+<!-- <span class="center">You are visitor number <a href="https://stuff.mit.edu/doc/counter-howto.html"><img class="crisp" src="https://stuff.mit.edu/cgi/counter/johnduncan.io" style="vertical-align:middle" alt=""></a></span> -->
+<span>Copyright &copy; John D. Duncan, III, <span id="currentYear">2011–2025</span>. All Rights Reserved.</span>
+<span>All images Copyright &copy; <a href="http://reneefrench.blogspot.com/">Renée French</a>. All Rights Reserved.</span>
+<span>Catclock Copyright &copy;
+	Tony Della Fera (MIT-Athena, Digital Equipment Corporation)
+	Dave Mankins (MIT-Athena, BBN)
+	Ed Moy (UC Berkeley)
+	Deanna Hohn (Digital Equipment Corporation)
+	Philip Schneider (Digital Equipment Corporation)
+	Tom Duff (Bell Labs)</span></div></pre>
+<script>document.getElementById("currentYear").textContent = `2011–${new Date().getFullYear()}`</script>
 		</footer>
 	</main>
 </body>
-</html>

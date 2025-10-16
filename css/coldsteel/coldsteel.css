@@ -1,0 +1,89 @@
+.thaer {
+    border-image-slice: 21 21 22 22;
+    border-image-width: 21px 21px 22px 22px;
+    border-image-outset: 0px 0px 0px 0px;
+    border-image-repeat: stretch stretch;
+    border-image-source: url("thaer.no-dark.gif");
+    border-style: solid;
+    image-rendering: pixelated;
+}
+
+.coldsteel {
+	min-width: 126px;
+	min-height: 78px;
+
+	position: relative;
+	height: fit-content;
+	width: fit-content;
+    image-rendering: pixelated;
+
+    border-style: solid;
+	border-image-repeat: repeat repeat;
+	border-width: 17px 7px 7px 7px;
+	border-image-outset: 0px 0px 0px 0px;
+
+    border-image-slice: 59 49 43 21;
+    border-image-width: 59px 49px 43px 21px;
+    border-image-source: url("coldsteel-border3white.png");
+
+/*
+    border-image-slice: 23 49 42 21;
+    border-image-width: 23px 49px 42px 21px;
+    border-image-source: url("coldsteel-border4.png");
+
+	border-image: url("coldsteel-border2.png") 60 / 60px / 0px stretch;
+
+	border-image-slice: 60 60 60 60;
+	border-image-width: 60px 60px 60px 60px;
+	border-image-source: url("coldsteel-border1.png");
+*/
+}
+
+/*
+.title-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 39px;
+    bottom: 0;
+    background-image: url("coldsteel-background.png");
+    z-index: -1;
+}
+
+.title-bar::after {
+    content: '';
+    background-image: url("coldsteel-throbber.png");
+    width: 39px;
+    height: 17px;
+    background-color: transparent;
+}*/
+
+.coldsteel-title {
+    position: absolute;
+    top: -17px;
+    left: 14px;
+    color: white;
+    font-family: Monaco, Tahoma;
+    font-size: 10px;
+    -webkit-font-smoothing: none;
+    min-height: 17px;
+    display: flex;
+    align-items: center;
+    image-rendering: pixelated;
+    background-image: url("coldsteel-background.png");
+    background-size: calc(100% - 39px) 100%;
+    background-repeat: no-repeat;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+.coldsteel-title::after {
+    content: "";
+    image-rendering: pixelated;
+    background-image: url("coldsteel-throbber.png");
+    width: 39px;
+    height: 17px;
+    background-color: transparent;
+    isolation: isolate;
+}

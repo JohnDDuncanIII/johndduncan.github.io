@@ -1,0 +1,54 @@
+<!doctype html>
+
+<head>
+<style>
+	a {
+		display: block;
+	}
+</style>
+</head>
+
+<body style="
+    min-width: 600px;
+    width: fit-content;
+    border: 5px double black;
+    box-shadow: 3px 3px;
+    padding: 5px;
+">
+	<!-- works -->
+	<a href="img/portfolio/mit/scrot-nocode.png">
+		<img
+			src="img/portfolio/mit/scrot-nocode.png"
+			onload="this.width*=0.2145"
+		> 
+	</a>
+
+	<!-- works -->
+	<a href="img/portfolio/mit/scrot-nocode.png">
+		<img
+			src="img/portfolio/mit/scrot-nocode.png"
+			style="width: 50vw;"
+		> 
+	</a>
+
+	<!-- works -->
+	<a href="img/portfolio/mit/scrot-nocode.png">
+		<img srcset="img/portfolio/mit/scrot-nocode.png 4.665x">
+	</a>
+
+	<!-- does not work -->
+	<a href="img/portfolio/mit/scrot-nocode.png">
+		<img
+			src="img/portfolio/mit/scrot-nocode.png"
+			style="width: 50%;"
+		>
+	</a>
+
+	<!-- does not work -->
+	<a href="img/portfolio/mit/scrot-nocode.png">
+		<img
+			src="img/portfolio/mit/scrot-nocode.png"
+			style="transform: scale(0.2); transform-origin: top left;"
+		> 
+	</a>
+</body>

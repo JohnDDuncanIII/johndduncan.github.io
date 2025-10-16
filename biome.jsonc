@@ -1,0 +1,19 @@
+// https://biomejs.dev/reference/configuration/
+// https://biomejs.dev/guides/configure-biome/
+{
+	"formatter": {
+		// https://biomejs.dev/formatter/#options
+		"indentWidth": 4,
+	},
+	"javascript": {
+		"formatter": {
+		  "semicolons": "asNeeded",
+		  "trailingCommas": "none"
+		}
+	},
+	"json": {
+		"formatter": {
+			"enabled": false
+		}
+	}
+}
