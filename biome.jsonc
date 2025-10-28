@@ -1,19 +1,28 @@
 // https://biomejs.dev/reference/configuration/
 // https://biomejs.dev/guides/configure-biome/
 {
-	"formatter": {
-		// https://biomejs.dev/formatter/#options
-		"indentWidth": 4,
+	// https://biomejs.dev/assist/
+	"assist": {
+		"actions": {
+			"source": {
+				// https://biomejs.dev/assist/actions/organize-imports/
+				"organizeImports": "on",
+				// https://biomejs.dev/assist/actions/use-sorted-keys/
+				"useSortedKeys": "on"
+			}
+		}
 	},
+	// https://biomejs.dev/formatter/#options
+	"formatter": {
+		// https://biomejs.dev/reference/configuration/#formatterindentwidth
+		"indentWidth": 4
+	},
+	// https://biomejs.dev/reference/configuration/#javascript
 	"javascript": {
 		"formatter": {
-		  "semicolons": "asNeeded",
-		  "trailingCommas": "none"
+			// https://biomejs.dev/reference/configuration/#javascriptformattersemicolons
+			"semicolons": "asNeeded"
 		}
 	},
-	"json": {
-		"formatter": {
-			"enabled": false
-		}
-	}
+	"root": true
 }

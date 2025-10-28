@@ -1,7 +1,8 @@
 #weatherBox {
 	width: 265px;
 	background-color: white;
-	border: 3px double black;
+	box-shadow: 1px 1px;
+	border: 1px solid black;
 	padding: 8px;
 	margin: auto;
 }
@@ -47,11 +48,11 @@
 	width: 263px;
 	border: 1px solid #aeaeae;
 	margin-bottom: 10px;
-	text-align:right;
+	text-align: right;
 	line-height: 0;
 }
 .textLeft {
-	text-align:left;
+	text-align: left;
 }
 
 .bar {
@@ -75,25 +76,32 @@
 }
 .bar-precip-bw {
 	background-color: white !important;
-	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAMAAABh9kWNAAAADFBMVEUAAAAAAAAAAAD///81VxGEAAAAAnRSTlMA/MKYcw8AAAAQSURBVAjXY2BgYGJgYASTAAAqAAZOaveNAAAAAElFTkSuQmCC) repeat;
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAMAAABh9kWNAAAADFBMVEUAAAAAAAAAAAD///81VxGEAAAAAnRSTlMA/MKYcw8AAAAQSURBVAjXY2BgYGJgYASTAAAqAAZOaveNAAAAAElFTkSuQmCC)
+		repeat;
 	outline: black solid 1px;
 	border-top: none !important;
 }
-.bar-temp-bw, .bar-dewpoint-bw, .bar-windchill-bw {
+.bar-temp-bw,
+.bar-dewpoint-bw,
+.bar-windchill-bw {
 	background-color: white !important;
-	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAQAAADYv8WvAAAADklEQVQI12Ng+M8ABv8BCQEB//G4bcoAAAAASUVORK5CYII=) repeat;
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAQAAADYv8WvAAAADklEQVQI12Ng+M8ABv8BCQEB//G4bcoAAAAASUVORK5CYII=)
+		repeat;
 	outline: black solid 1px;
 	border-top: none !important;
 }
 .bar-humidity-bw {
 	background-color: white !important;
-	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAMAAABh9kWNAAAACVBMVEUAAAAAAAD///+D3c/SAAAAAXRSTlMAQObYZgAAAA5JREFUCNdjYGQAAggBAAAeAAQUtVXfAAAAAElFTkSuQmCC) repeat;
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAMAAABh9kWNAAAACVBMVEUAAAAAAAD///+D3c/SAAAAAXRSTlMAQObYZgAAAA5JREFUCNdjYGQAAggBAAAeAAQUtVXfAAAAAElFTkSuQmCC)
+		repeat;
 	outline: black solid 1px;
 	border-top: none !important;
 }
-.bar-cloud-bw, .bar-windgust-bw {
+.bar-cloud-bw,
+.bar-windgust-bw {
 	background-color: white !important;
-	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAD0lEQVQImWNgwAL+Y4gAABIVAQDGiCc/AAAAAElFTkSuQmCC) repeat;
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAD0lEQVQImWNgwAL+Y4gAABIVAQDGiCc/AAAAAElFTkSuQmCC)
+		repeat;
 	outline: black solid 1px;
 }
 .bar-temp {
@@ -103,14 +111,14 @@
 }
 .bar-humidity {
 	background-color: magenta;
-	border-top: 1px solid #AA00AA;
+	border-top: 1px solid #aa00aa;
 }
 .bar-cloud {
 	margin-right: 1px;
 	background-color: white;
 	outline: 1px dotted white;
 	width: 3px;
-	border-left:1px solid #000;
+	border-left: 1px solid #000;
 	border-right: 1px solid #000;
 	border-top: 1px solid #000;
 }
@@ -139,7 +147,7 @@
 }
 .bar:hover {
 	outline: 1px dotted black;
-	z-index:1;
+	z-index: 1;
 }
 
 .bar-text {
@@ -154,17 +162,20 @@
 	height: 50px;
 	width: 15px;
 	display: inline-block;
-	vertical-align:top;
+	vertical-align: top;
 }
 .bar-text-vert {
 	width: 15px;
 	height: 5px;
 }
 .bar-text-image {
-	display:table-row;
+	display: table-row;
 }
-.bar-temp:last-child, .bar-text:last-child, .bar-humidity:last-child, .bar-cloud:last-child{
-	margin-right:0px;
+.bar-temp:last-child,
+.bar-text:last-child,
+.bar-humidity:last-child,
+.bar-cloud:last-child {
+	margin-right: 0px;
 }
 .bar-hidden {
 	visibility: hidden;
